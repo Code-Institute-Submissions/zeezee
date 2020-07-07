@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&display=swap');
 
 html {
     height: 100%;
@@ -9,7 +9,7 @@ body {
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
-    font-family: 'Merienda One', cursive;
+    font-family: 'Baloo 2', cursive;
 }
 
 /* from Bulma
@@ -22,9 +22,6 @@ code to make the icons appears in the center */
     width: 1.5rem;
 }
 
-.logo-font {
-    text-transform: uppercase;
-}
 
 .main-logo-link {
     width: fit-content;
