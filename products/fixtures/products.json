@@ -1,0 +1,14 @@
+[
+   {
+      "pk":1,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5001340155",
+         "name":"Test Product",
+         "description":"quite long description about a nonexisting product",
+         "price":15.99,
+         "category":3,
+         "image":"background_hand.JPG"
+      }
+   }
+]
