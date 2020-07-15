@@ -122,7 +122,13 @@ Method from https://www.w3schools.com/ */
     color:#1D5C28;
 }
 
-.cart-item:hover{
+.cart-item:hover
+    {
     color: #184620;
     text-decoration: none;
+}
+
+.cart:hover{
+    text-decoration: none;
+    color:aliceblue;
 }
