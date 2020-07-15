@@ -8,7 +8,7 @@ body {
     background: url('/media/background_hand.JPG') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    color: #555;
+    color: #0A390A;
     font-family: 'Baloo 2', cursive;
 }
 
@@ -23,14 +23,8 @@ code to make the icons appears in the center */
 }
 
 
-.main-logo-link {
+#bijoux-link{
     width: fit-content;
-}
-
-.shop-now-button {
-    background: black;
-    color: white;
-    min-width: 260px;
 }
 
 .btn-black {
@@ -38,9 +32,6 @@ code to make the icons appears in the center */
     color: white;
 }
 
-.shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus,
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
@@ -48,8 +39,8 @@ code to make the icons appears in the center */
     color: white;
 }
 
-.text-black {
-    color: #000 !important;
+.text {
+    color: aliceblue !important;
 }
 
 .border-black {
@@ -119,4 +110,8 @@ Method from https://www.w3schools.com/ */
 
 #myBtn:hover {
   background-color: #555; 
+}
+
+.bg-nav{
+    background: #ba826b;
 }
