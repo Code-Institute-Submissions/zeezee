@@ -56,6 +56,14 @@ code to make the icons appears in the center */
     border: 1px solid black !important;
 }
 
+.message-container{
+    position:fixed;
+    top:70px;
+    right: 50%;
+    z-index: 99999999;
+}
+
+
 /*  Media Queries */
 
 /* Slightly larger container on xl screens */
