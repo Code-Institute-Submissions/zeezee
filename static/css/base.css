@@ -40,7 +40,7 @@ code to make the icons appears in the center */
 }
 
 .text {
-    color: aliceblue !important;
+    color: white !important;
 }
 
 .border-black {
@@ -100,7 +100,7 @@ Method from https://www.w3schools.com/ */
   z-index: 99;
   border: none; 
   outline: none; 
-  background-color: blue; 
+  background-color:#D16BA5; 
   color: white; 
   cursor: pointer; 
   padding: 15px; 
@@ -108,10 +108,21 @@ Method from https://www.w3schools.com/ */
   font-size: 18px; 
 }
 
-#myBtn:hover {
-  background-color: #555; 
-}
+
 
 .bg-nav{
     background: #ba826b;
+}
+
+.cart{
+    color:white;
+}
+
+.cart-item{
+    color:#1D5C28;
+}
+
+.cart-item:hover{
+    color: #184620;
+    text-decoration: none;
 }

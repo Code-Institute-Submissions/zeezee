@@ -83,9 +83,9 @@
                   <!--If the bucket contains anything, we display the price with two decimals,
                      but when the bucket is empty, the message is 0.00 euro-->
                   <li class="list-inline-item">
-                     <a class="{% if grand_total %}text-info font-weight-bold{% else %}text{% endif %} nav-link" href="{% url 'view_bag' %}">
+                     <a class="{% if grand_total %} font-weight-bold cart-item{% else %}cart{% endif %} " href="{% url 'view_bag' %}">
                         <div class="text-center">
-                           <div><i class="fas fa-shopping-cart fa-lg"></i></div>
+                           <div><i class="fas fa-shopping-cart fa-lg cart"></i></div>
                            <p class="my-0">
                               {% if grand_total %}
                               €{{ grand_total|floatformat:2 }}
