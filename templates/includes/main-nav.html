@@ -1,5 +1,9 @@
 <div class="collapse navbar-collapse" id="main-nav">
    <ul class="navbar-nav w-auto mx-auto">
+    <li class="nav-item dropdown">
+         <a class="logo-font font-weight-bold nav-link text mr-5" href="#" id="bijoux-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Home  </a>
+      </li>
       <li class="nav-item dropdown">
          <a class="logo-font font-weight-bold nav-link text mr-5" href="#" id="bijoux-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          About ZeeZee
@@ -7,7 +11,7 @@
       </li>
       <li class="nav-item dropdown text">
          <a class="logo-font font-weight-bold nav-link mr-5 text" href="#" id="bijoux-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Categories
+         Products
          </a>
          <div class="dropdown-menu border-0 text" aria-labelledby="bijoux-link">
             <a href="{% url 'products' %}?category=rings" class="dropdown-item">Rings</a>

@@ -5,7 +5,7 @@
       "fields":{
          "sku":"pp5001340155",
          "name":"Test Product",
-         "description":"quite long description about a nonexisting product",
+         "description":" description about a product",
          "price":15.99,
          "category":3,
          "image":"background_hand.JPG"
