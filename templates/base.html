@@ -32,21 +32,20 @@
       <link rel="icon" sizes="192x192" href="{% static 'favicon.png' %}" type="image/x-icon">
    </head>
    <body>
-      <header class="container-fluid fixed-top">
+      <header class="container-fluid">
          <div id="topnav" class="row bg-nav pt-lg-2 d-none d-lg-flex">
-            <div class="col-12 col-4-lg my-auto py-1 py-lg-0 text-center text-lg-left">
+            <div class="col-7 col-4-lg my-auto py-1 py-lg-0 text-center text-lg-left">
                <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                  <h2 class="logo-font text my-0"><strong>ZeeZee</strong> Bijoux</h2>
+                  <h2 class="title-main"><strong>ZeeZee</strong> Bijoux</h2>
                </a>
             </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text">
                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-               
-                  <li class="list-inline-item dropdown">
+                      <li class="list-inline-item dropdown">
                      <a class="text nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="text-center text">
+                        <div class="text-center">
                            <div><i class="fas fa-user fa-lg"></i></div>
-                           <p class="my-0">My Account</p>
+                           <p class="my-0 text">My Account</p>
                         </div>
                      </a>
                      <!--If the user is autenticated and they are superurs,
@@ -72,7 +71,7 @@
                      <a class="{% if grand_total %}font-weight-bold cart-item{% else %}cart{% endif %} " href="{% url 'view_bag' %}">
                         <div class="text-center">
                            <div><i class="fas fa-shopping-cart fa-lg cart"></i></div>
-                           <p class="my-0">
+                           <p class="my-0 text">
                               {% if grand_total %}
                               €{{ grand_total|floatformat:2 }}
                               {% else %}

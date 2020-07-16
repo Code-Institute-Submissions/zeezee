@@ -14,12 +14,12 @@
     <div class="container-fluid">
     <!--Search bar form  with products url, returning the products view-->
     <div class="row">
-            <div class="col-12 col-lg-5">
+            <div class="col-12 col-lg-5 mx-auto">
                <form method="GET" action="{% url 'products' %}">
                   <div class="input-group w-100">
                      <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="I am looking for...">
                      <div class="input-group-append">
-                        <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                        <button class="form-control btn border-black rounded-0" type="submit">
                         <span class="icon">
                         <i class="fas fa-search"></i>
                         </span>
