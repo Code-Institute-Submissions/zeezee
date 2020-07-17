@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    background: url('/media/background_hand.JPG') no-repeat center center fixed;
+    
     background-size: cover;
     height: calc(100vh - 164px);
     color: #0A390A;
@@ -137,4 +137,10 @@ Method from https://www.w3schools.com/ */
 .title-main{
     color:white;
     font-size:2.5rem;
+}
+
+.introduction{
+    background:#A8A8A8;
+    border: 3px #6A0848 ;
+
 }
