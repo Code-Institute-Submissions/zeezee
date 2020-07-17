@@ -41,7 +41,7 @@
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text">
                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-                      <li class="list-inline-item dropdown">
+                  <li class="list-inline-item dropdown">
                      <a class="text nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="text-center">
                            <div><i class="fas fa-user fa-lg"></i></div>
@@ -95,76 +95,78 @@
          </div>
       </header>
       <body>
-            <div class="home-image">
-                <img src="/media/background_hand.JPG" class="img-fluid">
-            </div>
-            <div class="text-wrap text introduction">
+         <div class="home-image">
+            <img src="/media/background_hand.JPG" class="img-fluid">
+         </div>
+         <div class="text-wrap text introduction">
             <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia officia veritatis ratione. Velit tempora nulla minima vitae, hic aliquam ab quibusdam delectus adipisci iusto ea maiores rem eaque! Veniam, libero!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam sint magni quos perspiciatis tempora ipsa obcaecati molestiae cupiditate, natus, id eligendi repellendus dolores quia veniam at nesciunt nulla praesentium modi!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque iure esse minus ipsam facere. Neque error alias commodi quasi? Odio nemo repudiandae autem ipsa veritatis quidem adipisci suscipit, inventore quas?
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia officia veritatis ratione. Velit tempora nulla minima vitae, hic aliquam ab quibusdam delectus adipisci iusto ea maiores rem eaque! Veniam, libero!
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam sint magni quos perspiciatis tempora ipsa obcaecati molestiae cupiditate, natus, id eligendi repellendus dolores quia veniam at nesciunt nulla praesentium modi!
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque iure esse minus ipsam facere. Neque error alias commodi quasi? Odio nemo repudiandae autem ipsa veritatis quidem adipisci suscipit, inventore quas?
             </p>
+         </div>
+         <div class="categories row">
+            <div class="card-deck col-md-3 lg-2 col-sm-6">
+               <div class="card text-white">
+                  <img class="card-img img-fluid img-responsive" src="/media/rings.jpg" alt="Card image cap">
+                  <div class="card-img-overlay overl">
+                     <h5 class="card-title text-center"> <a class="link-card" href="{% url 'products' %}?category=rings}"> Rings </a></h5>
+                  </div>
+               </div>
             </div>
-            <div class="categories">
-                <div class="card-deck">
-                    <div class="card">
-                        <img class="card-img-top" src="/media/rings.jpg" alt="Card image cap">
-                        <div class="card-body">
-                        <h5 class="card-title">Rings</h5>
-                    </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="/media/earrings.jpg" alt="Card image cap">
-                        <div class="card-body">
-                        <h5 class="card-title">Earrings</h5>                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="/media/bracelets.jpg" alt="Card image cap">
-                        <div class="card-body">
-                        <h5 class="card-title">Bracelets</h5>
-
-                    </div>
-                    </div>
-                    
-                    <div class="card">
-                        <img class="card-img-top" src="/media/necklaces.jpg" alt="Card image cap">
-                        <div class="card-body">
-                        <h5 class="card-title">Necklaces</h5>
-
-                    </div>
-                    </div>
+            <div class="card-deck col-md-3 lg-2 col-sm-6">
+               <div class="card text-white">
+                  <img class="card-img img-fluid responsive" src="/media/earrings.jpg" alt="Card image cap">
+                  <div class="card-img-overlay overl">
+                     <h5 class="card-title text-center"> <a class="link-card" href="{% url 'products' %}?category=earrings}"> Earrings </a></h5>
+                  </div>
+               </div>
             </div>
-
-      <footer>
-      </footer>
-      </body>
-
-
-      {% if messages %}
-      <div class="message-container">
-         {% for message in messages %}
-         {% with message.level as level %}
-         {% if level == 40 %}
-         {% include 'includes/toasts/error.html' %}
-         {% elif level == 30 %}
-         {% include 'includes/toasts/warning.html' %}
-         {% elif level == 25 %}
-         {% include 'includes/toasts/success.html' %}
-         {% else %}
-         {% include 'includes/toasts/info.html' %}
-         {% endif %}
-         {% endwith %}
-         {% endfor %}
-      </div>
+            <div class="card-deck col-md-3 lg-2 col-sm-6">
+               <div class="card text-white">
+                  <img class="card-img img-fluid responsive" src="/media/bracelets.jpg" alt="Card image cap">
+                  <div class="card-img-overlay overl">
+                     <h5 class="card-title text-center"> <a class="link-card" href="{% url 'products' %}?category=bracelets}"> Bracelets </a></h5>
+                  </div>
+               </div>
+            </div>
+            <div class="card-deck col-md-3 lg-2 col-sm-6">
+               <div class="card text-white">
+                  <img class="card-img img-fluid responsive" src="/media/necklaces.jpg" alt="Card image cap">
+                  <div class="card-img-overlay overl">
+                     <h5 class="card-title text-center"> <a class="link-card" href="{% url 'products' %}?category=necklaces}"> Necklaces </a></h5>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <footer>
+         </footer>
+   </body>
+   {% if messages %}
+   <div class="message-container">
+      {% for message in messages %}
+      {% with message.level as level %}
+      {% if level == 40 %}
+      {% include 'includes/toasts/error.html' %}
+      {% elif level == 30 %}
+      {% include 'includes/toasts/warning.html' %}
+      {% elif level == 25 %}
+      {% include 'includes/toasts/success.html' %}
+      {% else %}
+      {% include 'includes/toasts/info.html' %}
       {% endif %}
-      {% block page_header %}
-      {% endblock %}
-      {% block content %}
-      {% endblock %}
-      {% block postloadjs %}
-      <script type="text/javascript"> 
-         $('.toast').toast('show');
-      </script>
-      {% endblock %}
+      {% endwith %}
+      {% endfor %}
+   </div>
+   {% endif %}
+   {% block page_header %}
+   {% endblock %}
+   {% block content %}
+   {% endblock %}
+   {% block postloadjs %}
+   <script type="text/javascript"> 
+      $('.toast').toast('show');
+   </script>
+   {% endblock %}
    </body>
 </html>

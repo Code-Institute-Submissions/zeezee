@@ -144,3 +144,30 @@ Method from https://www.w3schools.com/ */
     border: 3px #6A0848 ;
 
 }
+
+/*Categories card overlay*/
+.overl {
+opacity: 0;
+
+}
+
+.overl:hover{
+opacity: 1;
+background: rgba(0, 0, 0, 0.7);
+}
+
+.card-title{
+    margin-top:50%;
+}
+
+.link-card{
+    text-decoration: none !important;
+    color:white;
+    
+    
+}
+
+.link-card :hover{
+   
+    
+}
