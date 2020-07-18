@@ -146,7 +146,8 @@ Method from https://www.w3schools.com/ */
 /*Categories cards and overlay*/
 
 .categories{
-    margin-top:2rem;
+    margin:2rem;
+    
 }
 .overl {
 opacity: 0;
