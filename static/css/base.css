@@ -172,10 +172,16 @@ background: rgba(0, 0, 0, 0.7);
 
 /*Footer*/
 
-footer{
+.footer {
+    bottom: 0;
     width: 100%;
-    height: 10%;
-    background:  #A8A8A8;
-    bottom:0;
-    position: static;
+    height: 60px;
+    line-height: 60px;
+    background-color: #A8A8A8;
+    margin-top:2rem;
 }
+.container{
+    width: auto;
+    max-width: 680px;
+    padding: 0 15px;
+    }
