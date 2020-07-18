@@ -5,9 +5,7 @@ html {
 }
 
 body {
-    
-    background-size: cover;
-    height: calc(100vh - 164px);
+    min-height: 100vh;
     color: #0A390A;
     font-family: 'Baloo 2', cursive;
 }
@@ -170,4 +168,14 @@ background: rgba(0, 0, 0, 0.7);
 .link-card :hover{
    
     
+}
+
+/*Footer*/
+
+footer{
+    width: 100%;
+    height: 10%;
+    background:  #A8A8A8;
+    bottom:0;
+    position: static;
 }
