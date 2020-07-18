@@ -138,12 +138,16 @@ Method from https://www.w3schools.com/ */
 }
 
 .introduction{
-    background:#A8A8A8;
-    border: 3px #6A0848 ;
+    background:#6A0848;
+    border: 3px #A8A8A8 ;
 
 }
 
-/*Categories card overlay*/
+/*Categories cards and overlay*/
+
+.categories{
+    margin-top:2rem;
+}
 .overl {
 opacity: 0;
 
