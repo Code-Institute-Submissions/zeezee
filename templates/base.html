@@ -33,7 +33,7 @@
       <link rel="icon" sizes="192x192" href="{% static 'favicon.png' %}" type="image/x-icon">
    </head>
    <body>
-      <header class="container-fluid">
+      <header >
          <div id="topnav" class="row bg-nav pt-lg-2 d-none d-lg-flex">
             <div class="col-7 col-4-lg my-auto py-1 py-lg-0 text-center text-lg-left">
                <a href="{% url 'home' %}" class="nav-link main-logo-link">
@@ -95,26 +95,9 @@
             </nav>
          </div>
       </header>
-         
-         <footer class="footer">
-             <div class="footer-copyright">
-            <div class="container text">
-              <a  href="https://github.com/krisztinatxt" class="float-left text-decoration-none text" title="Visit my GitHub"> &copy; Krisztina Szabó </a>
-               <a class="text-center float-right text" href="#"> 
-               Subscribe to special offers 
-               </a>
-               <a href="https://www.facebook.com/zeezeebigyok/" target="_blank" rel="noopener"
-                  class="waves-effect waves-light btn-small float-right btn-footer text" title="ZeeZee on Facebook">
-               <i class="material-icons left fab fa-facebook-f"> </i>
-               </a>
-                <a href="https://www.instagram.com/zeezeewire/?igshid=wxn0gmviicv7" target="_blank" rel="noopener"
-                  class="waves-effect waves-light btn-small float-right btn-footer text" title="ZeeZee on Instagram">
-               <i class="material-icons left fab fa-instagram"> </i>
-               </a>
-            </div>
-         </div>
-         </footer>
-  
+
+
+
    {% if messages %}
    <div class="message-container">
       {% for message in messages %}
