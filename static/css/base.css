@@ -175,6 +175,13 @@ background: rgba(0, 0, 0, 0.7);
     
 }
 
+/*About page*/
+
+.about-text{
+    margin-top:10%;
+}
+
+
 /*Footer*/
 
 .footer {
