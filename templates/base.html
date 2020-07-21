@@ -96,8 +96,6 @@
          </div>
       </header>
 
-
-
    {% if messages %}
    <div class="message-container">
       {% for message in messages %}
@@ -124,5 +122,8 @@
       $('.toast').toast('show');
    </script>
    {% endblock %}
+   {% if footer != False %}
+    {% include 'includes/footer.html' %}
+    {% endif %}
    </body>
 </html>

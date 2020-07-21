@@ -4,4 +4,4 @@ from django.shortcuts import render
 
 
 def about_view(request, *args, **kwargs):
-    return render(request, "about.html", {"page": "about"})
+    return render(request, "pages/about.html", {"page": "about"})
