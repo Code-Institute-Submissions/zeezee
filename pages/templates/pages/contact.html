@@ -2,8 +2,24 @@
 
 {% load static %}
 <title> {% block title %}Contact{% endblock %} </title>
-
 {% block content %}
-<h1>aaaaa </h1>
+    <div class="row">
+        <div class="span6">
+            <h1>Send an email</h1>
+            <form action="." method="post">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+    </div>
+{% endblock %}
 
+{% block extrajs %}
+<script src="{{ STATIC_URL }}js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+    $('#id_name').focus()
+});
+</script>
 {% endblock %}

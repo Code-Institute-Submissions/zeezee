@@ -54,29 +54,6 @@ code to make the icons appears in the center */
 }
 
 
-/*  Media Queries */
-
-/* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
-}
-
-/* fixed top navbar only on medium and up */
-@media (min-width: 992px) {
-    .fixed-top-desktop-only {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
-    }
-
-    .header-container {
-        padding-top: 164px;
-    }
-}
 
 .overlay {
 	height: 100%;
@@ -99,7 +76,7 @@ Method from https://www.w3schools.com/ */
   z-index: 99;
   border: none; 
   outline: none; 
-  background-color:#D16BA5; 
+  background-color: #6A0848;
   color: white; 
   cursor: pointer; 
   padding: 15px; 
@@ -219,4 +196,26 @@ background: rgba(0, 0, 0, 0.7);
 }
 
 
-  
+  /*  Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+}
