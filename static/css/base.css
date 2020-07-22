@@ -179,6 +179,7 @@ background: rgba(0, 0, 0, 0.7);
 
 .about-text{
     margin-top:10%;
+    color: #6A0848;
 }
 
 .portrait{
@@ -186,13 +187,15 @@ background: rgba(0, 0, 0, 0.7);
 	border-spacing: 0.25rem;
 	border-color: white;
 	border-radius: 15%;
-	height: 80%;
-	width: 72%;
-	margin: 1.875rem auto;
+	height: 75%;
+	width: 65%;
+	margin: 10% auto;
 	align-content: center;
-	background-repeat: no-repeat;
-	transition: 0.3s ease-in;
+	
 
+}
+.about-page{
+    min-height: 100vh;
 }
 
 
@@ -208,8 +211,7 @@ background: rgba(0, 0, 0, 0.7);
 }
 .container{
     width: auto;
-    max-width: 680px;
-    padding: 0 15px;
+   
     }
 
 .btn-footer{
