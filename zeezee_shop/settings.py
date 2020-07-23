@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'products',
     'bag',
     'pages',
+    
 ]
 
 MIDDLEWARE = [
@@ -92,6 +93,8 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SITE_ID = 1 
+
+DEFAULT_FROM_EMAIL = 'andrekrisztina5@gmail.com'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
