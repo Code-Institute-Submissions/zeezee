@@ -6,17 +6,22 @@
 <div class="container-fluid text-center purple-text">
     <div class="row">
         
-        <div class="col-12 col-lg-5 col-sm-5 mx-auto">
-        <h1 class="text-center">Contact Us</h1>
-            <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <div class="form-actions">
-                <button type="submit">Send</button>
-            </div>
+    <div class="col-12 col-lg-5 col-sm-5 mx-auto">
+      
+            <h4>Let's get in touch!</h4>
+            <form onsubmit="return sendMail(this);">
+               <label for="name" class="label-name">Name:</label>
+               <input type="text" name="name" id="name" placeholder="Your name..." required>
+               <label for="email" class="label-email">Email:</label>
+               <input type="email" name="emailaddress" id="emailaddress" placeholder="Your email address..." required>
+               <label for="feedback" class="label-feedback">Feedback:</label>
+               <textarea id="feedback" name="feedback" placeholder="Write your feedback here" required></textarea>
+               <button class="btn waves-effect waves-light feedback_button" type="submit" value = "send" name="action">Submit </button>
             </form>
-        </div>
+         </div>
+      </div>
     </div>
-</div>
-
-{% endblock %}
+ {% endblock %}
+ <script type="text/javascript"> 
+      
+   </script>
