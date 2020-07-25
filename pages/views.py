@@ -22,8 +22,9 @@ def contact(request):
             from_email = form.cleaned_data['from_email']
             message = form.cleaned_data['message']
             try:
-                send_mail
-                (subject, message, from_email, ['andrekrisztina5@gmail.com'])
+                send_mail(
+                    subject, message, from_email, ['andrekrisztina5@gmail.com']
+                    )
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('success')
@@ -31,4 +32,7 @@ def contact(request):
 
 
 def success(request):
-    return render(request, "pages/success-contact.html", {'page':"success-contact"})
+    return render(
+        request, "pages/success-contact.html", {'page': "success-contact"}
+        )
+
