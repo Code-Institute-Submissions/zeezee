@@ -9,7 +9,7 @@
          "description":" Made of copper wire and onix and black glass beads. Let the wind take you away",
          "price":7.00,
          "category":2,
-         "image":"IMG_0708.jpg", "IMG_0713.jpg"
+         "image":["IMG_0708.jpg", "IMG_0713.jpg"]
       }
    },
 
@@ -22,7 +22,7 @@
          "description": "If you desire something small but exquisite, this necklace made of copper wire and a sparkling crystal like bead could be your choise",
          "price":12.00,
          "category":4,
-         "image":"IMG_0732.jpg", "IMG_0736.jpg", "IMG_6108.jpg"
+         "image":["IMG_0732.jpg", "IMG_0736.jpg", "IMG_6108.jpg"]
       }
    },
 
@@ -35,7 +35,7 @@
          "description": "You can feel the force of the  unbridled nature by wearing this pice, made of copper wire and raw mountain crystal from Parajd",
          "price":19.00,
          "category":4, 
-         "image": "IMG_0775.jpg" "Z001.jpg" "Z008.jpg"
+         "image": ["IMG_0775.jpg" "Z001.jpg" "Z008.jpg"]
       }
    },
 
@@ -48,7 +48,7 @@
          "description": "A touch of tenderness and grace, for woman who can wear their femininty. Made of copper, rose quartz, labradorit and crystal beads",
          "price":19.00,
          "category":4, 
-         "image": "IMG_0857.jpg", "IMG_0864.jpg"
+         "image": ["IMG_0857.jpg", "IMG_0864.jpg"]
       }
    },
 
@@ -74,7 +74,7 @@
          "description": "A simple design for everyday. Dare it, wear it!",
          "price": 5.00,
          "category": 2,
-         "image": "IMG_0916.jpg", "IMG_7864.jpg"
+         "image": ["IMG_0916.jpg", "IMG_7864.jpg"]
       }
    },
 
@@ -87,7 +87,7 @@
          "description": "For a romantic soul, this necklace made of copper wire and galvanized glass beads",
          "price": 12.00,
          "category": 4,
-         "image": "IMG_0937.jpg", "IMG_6124.jpg"
+         "image": ["IMG_0937.jpg", "IMG_6124.jpg"]
       }
    },
 
@@ -100,7 +100,7 @@
          "description": "This masculine design reflects force and confidence. Put it on, be daring.",
          "price": 10.00,
          "category": 3,
-         "image": "IMG_0924.jpg", "IMG_6198.jpg"
+         "image":["IMG_0924.jpg", "IMG_6198.jpg"]
       }
    },
 
@@ -113,7 +113,7 @@
          "description": "An unique design, for daring woman. If you wear this, you’ll be seen. Made of copper wire and turqouis.",
          "price": 12.00,
          "category": 4,
-         "image": "IMG_0959.jpg", "IMG_6200.jpg"
+         "image": ["IMG_0959.jpg", "IMG_6200.jpg"]
       }
    },
 
@@ -126,7 +126,7 @@
          "description": "Made of copper wire and crystal like glass bead. It blooms, it’s bursting into life.",
          "price": 10.00,
          "category": 4,
-         "image": "IMG_0978.jpg", "IMG_0993.jpg",  "IMG_6110.jpg"
+         "image": ["IMG_0978.jpg", "IMG_0993.jpg",  "IMG_6110.jpg"]
 
       }
    },
@@ -140,7 +140,7 @@
          "description": "This necklace is summer. It’s freedom. I’s sunshine and beach. It can be yours. Made from copper wire and feather.",
          "price": 12.00,
          "category": 4,
-         "image": "IMG_1052.jpg", "IMG_6107.jpg"
+         "image": ["IMG_1052.jpg", "IMG_6107.jpg"]
       }
    },
 
@@ -154,7 +154,7 @@
          "description": "An elegant desing for thos who love minimal. The smoky seashell bead gives it a touch of class. There’s always a special occasion for special jewellry...",
          "price": 10.00,
          "category": 4,
-         "image": "IMG_1017.jpg", "IMG_6109.jpg"
+         "image":["IMG_1017.jpg", "IMG_6109.jpg"]
       }
    },
 
@@ -167,7 +167,7 @@
          "description": "You want to feel the power of fire? You have to get this elegant piece. It makes every little black dress stunning.",
          "price": 12.00,
          "category": 4,
-         "image": "IMG_1060.jpg", "IMG_5637.jpg"
+         "image": ["IMG_1060.jpg", "IMG_5637.jpg"]
       }
    },
 
@@ -193,7 +193,7 @@
          "description": "The simplicity of winter, their like frozen teardrops. This copper wire and glass bead pirce bring you the refreshing chill of winter.",
          "price": 7.00,
          "category": 2,
-         "image": "IMG_1098.jpg", "IMG_1096.jpg"
+         "image": ["IMG_1098.jpg", "IMG_1096.jpg"]
       }
    },
 
@@ -219,7 +219,7 @@
          "description": "t’s concentrated sunshine, you can light up the room wearing it. It’s made of copper wire and a crystal like glass bead.",
          "price": 10.00,
          "category": 4,
-         "image": "IMG_1155.jpg", "IMG_1151"
+         "image": ["IMG_1155.jpg", "IMG_1151"]
       }
    },
 
@@ -232,7 +232,7 @@
          "description": "A woman's hand is the first thing that cathes a man's eyes. So why not make it unforgettable, with this copper and crystal like ring. Simple but elegant..",
          "price": 7.00,
          "category": 1,
-         "image": "IMG_1161.jpg", "IMG_6196"
+         "image": ["IMG_1161.jpg", "IMG_6196"]
       }
    },
 
@@ -245,7 +245,7 @@
          "description": "This is for the daring. Who embrace the colors, who are confident, who overshine this big copper, agat and glass bead piece.",
          "price": 17.00,
          "category": 1, 
-         "image": "IMG_1174.jpg", "IMG_1177"
+         "image": ["IMG_1174.jpg", "IMG_1177"]
       }
    }
 ]
