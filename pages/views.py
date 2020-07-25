@@ -31,4 +31,4 @@ def contact(request):
 
 
 def success(request):
-    return HttpResponse('Success! Thank you for your message.')
+    return render(request, "pages/success-contact.html", {'page':"success-contact"})
