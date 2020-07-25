@@ -31,6 +31,14 @@
       {% endblock %}
        <title>{% block title %} {% endblock%}</title>
       <link rel="icon" sizes="192x192" href="{% static 'favicon.png' %}" type="image/x-icon">
+      <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+      </script>
+      <script type="text/javascript">
+        (function(){
+            emailjs.init("user_UW97WmP3GsBepuyB8Vffd");
+        })();
+        </script>
    </head>
    <body>
       <header >
@@ -121,9 +129,11 @@
    <script type="text/javascript"> 
       $('.toast').toast('show');
    </script>
+
    {% endblock %}
    {% if footer != False %}
     {% include 'includes/footer.html' %}
     {% endif %}
+    <script src="static/js/sendEmail.js"></script>
    </body>
 </html>
