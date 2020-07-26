@@ -176,10 +176,14 @@ background: rgba(0, 0, 0, 0.7);
     min-height: 100vh;
 }
 
+
+
 /*Contact*/
 
-.success-page {
-    
+form { 
+margin: 0 auto; 
+width:70%;
+
 }
 
 
