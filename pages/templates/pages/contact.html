@@ -1,25 +1,51 @@
 {% extends "base.html" %}
-
 {% load static %}
 <title> {% block title %}Contact{% endblock %} </title>
+<script type="text/javascript">
+   (function(){
+       emailjs.init("user_UW97WmP3GsBepuyB8Vffd");
+   })();
+</script>
 {% block content %}
-<div class="container-fluid text-center purple-text">
-    <div class="row">
-        
-    <div class="col-12 col-lg-5 col-sm-5 mx-auto">
-      
-            <h4>Let's get in touch!</h4>
-            <form onsubmit="return sendMail(this);">
-               <label for="name" class="label-name">Name:</label>
-               <input type="text" name="name" id="name" placeholder="Your name..." required>
-               <label for="email" class="label-email">Email:</label>
-               <input type="email" name="emailaddress" id="emailaddress" placeholder="Your email address..." required>
-               <label for="message" class="label-message">Message:</label>
-               <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
-               <button class="btn waves-effect waves-light feedback_button" type="submit" value = "send" name="action">Submit </button>
-            </form>
+<section class="mb-4">
+<!--Section heading-->
+<h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+<!--Section description-->
+<p class="text-center w-responsive mx-auto mb-5">Do you have an idea or you just want to give some feedback? Please do not hesitate to contact us.
+</p>
+<div class="row">
+<!--Grid column-->
+<div class="col-md-9 mb-md-0 mb-5">
+   <form onsubmit="return sendMail(this);">
+      <!--Grid row-->
+      <div class="row">
+         <!--Grid column-->
+         <div class="col-md-6">
+            <div class="md-form mb-0">
+               <input type="text" id="name" name="name" class="form-control">
+               <label for="name" class="">Your name</label>
+            </div>
+         </div>
+         <!--Grid column-->
+         <!--Grid column-->
+         <div class="col-md-6">
+            <div class="md-form mb-0">
+               <input type="text" id="emailaddress" name="emailaddress" class="form-control">
+               <label for="emailaddress" class="">Your email</label>
+            </div>
          </div>
       </div>
-    </div>
- {% endblock %}
- 
+      <!--Grid row-->
+      <div class="row">
+         <!--Grid column-->
+         <div class="col-md-12">
+            <div class="md-form">
+               <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+               <label for="message">Your message</label>
+            </div>
+         </div>
+      </div>
+      <button class="btn waves-effect waves-light feedback_button" type="submit" value = "send" name="action">Submit </button>
+   </form>
+   {% endblock %}
+<script src="../static/js/email.js"></script>

@@ -11,8 +11,5 @@ def about(request, *args, **kwargs):
 def contact(request, *args, **kwargs):
     return render(request, "pages/contact.html", {"page": "contact"})
 
-def success(request):
-    return render(
-        request, "pages/success-contact.html", {'page': "success-contact"}
-        )
+
 
