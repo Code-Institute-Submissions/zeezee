@@ -35,7 +35,7 @@
          "description": "You can feel the force of the  unbridled nature by wearing this pice, made of copper wire and raw mountain crystal from Parajd",
          "price":19.00,
          "category":4, 
-         "image": ["IMG_0775.jpg" "Z001.jpg" "Z008.jpg"]
+         "image": ["IMG_0775.jpg","Z001.jpg", "Z008.jpg"]
       }
    },
 
