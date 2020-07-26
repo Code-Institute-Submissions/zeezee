@@ -171,7 +171,8 @@ background: rgba(0, 0, 0, 0.7);
 	
 
 }
-.about-page{
+.about-page,
+.contact{
     min-height: 100vh;
 }
 
