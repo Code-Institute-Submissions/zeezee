@@ -4,13 +4,13 @@
       "pk":1,
       "model":"products.product",
       "fields":{
-         "sku":"pp5001340155",
-         "name":"Onix whirlwind earrings",
-         "description":" Made of copper wire and onix and black glass beads. Let the wind take you away",
-         "price":7.00,
-         "category":2,
-         "image":"IMG_0708.jpg", 
-         "image2":"IMG_0713.jpg"
+         "sku":"pp5001340156",
+         "name":" Necklace with galvanized glass bead ",
+         "description": "If you desire something small but exquisite, this necklace made of copper wire and a sparkling crystal like bead could be your choise",
+         "price":12.00,
+         "category":4,
+         "image1":"IMG_0732.jpg",
+         "image2":"IMG_6108.jpg"
       }
    },
 
@@ -18,12 +18,13 @@
       "pk":2,
       "model":"products.product",
       "fields":{
-         "sku":"pp5001340156",
-         "name":" Necklace with galvanized glass bead ",
-         "description": "If you desire something small but exquisite, this necklace made of copper wire and a sparkling crystal like bead could be your choise",
-         "price":12.00,
-         "category":4,
-         "image":["IMG_0732.jpg", "IMG_0736.jpg", "IMG_6108.jpg"]
+         "sku":"pp5001340157",
+         "name":" Raw cystal necklace and ring ",
+         "description": "You can feel the force of the  unbridled nature by wearing this pice, made of copper wire and raw mountain crystal from Parajd",
+         "price":19.00,
+         "category":4, 
+         "image1": "IMG_0775.jpg",
+         "image2": "Z008.jpg"
       }
    },
 
@@ -31,12 +32,13 @@
       "pk":3,
       "model":"products.product",
       "fields":{
-         "sku":"pp5001340157",
-         "name":" Raw cystal necklace and ring ",
-         "description": "You can feel the force of the  unbridled nature by wearing this pice, made of copper wire and raw mountain crystal from Parajd",
+         "sku":"pp5001340158",
+         "name":" Labradorit-rose quartz pendant",
+         "description": "A touch of tenderness and grace, for woman who can wear their femininty. Made of copper, rose quartz, labradorit and crystal beads",
          "price":19.00,
          "category":4, 
-         "image": ["IMG_0775.jpg","Z001.jpg", "Z008.jpg"]
+         "image1": "IMG_0864.jpg",
+         "image2": "IMG_0875.jpg"
       }
    },
 
@@ -44,12 +46,12 @@
       "pk":4,
       "model":"products.product",
       "fields":{
-         "sku":"pp5001340158",
-         "name":" Labradorit-rose quartz pendant",
-         "description": "A touch of tenderness and grace, for woman who can wear their femininty. Made of copper, rose quartz, labradorit and crystal beads",
-         "price":19.00,
-         "category":4, 
-         "image": ["IMG_0857.jpg", "IMG_0864.jpg"]
+         "sku":"pp50013401560",
+         "name":" Minimal copper earring",
+         "description": "For everyday, every ocasion. Made of copper wire.",
+         "price": 5.00,
+         "category": 2,
+         "image1": "IMG_0873.jpg"
       }
    },
 
@@ -57,12 +59,13 @@
       "pk":5,
       "model":"products.product",
       "fields":{
-         "sku":"pp50013401560",
-         "name":" Minimal copper earring",
-         "description": "For everyday, every ocasion. Made of copper wire.",
+         "sku":"pp50013401561",
+         "name":" Sunstone earring",
+         "description": "A simple design for everyday. Dare it, wear it!",
          "price": 5.00,
          "category": 2,
-         "image": "IMG_0873.jpg"
+         "image1":"IMG_0916.jpg",
+         "image2": "IMG_7864.jpg"
       }
    },
 
@@ -70,12 +73,14 @@
       "pk":6,
       "model":"products.product",
       "fields":{
-         "sku":"pp50013401561",
-         "name":" Sunstone earring",
-         "description": "A simple design for everyday. Dare it, wear it!",
-         "price": 5.00,
-         "category": 2,
-         "image": ["IMG_0916.jpg", "IMG_7864.jpg"]
+         "sku":"pp50013401562",
+         "name":" Galvanized glass necklace",
+         "description": "For a romantic soul, this necklace made of copper wire and galvanized glass beads",
+         "price": 12.00,
+         "category": 4,
+         "image1": "IMG_0937.jpg",
+         "image2": "IMG_6124.jpg"
+        
       }
    },
 
@@ -83,12 +88,13 @@
       "pk":7,
       "model":"products.product",
       "fields":{
-         "sku":"pp50013401562",
-         "name":" Galvanized glass necklace",
-         "description": "For a romantic soul, this necklace made of copper wire and galvanized glass beads",
-         "price": 12.00,
-         "category": 4,
-         "image": ["IMG_0937.jpg", "IMG_6124.jpg"]
+         "sku":"pp50013401563",
+         "name":" Minimal copper bracelet",
+         "description": "This masculine design reflects force and confidence. Put it on, be daring.",
+         "price": 10.00,
+         "category": 3,
+         "image1":"IMG_0924.jpg",
+         "image2":"IMG_6198.jpg"
       }
    },
 
@@ -96,12 +102,13 @@
       "pk":8,
       "model":"products.product",
       "fields":{
-         "sku":"pp50013401563",
-         "name":" Minimal copper bracelet",
-         "description": "This masculine design reflects force and confidence. Put it on, be daring.",
-         "price": 10.00,
-         "category": 3,
-         "image":["IMG_0924.jpg", "IMG_6198.jpg"]
+         "sku":"pp50013401564",
+         "name":" Stiff turquoise necklace",
+         "description": "An unique design, for daring woman. If you wear this, you’ll be seen. Made of copper wire and turqouis.",
+         "price": 12.00,
+         "category": 4,
+         "image1":  "IMG_0959.jpg",
+         "image2": "IMG_6200.jpg"
       }
    },
 
@@ -109,12 +116,14 @@
       "pk":9,
       "model":"products.product",
       "fields":{
-         "sku":"pp50013401564",
-         "name":" Stiff turquoise necklace",
-         "description": "An unique design, for daring woman. If you wear this, you’ll be seen. Made of copper wire and turqouis.",
-         "price": 12.00,
+         "sku":"pp50013401565",
+         "name":"  Rococo glass bead pendant",
+         "description": "Made of copper wire and crystal like glass bead. It blooms, it’s bursting into life.",
+         "price": 10.00,
          "category": 4,
-         "image": ["IMG_0959.jpg", "IMG_6200.jpg"]
+         "image1":"IMG_0993.jpg",
+         "image2":"IMG_6110.jpg"
+
       }
    },
 
@@ -122,32 +131,19 @@
       "pk":10,
       "model":"products.product",
       "fields":{
-         "sku":"pp50013401565",
-         "name":"  Rococo glass bead pendant",
-         "description": "Made of copper wire and crystal like glass bead. It blooms, it’s bursting into life.",
-         "price": 10.00,
-         "category": 4,
-         "image": ["IMG_0978.jpg", "IMG_0993.jpg",  "IMG_6110.jpg"]
-
-      }
-   },
-
-{
-      "pk":11,
-      "model":"products.product",
-      "fields":{
          "sku":"pp50013401566",
          "name":"  Boho feather necklace ",
          "description": "This necklace is summer. It’s freedom. I’s sunshine and beach. It can be yours. Made from copper wire and feather.",
          "price": 12.00,
          "category": 4,
-         "image": ["IMG_1052.jpg", "IMG_6107.jpg"]
+         "image1": "IMG_1052.jpg",
+         "image2":"IMG_6107.jpg"
       }
    },
 
 
 {
-      "pk":12,
+      "pk":11,
       "model":"products.product",
       "fields":{
          "sku":"pp50013401567",
@@ -155,12 +151,13 @@
          "description": "An elegant desing for thos who love minimal. The smoky seashell bead gives it a touch of class. There’s always a special occasion for special jewellry...",
          "price": 10.00,
          "category": 4,
-         "image":["IMG_1017.jpg", "IMG_6109.jpg"]
+         "image1":"IMG_1017.jpg",
+         "image2": "IMG_6109.jpg"
       }
    },
 
 {
-      "pk":13,
+      "pk":12,
       "model":"products.product",
       "fields":{
          "sku":"pp50013401568",
@@ -168,12 +165,13 @@
          "description": "You want to feel the power of fire? You have to get this elegant piece. It makes every little black dress stunning.",
          "price": 12.00,
          "category": 4,
-         "image": ["IMG_1060.jpg", "IMG_5637.jpg"]
+         "image1": "IMG_1060.jpg",
+         "image2":"IMG_5637.jpg"
       }
    },
 
 {
-      "pk":14,
+      "pk":13,
       "model":"products.product",
       "fields":{
          "sku":"pp50013401569",
@@ -181,12 +179,12 @@
          "description": "So fancy, so shiny, so simple. It’s like a frozen waterdrop on your finger. Made of a crystal like button, and copper wire.",
          "price": 7.00,
          "category": 4,
-         "image": "IMG_1091.jpg"
+         "image1": "IMG_1091.jpg"
       }
    },
 
 {
-      "pk":15,
+      "pk":14,
       "model":"products.product",
       "fields":{
          "sku":"pp50013401570",
@@ -194,12 +192,13 @@
          "description": "The simplicity of winter, their like frozen teardrops. This copper wire and glass bead pirce bring you the refreshing chill of winter.",
          "price": 7.00,
          "category": 2,
-         "image": ["IMG_1098.jpg", "IMG_1096.jpg"]
+         "image1": "IMG_1096.jpg",
+         "image2":"IMG_1098.jpg"
       }
    },
 
 {
-      "pk":16,
+      "pk":15,
       "model":"products.product",
       "fields":{
          "sku":"pp50013401571",
@@ -207,12 +206,12 @@
          "description": "You want something eccentric, something that cathes the eye? This this geometric desing of copper wire and a tiny feminin bead has to be your choise.",
          "price": 12.00,
          "category": 4,
-         "image": "IMG_1125.jpg"
+         "image1": "IMG_1125.jpg"
       }
    },
 
 {
-      "pk":17,
+      "pk":16,
       "model":"products.product",
       "fields":{
          "sku":"pp50013401572",
@@ -220,12 +219,12 @@
          "description": "t’s concentrated sunshine, you can light up the room wearing it. It’s made of copper wire and a crystal like glass bead.",
          "price": 10.00,
          "category": 4,
-         "image": ["IMG_1155.jpg", "IMG_1151"]
+         "image1":"IMG_1151.jpg"
       }
    },
 
 {
-      "pk":18,
+      "pk":17,
       "model":"products.product",
       "fields":{
          "sku":"pp50013401573",
@@ -233,12 +232,13 @@
          "description": "A woman's hand is the first thing that cathes a man's eyes. So why not make it unforgettable, with this copper and crystal like ring. Simple but elegant..",
          "price": 7.00,
          "category": 1,
-         "image": ["IMG_1161.jpg", "IMG_6196"]
+         "image1":"IMG_1161.jpg",
+         "image2":"IMG_6196.jpg"
       }
    },
 
 {
-      "pk":19,
+      "pk":18,
       "model":"products.product",
       "fields":{
          "sku":"pp50013401574",
@@ -246,7 +246,8 @@
          "description": "This is for the daring. Who embrace the colors, who are confident, who overshine this big copper, agat and glass bead piece.",
          "price": 17.00,
          "category": 1, 
-         "image": ["IMG_1174.jpg", "IMG_1177"]
+         "image1":"IMG_1177.jpg",
+         "image2":"IMG_1174.jpg"
       }
    }
 ]
