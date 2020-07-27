@@ -9,7 +9,8 @@
          "description":" Made of copper wire and onix and black glass beads. Let the wind take you away",
          "price":7.00,
          "category":2,
-         "image":["IMG_0708.jpg", "IMG_0713.jpg"]
+         "image":"IMG_0708.jpg", 
+         "image2":"IMG_0713.jpg"
       }
    },
 

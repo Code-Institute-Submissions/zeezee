@@ -74,14 +74,17 @@
                     {% for product in products %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
-                                {% if product.image %}
+                                {% if product.image1 %}
                                 <a href="{% url 'detail_product' product.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    <img class="card-img-top img-fluid" src="{{ product.image1.url }}" alt="{{ product.name }}">
                                 </a>
+                                {% if product.image2 %}
+                                <img class="card-img-top img-fluid" src="{{ product.image2.url }}" alt="{{ product.name }}">
                                 {% else %}
                                 <a href="{% url 'detail_product' product.id %}">
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                 </a>
+                                {% endif %}
                                 {% endif %}
                                 <div class="card-body pb-0">
                                     <p class="mb-0">{{ product.name }}</p>
