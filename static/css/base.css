@@ -190,6 +190,9 @@ width:70%;
     background: #6A0848;
     color:white;
     margin-top:7%;
+    border: 0.5rem;
+    border-radius: 0.2rem;
+    padding:0.5rem;
 }
 
 
