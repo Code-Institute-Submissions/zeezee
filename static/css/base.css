@@ -6,7 +6,6 @@ html {
 
 body {
     min-height: 100vh;
-    color: #0A390A;
     font-family: 'Baloo 2', cursive;
 }
 
@@ -192,7 +191,7 @@ width:70%;
     margin-top:7%;
     border: 0.5rem;
     border-radius: 0.2rem;
-    padding:0.5rem;
+   
 }
 
 
@@ -201,6 +200,19 @@ width:70%;
 .purple-text{
     color:#6A0848;
 }
+
+.bagdes{
+    background: #6A0848;
+    color: white;
+    padding:0.5rem;
+    
+}
+
+a:hover{
+    color:#A8A8A8;
+}
+
+
 
 /*Footer*/
 
