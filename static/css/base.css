@@ -11,6 +11,10 @@ body {
     font-family: 'Baloo 2', cursive;
 }
 
+header{
+    overflow: hidden;
+}
+
 /* from Bulma
 code to make the icons appears in the center */
 .icon {
@@ -154,7 +158,9 @@ background: rgba(0, 0, 0, 0.7);
 
 }
 .about-page,
-.contact{
+.contact,
+.success-page,
+.bag {
     min-height: 100vh;
 }
 

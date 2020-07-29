@@ -32,6 +32,7 @@
                </form>
             </div>
         </div>
+        <!--Badges with the name of the category-->
         <div class="row">
             <div class="col text-center mt-3">
                 <h2 class="logo-font purple-text">Products</h2>
@@ -43,6 +44,7 @@
                 <hr class="w-50 mb-1">
             </div>
         </div>
+        <!--Sorting function filtering products by price, and name, both ascending and descending-->
         <div class="row">
             <div class="product-container col-10 offset-1">
                 <div class="row mt-1 mb-2">
@@ -71,6 +73,8 @@
             <div class="product-container col-10 offset-1">
                 <div class="row mt-1 mb-2"></div>
                 <div class="row">
+                <!--Render products, if there an image attached, load that, if there is no picture,
+                load the noimage error picture-->
                     {% for product in products %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 purple-text">
                             <div class="card h-100 border-0">
@@ -135,6 +139,7 @@
             </div>
         </div>
     </div>
+    <!--Send the user back to the top of the page-->
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 {% endblock %}
 

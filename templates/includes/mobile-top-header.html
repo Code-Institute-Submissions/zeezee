@@ -5,6 +5,8 @@
             <p class="my-0">My Account</p>
         </div>
     </a>
+    <!--If the user is a superuper, show the Product managment part, 
+    otherwise display the Profile and Logout-->
     <div class="dropdown-menu border-0" aria-labelledby="user-options">
         {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
@@ -19,6 +21,8 @@
         {% endif %}
     </div>
 </li>
+<!--Shopping cart with the grand total of the shopping,
+ if there is nothing in the bag, dislay 0 euro as total-->
 <li class="list-inline-item">
     <a class="{% if grand_total %}cart-item font-weight-bold{% else %}cart{% endif %} nav-link d-block d-lg-none" href="{% url 'view_bag' %}">
         <div class="text-center">

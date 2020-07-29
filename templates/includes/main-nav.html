@@ -1,29 +1,37 @@
-<div class="collapse navbar-collapse" id="main-nav">
-   <ul class="navbar-nav w-auto mx-auto">
-    <li class="nav-item dropdown">
-         <a class="logo-font font-weight-bold nav-link mr-5  nav-item nav-link text" href="{% url 'home' %}" id="bijoux-link" aria-haspopup="true" aria-expanded="false">
-        Home</a> 
-     </li>
-      <li class="nav-item dropdown">
-        <a class="logo-font font-weight-bold nav-link mr-5 text nav-item nav-link" href="{% url 'about' %}" id="bijoux-link" aria-haspopup="true" aria-expanded="false">
-        About ZeeZee  </a>
-         
-      </li>
-      <li class="nav-item dropdown text">
-         <a class="logo-font font-weight-bold nav-link mr-5 text" href="{% url 'products' %}" id="bijoux-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Products
-         </a>
-         <div class="dropdown-menu border-0" aria-labelledby="bijoux-link">
-            <a href="{% url 'products' %}?category=rings" class="dropdown-item">Rings</a>
-            <a href="{% url 'products' %}?category=earrings" class="dropdown-item">Earrings</a>
-            <a href="{% url 'products' %}?category=bracelets" class="dropdown-item">Bracelets</a>
-            <a href="{% url 'products' %}?category=necklaces" class="dropdown-item">Necklaces</a>
-            <a href="{% url 'products' %}" class="dropdown-item">All Bijoux</a>
-         </div>
-      </li>
-      <li>
-         <a class="logo-font font-weight-bold nav-link mr-5 text nav-item nav-link" href="{% url 'contact' %}" id="bijoux-link" aria-haspopup="true" aria-expanded="false">
-        Contact  </a>
-      </li>
-   </ul>
+<!--Main navigation with pages, profile and shopping cart options-->
+<div class="container-fluid header">
+    <div class="row">
+    <div class="col-md-12 offset-md-4">
+        <div class="collapse navbar-collapse" id="main-nav">
+        <ul class="navbar-nav w-auto mx-auto">
+            <li class="nav-item dropdown">
+                <a class="logo-font font-weight-bold nav-link mr-5  nav-item nav-link text" href="{% url 'home' %}"  aria-haspopup="true" aria-expanded="false">
+                Home</a> 
+            </li>
+            <li class="nav-item dropdown">
+                <a class="logo-font font-weight-bold nav-link mr-5 text nav-item nav-link" href="{% url 'about' %}" aria-haspopup="true" aria-expanded="false">
+                About ZeeZee  </a>
+                
+            </li>
+            <li class="nav-item dropdown text">
+                <a class="logo-font font-weight-bold nav-link mr-5 text" href="{% url 'products' %}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Products
+                </a>
+                <!--Dropdown menu with the categories-->
+                <div class="dropdown-menu border-0" aria-labelledby="bijoux-link">
+                    <a href="{% url 'products' %}?category=rings" class="dropdown-item">Rings</a>
+                    <a href="{% url 'products' %}?category=earrings" class="dropdown-item">Earrings</a>
+                    <a href="{% url 'products' %}?category=bracelets" class="dropdown-item">Bracelets</a>
+                    <a href="{% url 'products' %}?category=necklaces" class="dropdown-item">Necklaces</a>
+                    <a href="{% url 'products' %}" class="dropdown-item">All Bijoux</a>
+                </div>
+            </li>
+            <li>
+                <a class="logo-font font-weight-bold nav-link mr-5 text nav-item nav-link" href="{% url 'contact' %}" aria-haspopup="true" aria-expanded="false">
+                Contact  </a>
+            </li>
+        </ul>
+        </div>
+    </div>
+    </div>
 </div>
