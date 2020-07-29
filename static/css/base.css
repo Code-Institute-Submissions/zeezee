@@ -154,7 +154,7 @@ background: rgba(0, 0, 0, 0.7);
 
 /*About page*/
 
-.purple-text{
+.purple-about{
     margin-top:10%;
     color: #6A0848;
 }
@@ -195,7 +195,9 @@ width:70%;
 
 /*Products*/
  
-
+.purple-text{
+    color:#6A0848;
+}
 
 /*Footer*/
 
