@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
-<title> {% block title %}My bag{% endblock %} </title>
 
+<!--Block title for different page titles-->
+<title> {% block title %}My bag{% endblock %} </title>
+<!--Header space-->
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -9,7 +11,7 @@
         </div>
     </div>
 {% endblock %}
-
+<!--Shopping bag with detailed list-->
 {% block content %}
     <div class="overlay"></div>
     <div class="container mb-2">
@@ -35,7 +37,7 @@
                                     <th scope="col">Subtotal</th>
                                 </tr>
                             </thead>
-
+                            <!--Render thee details about the choosen product(s)-->
                             {% for item in bag_items %}
                                 <tr>
                                     <td class="p-3 w-25">
@@ -61,6 +63,7 @@
                                 </tr>
 
                             {% endfor %}
+                            <!--Delivery information with delivery delta-->
                             <tr>
                                 <td colspan="5" class="pt-5 text-right">
                                     <h6><strong>Bag Total: ‎€{{ total|floatformat:2 }}</strong></h6>
@@ -86,6 +89,8 @@
                             </tr>
                         </table>
                     </div>
+                    <!--If there is product in the bag, 
+                    details are loaded, else empyt bag and Keep Shopping displayed-->
                 {% else %}
                     <p class="lead mb-5">Your bag is empty.</p>
                     <a href="{% url 'products' %}" class="btn rounded-0 btn-lg">
