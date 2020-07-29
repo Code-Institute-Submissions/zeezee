@@ -3,53 +3,53 @@
 {% load static %}
 
 <title> {% block title %}ZeeZee Bijoux{% endblock %} </title>
-
-{% block content %}
-<!--Hero picture with introduction paragraph-->
-<div class="home-image home">
-            <img src="/media/background_hand.JPG" class="img-fluid">
-         </div>
-         <div class="text-wrap text introduction text-center p-3">
-            <h5 class="text-center"> ZeeZee - Because jewels dress you up </h5>
-            <p>
-               The Jewels of ZeeZee are mostly made from red copper and semi-precious stones. <br> Also there is a recycled line in which I remake clockwork pieces, keys or even nails into something new and wearable. 
-            <br>They were made for strong women, they radiate strength and confidence. All the while being very feminine. Dress in ZeeZee, express yourself. <br> Be courageous. Be yourself!
-            </p>
-         </div>
-         <!--Categories card with overlays-->
-         <div class="categories row mr-4 ml-5">
-            <div class="card-deck col-md-3 lg-2 col-sm-6 ml-md-4">
-               <div class="card text-white">
-                  <img class="card-img img-fluid img-responsive" src="/media/rings.jpg" alt="Card image cap">
-                  <div class="card-img-overlay overl">
-                     <h5 class="card-title text-center"> <a class="link-card" href="{% url 'products' %}?category=rings"> Rings </a></h5>
-                  </div>
-               </div>
+<div class="container fluid home">
+    {% block content %}
+    <!--Hero picture with introduction paragraph-->
+    <div class="home-image home">
+                <img src="/media/background_hand.JPG" class="img-fluid">
+    </div>
+            <div class="text-wrap text introduction text-center p-3">
+                <h5 class="text-center"> ZeeZee - Because jewels dress you up </h5>
+                <p>
+                The Jewels of ZeeZee are mostly made from red copper and semi-precious stones. <br> Also there is a recycled line in which I remake clockwork pieces, keys or even nails into something new and wearable. 
+                <br>They were made for strong women, they radiate strength and confidence. All the while being very feminine. Dress in ZeeZee, express yourself. <br> Be courageous. Be yourself!
+                </p>
             </div>
-            <div class="card-deck col-md-3 lg-2 col-sm-6">
-               <div class="card text-white">
-                  <img class="card-img img-fluid responsive" src="/media/earrings.jpg" alt="Card image cap">
-                  <div class="card-img-overlay overl">
-                     <h5 class="card-title text-center"> <a class="link-card" href="{% url 'products' %}?category=earrings"> Earrings </a></h5>
-                  </div>
-               </div>
+            <!--Categories card with overlays-->
+            <div class="categories row mr-4 ml-5">
+                <div class="card-deck col-md-3 lg-2 col-sm-6 ml-md-4">
+                <div class="card text-white">
+                    <img class="card-img img-fluid img-responsive" src="/media/rings.jpg" alt="Card image cap">
+                    <div class="card-img-overlay overl">
+                        <h5 class="card-title text-center"> <a class="link-card" href="{% url 'products' %}?category=rings"> Rings </a></h5>
+                    </div>
+                </div>
+                </div>
+                <div class="card-deck col-md-3 lg-2 col-sm-6">
+                <div class="card text-white">
+                    <img class="card-img img-fluid responsive" src="/media/earrings.jpg" alt="Card image cap">
+                    <div class="card-img-overlay overl">
+                        <h5 class="card-title text-center"> <a class="link-card" href="{% url 'products' %}?category=earrings"> Earrings </a></h5>
+                    </div>
+                </div>
+                </div>
+                <div class="card-deck col-md-3 lg-2 col-sm-6">
+                <div class="card text-white">
+                    <img class="card-img img-fluid responsive" src="/media/bracelets.jpg" alt="Card image cap">
+                    <div class="card-img-overlay overl">
+                        <h5 class="card-title text-center"> <a class="link-card" href="{% url 'products' %}?category=bracelets"> Bracelets </a></h5>
+                    </div>
+                </div>
+                </div>
+                <div class="card-deck col-md-3 lg-2 col-sm-6">
+                <div class="card text-white">
+                    <img class="card-img img-fluid responsive" src="/media/necklaces.jpg" alt="Card image cap">
+                    <div class="card-img-overlay overl">
+                        <h5 class="card-title text-center"> <a class="link-card" href="{% url 'products' %}?category=necklaces"> Necklaces </a></h5>
+                    </div>
+                </div>
+                </div>
             </div>
-            <div class="card-deck col-md-3 lg-2 col-sm-6">
-               <div class="card text-white">
-                  <img class="card-img img-fluid responsive" src="/media/bracelets.jpg" alt="Card image cap">
-                  <div class="card-img-overlay overl">
-                     <h5 class="card-title text-center"> <a class="link-card" href="{% url 'products' %}?category=bracelets"> Bracelets </a></h5>
-                  </div>
-               </div>
-            </div>
-            <div class="card-deck col-md-3 lg-2 col-sm-6">
-               <div class="card text-white">
-                  <img class="card-img img-fluid responsive" src="/media/necklaces.jpg" alt="Card image cap">
-                  <div class="card-img-overlay overl">
-                     <h5 class="card-title text-center"> <a class="link-card" href="{% url 'products' %}?category=necklaces"> Necklaces </a></h5>
-                  </div>
-               </div>
-            </div>
-         </div>
-        
+</div>
 {%endblock%}
