@@ -11,9 +11,12 @@ body {
     font-family: 'Baloo 2', cursive;
 }
 
+/*Header*/
+
 header{
     overflow: hidden;
 }
+
 
 /* from Bulma
 code to make the icons appears in the center */
@@ -26,9 +29,7 @@ code to make the icons appears in the center */
 }
 
 
-#bijoux-link{
-    width: fit-content;
-}
+
 
 .btn-black {
     background: black;
@@ -76,6 +77,8 @@ code to make the icons appears in the center */
     background: #A8A8A8;
 }
 
+/*Shopping cart*/
+
 .cart{
     color:#6A0848;
 }
@@ -100,6 +103,8 @@ code to make the icons appears in the center */
     font-size:2.5rem;
 }
 
+/*Introduction text box*/
+
 .introduction{
     background:#6A0848;
     border: 3px #A8A8A8 ;
@@ -109,7 +114,7 @@ code to make the icons appears in the center */
 /*Categories cards and overlay*/
 
 .categories{
-    margin:2rem;
+    margin-top:2rem;
     
 }
 .overl {
@@ -124,17 +129,13 @@ background: rgba(0, 0, 0, 0.7);
 
 .card-title{
     margin-top:50%;
+    margin-right: 5%;
 }
 
 .link-card{
     text-decoration: none !important;
     color:white;
     
-    
-}
-
-.link-card :hover{
-   
     
 }
 
