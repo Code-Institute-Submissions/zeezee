@@ -6,8 +6,8 @@ from .models import Product, Category
 
 # Create your views here.
 
-# View for showing all the product in the database
 
+# View for showing all the product in the database
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
@@ -32,7 +32,7 @@ def all_products(request):
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
-            
+
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
@@ -42,10 +42,10 @@ def all_products(request):
             if not query:
                 messages.error(request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
-            '''Q variable where the name OR the description contain the query, then filter the products'''           
+            '''Q variable where the name OR the description contain the query, then filter the products'''
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
-    
+
     current_sorting = f'{sort}_{direction}'
 
     context = {
@@ -57,10 +57,9 @@ def all_products(request):
 
     return render(request, 'products/products.html', context)
 
-# Detailed product view
 
+# Detailed product view
 def detail_product(request, product_id):
-    
 
     product = get_object_or_404(Product, pk=product_id)
 
