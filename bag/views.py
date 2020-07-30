@@ -4,14 +4,15 @@ from products.models import Product
 
 # Create your views here.
 
-#View to render the bag itself
 
 def view_bag(request):
+    '''View to render the bag itself'''
    
     return render(request, 'bag/bag.html')
 
 def add_to_cart(request, item_id):
 
+    '''Add item to the cart, display a success message'''
     product = Product.objects.get(pk=item_id)
 
     quantity = int(request.POST.get('quantity'))
@@ -30,7 +31,8 @@ def add_to_cart(request, item_id):
 
 
 def remove_from_cart(request, item_id):
-   
+
+    '''Remove item from the cart'''   
     bag = request.session.get('bag', {})
     bag.pop(item_id)
     request.session['bag'] = bag

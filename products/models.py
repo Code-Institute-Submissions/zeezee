@@ -4,12 +4,13 @@ from django.db import models
 # Base of the models from the Boutique Ado project
 
 
-
-# Categories with a name and a friendly name for frontend
-# Both of them have max lenght, the friendly name it's not required (because blank=True)
-# Metaclass provided to fix the spelling, declare that the plural version of Category is not Categorys 
-
 class Category(models.Model):
+    ''''Categories with a name and a friendly name for frontend
+     Both of them have max lenght,
+     the friendly name it's not required (because blank=True)
+     Metaclass provided to fix the spelling,
+     declare that the plural version of Category is not Categorys
+     '''
 
     class Meta:
         verbose_name_plural = 'Categories'
@@ -22,10 +23,11 @@ class Category(models.Model):
     def get_friendly_name(self):
         return self.friendly_name
 
-# Product model with key elements
-# Category, sku, image url and image fields are optional
 
 class Product(models.Model):
+    '''Product model with key elements
+    Category, sku, image url and image fields are optional
+    '''
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)

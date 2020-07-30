@@ -27,9 +27,7 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
       <script src="https://kit.fontawesome.com/9f5ed27540.js" crossorigin="anonymous"></script>
       {% endblock %}
-      {% block extra_js %}
-      {% endblock %}
-       <title>{% block title %} {% endblock%}</title>
+      <title>{% block title %} {% endblock%}</title>
       <link rel="icon" sizes="192x192" href="{% static 'favicon.png' %}" type="image/x-icon">
       <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
@@ -53,8 +51,8 @@
                   <li class="list-inline-item dropdown">
                      <a class="text nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="text-center">
-                           <div><i class="fas fa-user fa-lg"></i></div>
-                           <p class="my-0 text">My Account</p>
+                           <div><i class="fas fa-user fa-lg text-white"></i></div>
+                           <p class="my-0 text-white">My Account</p>
                         </div>
                      </a>
                      <!--If the user is autenticated and they are superurs,
@@ -62,22 +60,22 @@
                      <div class="dropdown-menu border-0" aria-labelledby="user-options">
                         {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
-                        <a href="" class="dropdown-item">Product Management</a>
+                        <a href="" class="dropdown-item purple-text">Product Management</a>
                         {% endif %}
                         <!--If they are not superuser, they can access their profile and the button to logout-->
-                        <a href="" class="dropdown-item">My Profile</a>
-                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                        <a href="" class="dropdown-item purple-text">My Profile</a>
+                        <a href="{% url 'account_logout' %}" class="dropdown-item purple-text">Logout</a>
                         {% else %}
                         <!--Else (they are not logged in) they can register or login to their account-->
-                        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                        <a href="{% url 'account_signup' %}" class="dropdown-item purple-text">Register</a>
+                        <a href="{% url 'account_login' %}" class="dropdown-item purple-text">Login</a>
                         {% endif %}
                      </div>
                   </li>
                   <!--If the bucket contains anything, we display the price with two decimals,
                      but when the bucket is empty, the message is 0.00 euro-->
                   <li class="list-inline-item cart-main">
-                     <a class="{% if grand_total %}font-weight-bold cart-item{% else %}cart{% endif %} " href="{% url 'view_bag' %}">
+                     <a class="{% if grand_total %}font-weight-bold cart-item{% else %}cart{% endif %}" href="{% url 'view_bag' %}">
                         <div class="text-center">
                            <div><i class="fas fa-shopping-cart fa-lg cart"></i></div>
                            <p class="my-0 text">
