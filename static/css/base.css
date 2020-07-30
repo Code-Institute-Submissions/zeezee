@@ -9,14 +9,14 @@ html {
 body {
     min-height: 100vh;
     font-family: 'Baloo 2', cursive;
+    
 }
 
 /*Header*/
 
-header{
-    overflow: hidden;
+.row{
+    margin:0;
 }
-
 
 /* from Bulma
 code to make the icons appears in the center */
