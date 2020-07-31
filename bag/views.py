@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import messages
 from products.models import Product
 
@@ -33,7 +33,7 @@ def add_to_cart(request, item_id):
 def remove_from_cart(request, item_id):
 
     '''Remove item from the cart'''   
-    bag = request.session.get('bag', {})
+    bag = request.session.get('bag')
     bag.pop(item_id)
     request.session['bag'] = bag
     return HttpResponse(status=200)
