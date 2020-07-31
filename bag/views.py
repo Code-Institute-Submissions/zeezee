@@ -10,6 +10,7 @@ def view_bag(request):
    
     return render(request, 'bag/bag.html')
 
+
 def add_to_cart(request, item_id):
 
     '''Add item to the cart, display a success message'''
@@ -32,7 +33,7 @@ def add_to_cart(request, item_id):
 
 def remove_from_cart(request, item_id):
 
-    '''Remove item from the cart'''   
+    '''Remove item from the cart'''
     bag = request.session.get('bag')
     bag.pop(item_id)
     request.session['bag'] = bag
