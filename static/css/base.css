@@ -50,6 +50,11 @@ code to make the icons appears in the center */
     background: #6A0848;
 }
 
+.error-warning{
+    background: white;
+    color: red;
+}
+
 .overlay {
 	height: 100%;
 	width: 100%;
