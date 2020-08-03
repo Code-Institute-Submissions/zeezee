@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{% block head_title %}{% endblock %}</title>
+    <title class="purple-text">{% block head_title %}{% endblock %}</title>
     {% block extra_head %}
     {% endblock %}
   </head>
-  <body>
+  <body class="purple-text">
     {% block body %}
 
     {% if messages %}
@@ -19,9 +19,9 @@
     </div>
     {% endif %}
 
-    <div>
+    <div class="purple-text">
       <strong>Menu:</strong>
-      <ul>
+      <ul class="purple_button">
         {% if user.is_authenticated %}
         <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
         <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
