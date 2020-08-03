@@ -34,8 +34,10 @@ def add_to_cart(request, item_id):
 def remove_from_cart(request, item_id):
 
     '''Remove item from the cart'''
+    product = Product.objects.get(pk=item_id)
     bag = request.session.get('bag')
     bag.pop(item_id)
+    messages.success(request, f'Removed {product.name} from your bag')
     request.session['bag'] = bag
     return HttpResponse(status=200)
-
+    
