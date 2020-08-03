@@ -101,7 +101,9 @@
             </nav>
          </div>
       </header>
-<!--Show messages coming from server and display as a Boostrap toast-->
+<!--Show messages coming from server and display as a Boostrap toast
+Function based on Boutique Ado project and Django Offical Documentation
+https://docs.djangoproject.com/en/3.0/ref/contrib/messages/-->
    {% if messages %}
    <div class="message-container">
       {% for message in messages %}
