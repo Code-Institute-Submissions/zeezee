@@ -38,11 +38,16 @@ code to make the icons appears in the center */
 	border: 1px solid black !important;
 }
 
+/* Messages container */
 .message-container {
-	position: fixed;
-	top: 70px;
-	right: 50%;
-	z-index: 99999999;
+    position: fixed;
+    top: 25%;
+    right: 35%;
+    z-index: 99999999999;
+}
+
+.purple-background{
+    background: #6A0848;
 }
 
 .overlay {

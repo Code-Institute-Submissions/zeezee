@@ -101,7 +101,7 @@
             </nav>
          </div>
       </header>
-
+<!--Show messages coming from server and display as a Boostrap toast-->
    {% if messages %}
    <div class="message-container">
       {% for message in messages %}
@@ -123,11 +123,11 @@
    {% endblock %}
    {% block content %}
    {% endblock %}
+   <!--Show toast-->
    {% block postloadjs %}
    <script type="text/javascript"> 
       $('.toast').toast('show');
    </script>
-
    {% endblock %}
    {% if footer != False %}
     {% include 'includes/footer.html' %}
