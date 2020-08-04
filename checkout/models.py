@@ -6,7 +6,11 @@ from django.conf import settings
 
 from products.models import Product
 
-
+'''
+Ask the shopper to adjust shipping information,
+generate a unique order number,
+update and save the information, then render the shopping bag
+'''
 
 class Order(models.Model):
     '''
