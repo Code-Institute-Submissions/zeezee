@@ -32,16 +32,16 @@ def checkout(request):
         if order_form.is_valid():
             order = order_form.save()
         for item_id, item_data in bag.items():
-                product = Product.objects.get(id=item_id)
-                order_line_item = OrderLineItem(
+            product = Product.objects.get(id=item_id)
+            order_line_item = OrderLineItem(
                         order=order,
                         product=product,
                         quantity=item_data,
                     )
-                order_line_item.save()
+            order_line_item.save()
 
-                if not bag:
-                    messages.error(request, "Your bag is empty")
+            if not bag:
+                messages.error(request, "Your bag is empty")
                 return redirect(reverse('products'))
 
                 current_bag = bag_contents(request)
@@ -49,8 +49,8 @@ def checkout(request):
                 stripe_total = round(total * 100)
                 stripe.api_key = stripe_secret_key
                 intent = stripe.PaymentIntent.create(
-                amount=stripe_total,
-                currency=settings.STRIPE_CURRENCY,)
+                    amount=stripe_total,
+                    currency=settings.STRIPE_CURRENCY,)
 
                 order_form = OrderForm()
 
