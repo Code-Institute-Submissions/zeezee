@@ -10,4 +10,4 @@ def ready(self):
     the order will be updated as well
     '''
 
-        import checkout.signals
+    import checkout.signals
