@@ -51,9 +51,19 @@ form.addEventListener('submit', function(ev) {
     //to prevent user submitting the same data more then once
     card.update({ 'disabled': true});
     $('#submit-button').attr('disabled', true);
-    stripe.confirmCardPayment(clientSecret, {
-        payment_method: {
-            card: card,
+     var saveInfo = Boolean($('#id-save-info').attr('checked'));
+    // From using {% csrf_token %} in the form
+    var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
+    var postData = {
+        'csrfmiddlewaretoken': csrfToken,
+        'client_secret': clientSecret,
+        'save_info': saveInfo,
+    };
+    var url = '/checkout/cache_checkout_data/';
+  $.post(url, postData).done(function () {
+        stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
+                card: card,
                 billing_details: {
                     name: $.trim(form.full_name.value),
                     phone: $.trim(form.phone_number.value),
@@ -100,5 +110,9 @@ form.addEventListener('submit', function(ev) {
                 form.submit();
             }
         }
+        .fail(function () {
+        // just reload the page, the error will be in django messages
+        location.reload();
     });
+    
 });
