@@ -34,6 +34,6 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
     Create a profile or if there is a profile belonging to a user,
     just update it with the adjustment
     """
-    if created:
-        UserProfile.objects.create(user=instance)
-    instance.userprofile.save()
+    #if created:
+    UserProfile.objects.create(user=instance)
+    #instance.userprofile.save()

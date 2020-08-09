@@ -64,7 +64,7 @@
                         <a href="" class="dropdown-item purple-text">Product Management</a>
                         {% endif %}
                         <!--If they are not superuser, they can access their profile and the button to logout-->
-                        <a href="" class="dropdown-item purple-text">My Profile</a>
+                        <a href="{% url 'profile' %}" class="dropdown-item purple-text">My Profile</a>
                         <a href="{% url 'account_logout' %}" class="dropdown-item purple-text">Logout</a>
                         {% else %}
                         <!--Else (they are not logged in) they can register or login to their account-->
