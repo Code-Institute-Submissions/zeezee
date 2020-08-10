@@ -104,15 +104,14 @@ form.addEventListener('submit', function(ev) {
             //so the user can fix the error
             card.update({ 'disabled': false});
             $('#submit-button').attr('disabled', false);
-        } else {
-            if (result.paymentIntent.status === 'succeeded') {
-                //if the intent is succeeded, submit the form
-                form.submit();
+         } else {
+                if (result.paymentIntent.status === 'succeeded') {
+                    form.submit();
+                }
             }
-        }
-        .fail(function () {
+        });
+    }).fail(function () {
         // just reload the page, the error will be in django messages
         location.reload();
-    });
-    
+    })
 });
