@@ -20,10 +20,10 @@ class StripeWH_Handler:
     def _send_confirmation_email(self, order):
         """Send the user a confirmation email"""
         cust_email = order.email
-        text = 'checkout/confirmation_emails/confirmation_email.txt',
         {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL}
         send_mail(
-        text,
+        "ZeeZee Bijoux order confirmation for Order Number {{ order.order_number }}",
+        "Your order will be shipped soon. If you have any questions, feel free to contact us at {{ contact_email }}. Thank you for your order!",
         settings.DEFAULT_FROM_EMAIL,
         [cust_email],
         )
