@@ -75,7 +75,7 @@ def checkout(request):
                         )
                         order_line_item.save()
                     else:
-                        for quantity in item_data.items():
+                        for quantity in item_data():
                             order_line_item = OrderLineItem(
                                 order=order,
                                 product=product,

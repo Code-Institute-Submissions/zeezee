@@ -51,7 +51,8 @@ form.addEventListener('submit', function(ev) {
     //to prevent user submitting the same data more then once
     card.update({ 'disabled': true});
     $('#submit-button').attr('disabled', true);
-     var saveInfo = Boolean($('#id-save-info').attr('checked'));
+    $('#payment-form').fadeToggle(100);
+    var saveInfo = Boolean($('#id-save-info').attr('checked'));
     // From using {% csrf_token %} in the form
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     var postData = {
@@ -60,7 +61,8 @@ form.addEventListener('submit', function(ev) {
         'save_info': saveInfo,
     };
     var url = '/checkout/cache_checkout_data/';
-  $.post(url, postData).done(function () {
+
+    $.post(url, postData).done(function () {
         stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card: card,
