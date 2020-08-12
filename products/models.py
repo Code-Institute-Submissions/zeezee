@@ -28,13 +28,13 @@ class Product(models.Model):
     '''Product model with key elements
     Category, sku, image url and image fields are optional
     '''
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
-    sku = models.CharField(max_length=254, null=True, blank=True)
-    name = models.CharField(max_length=254)
-    description = models.TextField()
-    price = models.DecimalField(max_digits=6, decimal_places=2)
-    image1 = models.ImageField(null=True, blank=True)
-    image2 = models.ImageField(null=True, blank=True)
+    category = models.ForeignKey('Category', null=True, blank=False, on_delete=models.SET_NULL)
+    sku = models.CharField(max_length=254, null=True, blank=False)
+    name = models.CharField(max_length=254, blank=False)
+    description = models.TextField(blank=False)
+    price = models.DecimalField(max_digits=6, decimal_places=2, blank=False) 
+    image1 = models.ImageField(null=True, blank=False)
+    image2 = models.ImageField(null=True, blank=False)
 
     def __str__(self):
         return self.name

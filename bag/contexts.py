@@ -31,7 +31,9 @@ def bag_contents(request):
         free_delivery_delta = 0
     
     grand_total = delivery + total
-    '''Add variables to context to make them available across all templates'''   
+    '''
+    Add variables to context to make them available across all templates
+    '''
     context = {
         'bag_items': bag_items,
         'total': total,
