@@ -11,5 +11,4 @@ def ready(self):
     is deleted or updated,
     the order will be updated as well
     '''
-
     import checkout.signals
