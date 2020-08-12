@@ -64,7 +64,7 @@
                         <a href="{%url 'add_new_product' %}" class="dropdown-item purple-text">Store Admin</a>
                         {% endif %}
                         <!--If they are not superuser, they can access their profile and the button to logout-->
-                        <a href="{% url 'profile' %}" class="dropdown-item purple-text">My ZeeZee</a>
+                        <a href="{% url 'profile' %}" class="dropdown-item purple-text">Profile</a>
                         <a href="{% url 'account_logout' %}" class="dropdown-item purple-text">Logout</a>
                         {% else %}
                         <!--Else (they are not logged in) they can register or login to their account-->
