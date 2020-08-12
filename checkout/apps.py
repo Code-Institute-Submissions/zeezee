@@ -3,6 +3,8 @@ from django.apps import AppConfig
 
 class CheckoutConfig(AppConfig):
     name = 'checkout'
+
+    
 def ready(self):
     '''
     Import signals, so when any line of the order
