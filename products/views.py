@@ -3,6 +3,8 @@ from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category
+from .forms import ProductForm
+
 
 # Create your views here.
 
@@ -69,3 +71,28 @@ def detail_product(request, product_id):
     }
 
     return render(request, 'products/detail_product.html', context)
+
+
+def add_new_product(request):
+    """
+    Allow the superusers 
+    to add a new product with admin
+    Render the add_new_product template 
+    and the form    
+    """
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added product!')
+            return redirect(reverse('add_new_product'))
+        else:
+            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+    else:
+        form = ProductForm()
+    template = 'products/add_new_product.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)

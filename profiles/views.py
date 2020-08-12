@@ -18,9 +18,10 @@ def profile(request):
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Profile updated successfully')
+            messages.success(request, 'Profile updated')
 
-    form = UserProfileForm(instance=profile)
+    else:
+        form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
 
     template = 'profiles/profile.html'
