@@ -72,6 +72,25 @@ def detail_product(request, product_id):
 
     return render(request, 'products/detail_product.html', context)
 
+def edit_product(request, product_id):
+    """ Edit a product in the store """
+    product = get_object_or_404(Product, pk=product_id)
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('detail_product', args=[product.id]))
+    else:
+        form = ProductForm(instance=product)
+
+    template = 'products/edit_product.html'
+    context = {
+        'form': form,
+        'product': product,
+    }
+
+    return render(request, template, context)
+
 
 def add_new_product(request):
     """
@@ -96,3 +115,12 @@ def add_new_product(request):
     }
 
     return render(request, template, context)
+
+
+def delete_product(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    messages.success(request, 'The choosed product was deleted!')
+    return redirect(reverse('products'))
+
+

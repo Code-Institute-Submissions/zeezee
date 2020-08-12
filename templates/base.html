@@ -53,7 +53,7 @@
                      <a class="text nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="text-center">
                            <div><i class="fas fa-user fa-lg text-white"></i></div>
-                           <p class="my-0 text-white">My Account</p>
+                           <p class="my-0 text-white">My ZeeZee</p>
                         </div>
                      </a>
                      <!--If the user is autenticated and they are superurs,
@@ -61,10 +61,10 @@
                      <div class="dropdown-menu border-0" aria-labelledby="user-options">
                         {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
-                        <a href="{%url 'add_new_product' %}" class="dropdown-item purple-text">Product Management</a>
+                        <a href="{%url 'add_new_product' %}" class="dropdown-item purple-text">Store Admin</a>
                         {% endif %}
                         <!--If they are not superuser, they can access their profile and the button to logout-->
-                        <a href="{% url 'profile' %}" class="dropdown-item purple-text">My Profile</a>
+                        <a href="{% url 'profile' %}" class="dropdown-item purple-text">My ZeeZee</a>
                         <a href="{% url 'account_logout' %}" class="dropdown-item purple-text">Logout</a>
                         {% else %}
                         <!--Else (they are not logged in) they can register or login to their account-->

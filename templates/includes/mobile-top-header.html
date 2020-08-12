@@ -2,7 +2,7 @@
     <a class="text nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
             <div><i class="fas fa-user fa-lg text-white"></i></div>
-            <p class="my-0 text-white">My Account</p>
+            <p class="my-0 text-white">My ZeeZee</p>
         </div>
     </a>
     <!--If the user is a superuper, show the Product managment part, 
@@ -10,7 +10,7 @@
     <div class="dropdown-menu border-0" aria-labelledby="user-options">
         {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
-                <a href="{% url 'add_new_product' %}" class="dropdown-item purple-text">Product Management</a>
+                <a href="{% url 'add_new_product' %}" class="dropdown-item purple-text">Store Admin</a>
             {% endif %}
             
             <a href="" class="dropdown-item purple-text">My Profile</a>
