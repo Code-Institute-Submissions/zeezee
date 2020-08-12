@@ -4,6 +4,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category
 from .forms import ProductForm
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -72,8 +73,16 @@ def detail_product(request, product_id):
 
     return render(request, 'products/detail_product.html', context)
 
+'''
+Login_required decorator added to avoid people
+deleting, editing or adding products with hardtyping the urls
+'''
+@login_required
 def edit_product(request, product_id):
     """ Edit a product in the store """
+    if not request.user.is_superuser:
+        messages.error(request, "Sorry, you don't have acces to this page.")
+        return redirect(reverse('home'))
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
@@ -91,7 +100,7 @@ def edit_product(request, product_id):
 
     return render(request, template, context)
 
-
+@login_required
 def add_new_product(request):
     """
     Allow the superusers 
@@ -99,6 +108,9 @@ def add_new_product(request):
     Render the add_new_product template 
     and the form    
     """
+    if not request.user.is_superuser:
+        messages.error(request, "Sorry, you don't have acces to this page.")
+        return redirect(reverse('home'))
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
@@ -116,8 +128,11 @@ def add_new_product(request):
 
     return render(request, template, context)
 
-
+@login_required
 def delete_product(request, product_id):
+    if not request.user.is_superuser:
+        messages.error(request, "Sorry, you don't have acces to this page.")
+        return redirect(reverse('home'))
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, 'The choosed product was deleted!')
