@@ -8,30 +8,30 @@
         </div>
     </div>
 {% endblock %}
-
+<title>{% block title %} My ZeeZee {% endblock%}</title>
 {% block content %}
    <div class="overlay"></div>
     <div class="container">
         <div class="row">
             <div class="col">
                 <hr>
-                <h2 class="logo-font mb-4">My ZeeZee</h2>
+                <h2 class="purple-text mb-4">My ZeeZee</h2>
                 <hr>
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-lg-6">
-                <p class="text-muted">Default Delivery Information</p>
-                <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                <p class="purple-text"> Delivery Information</p>
+                <form class="mt-2" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                     {% csrf_token %}
                     {{ form|crispy }}
-                    <button class="btn btn-black rounded-0 text-uppercase float-right">Update Information</button>
+                    <button class="btn purple_button float-right">Update Information</button>
                 </form>
             </div>
             <div class="col-12 col-lg-6">
-                <p class="text-muted">Order History</p>
+                <p class="purple-text">Order History</p>
                 <div class="order-history table-responsive">
-                    <table class="table table-sm table-borderless">
+                    <table class="table table-sm table-borderless purple-text">
                         <thead>
                             <tr>
                                 <th>Order Number</th>
@@ -46,7 +46,7 @@
                                     <td>
                                         <a href="{% url 'order_history' order.order_number %}"
                                         title="{{ order.order_number }}">
-                                            {{ order.order_number|truncatechars:6 }}
+                                            {{ order.order_number|truncatechars:5 }}
                                         </a>
                                     </td>
                                     <td>{{ order.date }}</td>
