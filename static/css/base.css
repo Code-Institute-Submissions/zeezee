@@ -6,8 +6,6 @@ html {
 }
 
 body {
-    background: url('/media/background_hand.JPG') no-repeat center center fixed;
-    background-size:cover;
 	min-height: 100vh;
 	font-family: 'Baloo 2', cursive;
 }
