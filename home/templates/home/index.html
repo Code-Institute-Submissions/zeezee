@@ -8,7 +8,7 @@
     {% block content %}
     <!--Hero picture with introduction paragraph-->
     <div>
-                <img src="{{MEDIA_URL}}/{{background_hand.JPG }}/" class="img-fluid">
+                <img src="https://{{zeezee-bijoux.s3.us-east-2.amazonaws.com}}/{{media/background_hand.JPG}}/" class="img-fluid">
     </div>
             <div class="text-wrap introduction text-center p-3">
                 <h5 class="text-center"> ZeeZee - Because jewels dress you up </h5>
@@ -23,7 +23,7 @@
             <div class="categories row mr-4 ml-5">
                 <div class="card-deck col-md-3 lg-2 col-sm-6 ml-md-4">
                 <div class="card text-white">
-                    <img class="card-img img-fluid img-responsive" src="" alt="Card image cap">
+                    <img class="card-img img-fluid img-responsive" src="{{MEDIA_URL}}/{{rings.jpg }}/" alt="Card image cap">
                     <div class="card-img-overlay overl">
                         <h5 class="card-title text-center"> <a class="link-card" href="{% url 'products' %}?category=rings"> Rings </a></h5>
                     </div>
@@ -31,7 +31,7 @@
                 </div>
                 <div class="card-deck col-md-3 lg-2 col-sm-6">
                 <div class="card text-white">
-                    <img class="card-img img-fluid responsive" src="/media/earrings.jpg" alt="Card image cap">
+                    <img class="card-img img-fluid responsive" src="{{MEDIA_URL}}/{{earrings.jpg }}/" alt="Card image cap">
                     <div class="card-img-overlay overl">
                         <h5 class="card-title text-center"> <a class="link-card" href="{% url 'products' %}?category=earrings"> Earrings </a></h5>
                     </div>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="card-deck col-md-3 lg-2 col-sm-6">
                 <div class="card text-white">
-                    <img class="card-img img-fluid responsive" src="/media/bracelets.jpg" alt="Card image cap">
+                    <img class="card-img img-fluid responsive" src="{{MEDIA_URL}}/{{bracelets.jpg }}/" alt="Card image cap">
                     <div class="card-img-overlay overl">
                         <h5 class="card-title text-center"> <a class="link-card" href="{% url 'products' %}?category=bracelets"> Bracelets </a></h5>
                     </div>
@@ -47,7 +47,7 @@
                 </div>
                 <div class="card-deck col-md-3 lg-2 col-sm-6">
                 <div class="card text-white">
-                    <img class="card-img img-fluid responsive" src="/media/necklaces.jpg" alt="Card image cap">
+                    <img class="card-img img-fluid responsive" src="{{MEDIA_URL}}/{{necklaces.jpg }}/" alt="Card image cap">
                     <div class="card-img-overlay overl">
                         <h5 class="card-title text-center"> <a class="link-card" href="{% url 'products' %}?category=necklaces"> Necklaces </a></h5>
                     </div>
