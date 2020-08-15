@@ -83,7 +83,9 @@
                                 </a>
                                
                                 <div class="card-body pb-0">
+                                    <a href="{% url 'detail_product' product.id %}" class="purple-text">
                                     <p class="mb-0" href="{% url 'detail_product' product.id %}">{{ product.name }}</p>
+                                    </a>
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
