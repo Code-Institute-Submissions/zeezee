@@ -103,6 +103,12 @@ code to make the icons appears in the center */
 	color: white;
 }
 
+.offer-btn{
+    color: #A8A8A8;
+    border-radius: 0.5rem;
+    line-height: 2;
+    font-size: 1.1rem;
+}
 
 /*Categories cards and overlay*/
 
