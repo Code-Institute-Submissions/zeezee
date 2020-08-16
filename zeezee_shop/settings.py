@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
     'home',
     'products',
     'bag',
@@ -108,6 +109,7 @@ AUTHENTICATION_BACKENDS = [
     
 ]
 
+#if you succeed in login, you'll be redirected to the main page.
 SITE_ID = 1 
 
 

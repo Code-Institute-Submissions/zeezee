@@ -1,7 +1,8 @@
 {% extends "socialaccount/base.html" %}
 
 {% load i18n %}
-
+{% load socialaccount %}
+{% providers_media_js %}
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
@@ -17,6 +18,9 @@
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
   <button class="purple_button" type="submit">{% trans "Sign Up" %} &raquo;</button>
+  
+
+ 
 </form>
 
 {% endblock %}
