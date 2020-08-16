@@ -39,6 +39,7 @@
    })();
 </script>
    </head>
+   <div class="page-wrapper">
    <body>
       <header >
          <div id="topnav" class="row bg-nav pt-lg-2 d-none d-lg-flex">
@@ -136,6 +137,27 @@ https://docs.djangoproject.com/en/3.0/ref/contrib/messages/-->
    {% if footer != False %}
     {% include 'includes/footer.html' %}
     {% endif %}
-   
+   <!--Footer wit copyright, social media icons
+  to the bijoux and subscribe to newsletter button-->
+   </div>
+         <div class="footer small-box-shadow">
+            <div class="footer-container text">
+               <a class="text-center float-right text-white" href="#"> 
+               Subscribe to special offers 
+               </a>
+               <a href="https://www.facebook.com/zeezeebigyok/" target="_blank" rel="noopener"
+                  class="waves-effect waves-light btn-small float-right btn-footer text-white" title="ZeeZee on Facebook">
+               <i class="material-icons left fab fa-facebook-f"> </i>
+               </a>
+                <a href="https://www.instagram.com/zeezeewire/?igshid=wxn0gmviicv7" target="_blank" rel="noopener"
+                  class="waves-effect waves-light btn-small float-right btn-footer text-white" title="ZeeZee on Instagram">
+               <i class="material-icons left fab fa-instagram"> </i>
+               </a>
+            </div>
+
+         <div class="footer-bottom">
+         <a  href="https://github.com/krisztinatxt" class="center text-decoration-none text-white" title="Visit my GitHub" target="_blank" rel="noopener"> &copy; Krisztina Szabó </a>
+         </div>
+         </div>
    </body>
 </html>
