@@ -198,7 +198,10 @@ Method from https://www.w3schools.com/ */
 	border-radius: 10px;
 	font-size: 18px;
 }
-
+/*Social button */
+.social_btn{
+    margin-left:12%;
+}
 
 /*Contact*/
 
