@@ -32,7 +32,7 @@ def bag_contents(request):
         free_delivery_delta = 0
     
     grand_total = delivery + total
-    print (grand_total)
+    
     '''
     Add variables to context to make them available across all templates
     '''

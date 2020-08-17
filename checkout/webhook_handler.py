@@ -22,8 +22,8 @@ class StripeWH_Handler:
         cust_email = order.email
         {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL}
         send_mail(
-        "ZeeZee Bijoux order confirmation for Order Number {{ order.order_number }}",
-        "Your order will be shipped soon. If you have any questions, feel free to contact us at {{ contact_email }}. Thank you for your order!",
+        "ZeeZee Bijoux order confirmation for your recent order",
+        "Your order will be shipped soon. If you have any questions, feel free to contact us at andrekrisztina5@gmail.com or via our Contact our. Thank you for your order!",
         settings.DEFAULT_FROM_EMAIL,
         [cust_email],
         )
