@@ -76,18 +76,9 @@ code to make the icons appears in the center */
 }
 
 .cart-item {
-	color: #6A0848;
+	color:white;
 }
 
-.cart-item:hover {
-	color: #184620;
-	text-decoration: none;
-}
-
-.cart:hover {
-	text-decoration: none;
-	color: aliceblue;
-}
 
 .title-main {
 	color: white;
