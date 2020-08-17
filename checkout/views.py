@@ -67,11 +67,14 @@ def checkout(request):
             for item_id, item_data in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
+                    lineitem_total=product.price
                     order_line_item = OrderLineItem(
                             order=order,
                             product=product,
                             quantity=item_data,
+                            lineitem_total=lineitem_total
                         )
+                    print(order_line_item)
                     order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
@@ -95,6 +98,7 @@ def checkout(request):
 
         current_bag = bag_contents(request)
         total = current_bag['grand_total']
+        print(f'bag total checkout {total}')
         stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
