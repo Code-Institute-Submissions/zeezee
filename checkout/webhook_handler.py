@@ -119,7 +119,7 @@ class StripeWH_Handler:
                         order_line_item = OrderLineItem(
                             order=order,
                             product=product,
-                            quantity=item_data,
+                            quantity=item_data,  
                         )
                         order_line_item.save()
                     else:

@@ -67,7 +67,7 @@ def checkout(request):
             for item_id, item_data in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
-                    lineitem_total=product.price
+                    lineitem_total = product.price
                     order_line_item = OrderLineItem(
                             order=order,
                             product=product,
