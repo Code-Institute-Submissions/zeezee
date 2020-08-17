@@ -67,19 +67,25 @@ def checkout(request):
             for item_id, item_data in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
-                    lineitem_total = product.price
-                    order_line_item = OrderLineItem(
+                    if isinstance(item_data, int):
+                        order_line_item = OrderLineItem(
                             order=order,
                             product=product,
                             quantity=item_data,
-                            lineitem_total=lineitem_total
                         )
-                    print(order_line_item)
-                    order_line_item.save()
+                        order_line_item.save()
+                    else:
+                        for quantity in item_data.items():
+                            order_line_item = OrderLineItem(
+                                order=order,
+                                product=product,
+                                quantity=quantity,
+                            )
+                            order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
                         "One of the products in your bag wasn't found in our store. "
-                        "Please call contact us by contact form!")
+                        "Please contact us by contact form!")
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
