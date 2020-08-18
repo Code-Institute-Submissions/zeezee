@@ -174,7 +174,36 @@ a:hover {
 	color: #A8A8A8;
 }
 
+/*Pagination styling*/
 
+.pagination-wrap{
+    margin-right:3rem;
+   
+}
+.pagination{
+    text-align: center;
+}
+
+.pagination-action{
+    margin-right:0.2rem;
+    margin-left:0.2rem;
+    display: inline-block;
+    padding: 0.1rem;
+    color:#6A0848;
+    font-size:1.5rem;
+}
+.pagination-action:hover{
+   color: #a8a8a8;
+
+}
+.number{
+    background: #6A0848;
+    color:white;
+    padding: 0.5rem;
+    border-radius:0.2rem;
+    margin-right:0.3rem;
+
+}
 /*Back to the top button on products page
 Method from https://www.w3schools.com/ */
 

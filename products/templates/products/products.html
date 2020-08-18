@@ -13,25 +13,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="pagination">
-{% if products.has_previous %}
-<a href="?page=1"><<</a>
-<a href="?page={{products.previous_page_number}}"><<</a>
-{% endif %}
-{% for num in products.paginator.page_range %}
-    
-{{ num }}
 
-{% endfor %}
-
-{% if products.has_next %}
-<a href="?page={{products.next_page_number"><<</a>
-<a href="?page={{products.paginator.num_pages}}"><<</a>
-{% endif %}
-
-
-
-</div>
     <div class="overlay"></div>
     <!--Search bar form  with products url, returning the products view-->
     <div class="row">
@@ -54,14 +36,44 @@
         <div class="row">
             <div class="col text-center mt-3">
                 <h2 class="logo-font purple-text">Products</h2>
+            </div>
+        </div>
+        <div class="row pagination-wrap">
+            <div class="col text-center mr-1">
+                <div class="pagination mx-auto">
+                    {% if products.has_previous %}
+                    <a class="pagination-action" href="?page=1">
+                    <i class="fas fa-angle-double-left"></i>
+                    </a>
+                    <a class="pagination-action" href="?page={{products.previous_page_number}}">
+                    <i class="fas fa-angle-left"></i>
+                    </a>
+                    {% endif %}
+                    {% for num in products.paginator.page_range %}
+                        
+                    <span class="number">{{ num }} </span>
+
+                    {% endfor %}
+
+                    {% if products.has_next %}
+                    <a class="pagination-action" href="?page={{products.next_page_number">
+                    <i class="fas fa-angle-right"></i>
+                    </a>
+                    <a class="pagination-action" href="?page={{products.paginator.num_pages}}">
+                    <i class="fas fa-angle-double-right"></i>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
                 {% for c in current_categories %}
                     <a class="category-badge text-decoration-none bagdes" href="{% url 'products' %}?category={{ c.name }}">
                         <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
                     </a>
                 {% endfor %}
                 <hr class="w-50 mb-1">
-            </div>
-        </div>
+          
         <!--Sorting function filtering products by price, and name, both ascending and descending-->
         <div class="row">
             <div class="product-container col-10 offset-1">
@@ -205,4 +217,5 @@
             }
         })
 </script>
+
 {% endblock %}
