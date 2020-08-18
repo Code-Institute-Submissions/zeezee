@@ -41,6 +41,26 @@
    </head>
    <div class="page-wrapper">
    <body>
+    <!--Facebook Login-->
+  <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '3704332892929050',
+      xfbml      : true,
+      version    : 'v8.0'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<!--Header-->
       <header >
          <div id="topnav" class="row bg-nav pt-lg-2 d-none d-lg-flex">
             <div class="col-7 col-4-lg my-auto py-1 py-lg-0 text-center text-lg-left">

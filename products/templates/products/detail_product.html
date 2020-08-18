@@ -47,6 +47,12 @@
                </a>
             </p>
             {% endif %}
+            <div
+                class="fb-like"
+                    data-share="true"
+                    data-width="450"
+                     data-show-faces="true">
+            </div>
              {% if request.user.is_superuser %}
                         <small class="ml-3">
                             <a href="{% url 'edit_product' product.id %}" class="text-muted">Edit </a> | 
