@@ -19,14 +19,10 @@
             <p class="purple-text">{% blocktrans with site.name as site_name %}Please sign in with one
             of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
             for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
-
+            <div class="fb-login-button" data-size="medium" data-button-type="continue_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="true" data-width=""></div>
             <div class="socialaccount_ballot purple-text">
 
-            <ul class="socialaccount_providers">
-                {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-            </ul>
-
-            <div class="login-or">{% trans 'or' %}</div>
+           <div class="login-or">{% trans 'or' %}</div>
 
             </div>
 
