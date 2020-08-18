@@ -5,6 +5,8 @@ from django.db.models.functions import Lower
 from .models import Product, Category
 from .forms import ProductForm
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 
 
 # Create your views here.
@@ -12,8 +14,15 @@ from django.contrib.auth.decorators import login_required
 
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
-
     products = Product.objects.all()
+    paginator = Paginator(products, 8)
+    page = request.GET.get('page')
+    products=paginator.get_page(page)
+    
+
+
+
+
     query = None
     categories = None
     sort = None

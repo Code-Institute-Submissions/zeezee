@@ -13,6 +13,25 @@
 {% endblock %}
 
 {% block content %}
+<div class="pagination">
+{% if products.has_previous %}
+<a href="?page=1"><<</a>
+<a href="?page={{products.previous_page_number}}"><<</a>
+{% endif %}
+{% for num in products.paginator.page_range %}
+    
+{{ num }}
+
+{% endfor %}
+
+{% if products.has_next %}
+<a href="?page={{products.next_page_number"><<</a>
+<a href="?page={{products.paginator.num_pages}}"><<</a>
+{% endif %}
+
+
+
+</div>
     <div class="overlay"></div>
     <!--Search bar form  with products url, returning the products view-->
     <div class="row">
@@ -135,7 +154,7 @@
             </div>
         </div>
     </div>
-    <!--Send the user back to the top of the page-->
+        <!--Send the user back to the top of the page-->
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 {% endblock %}
 
