@@ -111,6 +111,7 @@ AUTHENTICATION_BACKENDS = [
 
 #if you succeed in login, you'll be redirected to the main page.
 SITE_ID = 1 
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'
 
 SOCIALACCOUNT_PROVIDERS = {
     'facebook': {
