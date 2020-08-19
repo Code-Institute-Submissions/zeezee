@@ -9,11 +9,13 @@ from django_countries.fields import CountryField
 from profiles.models import UserProfile
 
 
+
 '''
 Ask the shopper to adjust shipping information,
 generate a unique order number,
 update and save the information, then render the shopping bag
 '''
+
 
 class Order(models.Model):
     '''
@@ -36,9 +38,10 @@ class Order(models.Model):
     delivery_cost = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    status = models.BooleanField(default=True)
     original_bag = models.TextField(null=False, blank=False, default='')
     stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
-    status = models.BooleanField(default=False)
+    
 
     def _generate_order_number(self):
         """
