@@ -13,21 +13,19 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 def all_products(request):
-    """
-     A view to show all products, including sorting and search queries
-     """
-   
     '''
+     A view to show all products, including sorting and search queries
     Filter all the category who's name is in the list'
     If the query is empty,
     so the user haven't entered any search term,
     they get an error message
     '''
-    products = Product.objects.all()
     query = None
     categories = None
     sort = None
     direction = None
+    products = Product.objects.all()
+    paginator = Paginator(products, 8)
     if request.GET:
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
@@ -47,6 +45,7 @@ def all_products(request):
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -58,7 +57,6 @@ def all_products(request):
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
-    products = Product.objects.all()
     paginator = Paginator(products, 8)
     page = request.GET.get('page')
     products = paginator.get_page(page)
@@ -69,6 +67,8 @@ def all_products(request):
         'current_sorting': current_sorting,
         'paginator': paginator,
     }
+
+    
 
     return render(request, 'products/products.html', context)
 
