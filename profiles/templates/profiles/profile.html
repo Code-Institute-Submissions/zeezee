@@ -54,14 +54,20 @@
                                         <ul class="list-unstyled">
                                             {% for item in order.lineitems.all %}
                                                 <li class="small">
-                                                    {% if item.product.has_sizes %}
-                                                        Size {{ item.product.size|upper }}
-                                                    {% endif %}{{ item.product.name }} x{{ item.quantity }}
+                                                  {{ item.quantity }} X {{ item.product.name }}
                                                 </li>
                                             {% endfor %}
                                         </ul>
                                     </td>
-                                    <td></td>
+                                    {% if order.status %}
+                                    <td> Processed <br>
+                                    <small> We started to prepare your order </small>
+                                    </td>
+                                    {% else %}
+                                    <td> Awaiting <br>
+                                    <small> We haven't seen your order yet, check this in an hour </small> 
+                                    </td>
+                                    {% endif %}
                                 </tr>
                             {% endfor %}
                         </tbody>
