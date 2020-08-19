@@ -17,12 +17,7 @@ def all_products(request):
     products = Product.objects.all()
     paginator = Paginator(products, 8)
     page = request.GET.get('page')
-    products=paginator.get_page(page)
-    
-
-
-
-
+    products = paginator.get_page(page)
     query = None
     categories = None
     sort = None
