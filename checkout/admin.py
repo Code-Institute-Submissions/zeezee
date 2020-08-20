@@ -33,6 +33,7 @@ class OrderAdmin(admin.ModelAdmin):
 
     ordering = ('-date',)
 
+
 '''
 Register the classed created
 '''

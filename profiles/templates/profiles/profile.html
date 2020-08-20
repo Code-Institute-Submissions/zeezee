@@ -1,79 +1,80 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
+<div class="container header-container">
+   <div class="row">
+      <div class="col"></div>
+   </div>
+</div>
 {% endblock %}
 <title>{% block title %} My ZeeZee {% endblock%}</title>
 {% block content %}
-   <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="purple-text mb-4">My ZeeZee</h2>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-lg-6">
-                <p class="purple-text"> Delivery Information</p>
-                <form class="mt-2" action="{% url 'profile' %}" method="POST" id="profile-update-form">
-                    {% csrf_token %}
-                    {{ form|crispy }}
-                    <button class="btn purple_button float-right">Update Information</button>
-                </form>
-            </div>
-            <div class="col-12 col-lg-6">
-                <p class="purple-text">Order History</p>
-                <div class="order-history table-responsive">
-                    <table class="table table-sm table-borderless purple-text">
-                        <thead>
-                            <tr>
-                                <th>Order Number</th>
-                                <th>Date</th>
-                                <th>Items</th>
-                                <th>Order Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for order in orders %}
-                                <tr>
-                                    <td>
-                                        <a href="{% url 'order_history' order.order_number %}"
-                                        title="{{ order.order_number }}">
-                                            {{ order.order_number|truncatechars:5 }}
-                                        </a>
-                                    </td>
-                                    <td>{{ order.date }}</td>
-                                    <td>
-                                        <ul class="list-unstyled">
-                                            {% for item in order.lineitems.all %}
-                                                <li class="small">
-                                                  {{ item.quantity }} X {{ item.product.name }}
-                                                </li>
-                                            {% endfor %}
-                                        </ul>
-                                    </td>
-                                    {% if order.status %}
-                                    <td> Awaiting <br>
-                                    <small>We haven't seen your order yet, check this in an hour </small>
-                                    </td>
-                                    {% else %}
-                                    <td> Processed <br>
-                                    <small> We started to prepare your order </small> 
-                                    </td>
-                                    {% endif %}
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+<!--User profile with saved delivery information and order history with order status-->
+<div class="overlay"></div>
+<div class="container">
+<div class="row">
+   <div class="col">
+      <hr>
+      <h2 class="purple-text mb-4">My ZeeZee</h2>
+      <hr>
+   </div>
+</div>
+<div class="row">
+   <div class="col-12 col-lg-6">
+      <p class="purple-text"> Delivery Information</p>
+      <form class="mt-2" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+         {% csrf_token %}
+         {{ form|crispy }}
+         <button class="btn purple_button float-right">Update Information</button>
+      </form>
+   </div>
+   <div class="col-12 col-lg-6">
+      <p class="purple-text">Order History</p>
+      <div class="order-history table-responsive">
+         <table class="table table-sm table-borderless purple-text">
+            <thead>
+               <tr>
+                  <th>Order Number</th>
+                  <th>Date</th>
+                  <th>Items</th>
+                  <th>Order Status</th>
+               </tr>
+            </thead>
+            <tbody>
+               {% for order in orders %}
+               <tr>
+                  <td>
+                     <a href="{% url 'order_history' order.order_number %}"
+                        title="{{ order.order_number }}">
+                     {{ order.order_number|truncatechars:5 }}
+                     </a>
+                  </td>
+                  <td>{{ order.date }}</td>
+                  <td>
+                     <ul class="list-unstyled">
+                        {% for item in order.lineitems.all %}
+                        <li class="small">
+                           {{ item.quantity }} X {{ item.product.name }}
+                        </li>
+                        {% endfor %}
+                     </ul>
+                  </td>
+                  <!--The order status default is Awaiting, when the admin received the order, 
+                     they can check in and then the status is updating to Processed-->
+                  {% if order.status %}
+                  <td> Awaiting <br>
+                     <small>We haven't seen your order yet, check this in an hour </small>
+                  </td>
+                  {% else %}
+                  <td> Processed <br>
+                     <small> We started to prepare your order </small> 
+                  </td>
+                  {% endif %}
+               </tr>
+               {% endfor %}
+            </tbody>
+         </table>
+      </div>
+   </div>
+</div>
 {% endblock %}
-

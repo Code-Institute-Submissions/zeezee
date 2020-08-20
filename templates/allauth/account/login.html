@@ -10,7 +10,7 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-md-12 offset-3 mt-4">
+        <div class="col-md-12 mt-4">
             <h1 class="purple-text">{% trans "Sign In" %}</h1>
 
             {% get_providers as socialaccount_providers %}
@@ -20,17 +20,9 @@
             of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
             for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 
-            <div class="socialaccount_ballot purple-text">
+        
 
-            <ul class="socialaccount_providers">
-                {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-            </ul>
-
-            <div class="login-or">{% trans 'or' %}</div>
-
-            </div>
-
-            {% include "socialaccount/snippets/login_extra.html" %}
+        </div>
 
             {% else %}
             <p class="purple-text">{% blocktrans %}If you have not created an account yet, then please
@@ -48,5 +40,5 @@
             </form>
         </div>
     </div>
-</div>
+
 {% endblock %}

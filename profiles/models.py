@@ -7,11 +7,10 @@ from django_countries.fields import CountryField
 
 
 class UserProfile(models.Model):
-    """
+    '''
     User profile for storing order information and delivery address
     Each user can have on profile, and a profile can belong to only one user
-
-    """
+    '''
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     default_phone_number = models.CharField(max_length=20, null=True, blank=True)
     default_country = CountryField(blank_label='Country', null=True, blank=True)
@@ -30,10 +29,10 @@ class UserProfile(models.Model):
 
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
-    """
+    '''
     Create a profile or if there is a profile belonging to a user,
     just update it with the adjustment
-    """
+    '''
     if created:
         UserProfile.objects.create(user=instance)
     instance.userprofile.save()

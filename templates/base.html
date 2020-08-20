@@ -31,133 +31,128 @@
       <title>{% block title %} {% endblock%}</title>
       <link rel="icon" sizes="192x192" href="{% static 'favicon.png' %}" type="image/x-icon">
       <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
-      </script>
+         src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
       <script type="text/javascript">
-   (function(){
-       emailjs.init("user_UW97WmP3GsBepuyB8Vffd");
-   })();
-</script>
+         (function(){
+             emailjs.init("user_UW97WmP3GsBepuyB8Vffd");
+         })();
+      </script>
    </head>
    <div class="page-wrapper">
-   <body>
-<!--Facebook like and share--> 
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v8.0&appId=3704332892929050&autoLogAppEvents=1" nonce="01iUadNH"></script>
-<!--Header-->
-      <header >
-         <div id="topnav" class="row bg-nav pt-lg-2 d-none d-lg-flex">
-            <div class="col-7 col-4-lg my-auto py-1 py-lg-0 text-center text-lg-left">
-               <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                  <h2 class="title-main"><strong>ZeeZee</strong> Bijoux</h2>
-               </a>
-            </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text">
-               <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-                  <li class="list-inline-item dropdown">
-                     <a class="text nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="text-center">
-                           <div><i class="fas fa-user fa-lg text-white"></i></div>
-                           <p class="my-0 text-white">My ZeeZee</p>
+      <body>
+         <!--Facebook like and share--> 
+         <div id="fb-root"></div>
+         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v8.0&appId=3704332892929050&autoLogAppEvents=1" nonce="01iUadNH"></script>
+         <!--Header-->
+         <header >
+            <div id="topnav" class="row bg-nav pt-lg-2 d-none d-lg-flex">
+               <div class="col-7 col-4-lg my-auto py-1 py-lg-0 text-center text-lg-left">
+                  <a href="{% url 'home' %}" class="nav-link main-logo-link">
+                     <h2 class="title-main"><strong>ZeeZee</strong> Bijoux</h2>
+                  </a>
+               </div>
+               <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text">
+                  <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                     <li class="list-inline-item dropdown">
+                        <a class="text nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <div class="text-center">
+                              <div><i class="fas fa-user fa-lg text-white"></i></div>
+                              <p class="my-0 text-white">My ZeeZee</p>
+                           </div>
+                        </a>
+                        <!--If the user is autenticated and they are superusers,
+                           they can click on the Product Managment to create, update, edit, delete products-->
+                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                           {% if request.user.is_authenticated %}
+                           {% if request.user.is_superuser %}
+                           <a href="{%url 'add_new_product' %}" class="dropdown-item purple-text">Store Admin</a>
+                           {% endif %}
+                           <!--If they are not superuser, they can access their profile and the button to logout-->
+                           <a href="{% url 'profile' %}" class="dropdown-item purple-text">Profile</a>
+                           <a href="{% url 'account_logout' %}" class="dropdown-item purple-text">Logout</a>
+                           {% else %}
+                           <!--Else (they are not logged in) they can register or login to their account-->
+                           <a href="{% url 'account_signup' %}" class="dropdown-item purple-text">Register</a>
+                           <a href="{% url 'account_login' %}" class="dropdown-item purple-text">Login</a>
+                           {% endif %}
                         </div>
-                     </a>
-                     <!--If the user is autenticated and they are superurs,
-                        they can click on the Product Managment to create, update, edit, delete products-->
-                     <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                        {% if request.user.is_authenticated %}
-                        {% if request.user.is_superuser %}
-                        <a href="{%url 'add_new_product' %}" class="dropdown-item purple-text">Store Admin</a>
-                        {% endif %}
-                        <!--If they are not superuser, they can access their profile and the button to logout-->
-                        <a href="{% url 'profile' %}" class="dropdown-item purple-text">Profile</a>
-                        <a href="{% url 'account_logout' %}" class="dropdown-item purple-text">Logout</a>
-                        {% else %}
-                        <!--Else (they are not logged in) they can register or login to their account-->
-                        <a href="{% url 'account_signup' %}" class="dropdown-item purple-text">Register</a>
-                        <a href="{% url 'account_login' %}" class="dropdown-item purple-text">Login</a>
-                        {% endif %}
-                     </div>
-                  </li>
-                  <!--If the bucket contains anything, we display the price with two decimals,
-                     but when the bucket is empty, the message is 0.00 euro-->
-                  <li class="list-inline-item cart-main">
-                     <a class="{% if grand_total %}font-weight-bold cart-item{% else %}cart{% endif %}" href="{% url 'view_bag' %}">
-                        <div class="text-center">
-                           <div><i class="fas fa-shopping-cart fa-lg cart"></i></div>
-                           <p class="my-0 text">
-                              {% if grand_total %}
-                              €{{ grand_total|floatformat:2 }}
-                              {% else %}
-                              €0.00
-                              {% endif %}
-                           </p>
-                        </div>
-                     </a>
-                  </li>
-               </ul>
+                     </li>
+                     <!--If the bucket contains anything, we display the price with two decimals,
+                        but when the bucket is empty, the message is 0.00 euro-->
+                     <li class="list-inline-item cart-main">
+                        <a class="{% if grand_total %}font-weight-bold cart-item{% else %}cart{% endif %}" href="{% url 'view_bag' %}">
+                           <div class="text-center">
+                              <div><i class="fas fa-shopping-cart fa-lg cart"></i></div>
+                              <p class="my-0 text">
+                                 {% if grand_total %}
+                                 €{{ grand_total|floatformat:2 }}
+                                 {% else %}
+                                 €0.00
+                                 {% endif %}
+                              </p>
+                           </div>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
             </div>
+            <div class="row bg-nav">
+               <nav class="navbar navbar-expand-lg navbar-light w-100">
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                  </button>
+                  {% include 'includes/mobile-top-header.html' %}
+                  {% include 'includes/main-nav.html' %}
+               </nav>
+            </div>
+         </header>
+         <!--Show messages coming from server and display as a Boostrap toast
+            Function based on Boutique Ado project and Django Offical Documentation
+            https://docs.djangoproject.com/en/3.0/ref/contrib/messages/-->
+         {% if messages %}
+         <div class="message-container">
+            {% for message in messages %}
+            {% with message.level as level %}
+            {% if level == 40 %}
+            {% include 'includes/toasts/error.html' %}
+            {% elif level == 30 %}
+            {% include 'includes/toasts/warning.html' %}
+            {% elif level == 25 %}
+            {% include 'includes/toasts/success.html' %}
+            {% else %}
+            {% include 'includes/toasts/info.html' %}
+            {% endif %}
+            {% endwith %}
+            {% endfor %}
          </div>
-         <div class="row bg-nav">
-            <nav class="navbar navbar-expand-lg navbar-light w-100">
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-               </button>
-               {% include 'includes/mobile-top-header.html' %}
-               {% include 'includes/main-nav.html' %}
-            </nav>
-         </div>
-      </header>
-<!--Show messages coming from server and display as a Boostrap toast
-Function based on Boutique Ado project and Django Offical Documentation
-https://docs.djangoproject.com/en/3.0/ref/contrib/messages/-->
-   {% if messages %}
-   <div class="message-container">
-      {% for message in messages %}
-      {% with message.level as level %}
-      {% if level == 40 %}
-      {% include 'includes/toasts/error.html' %}
-      {% elif level == 30 %}
-      {% include 'includes/toasts/warning.html' %}
-      {% elif level == 25 %}
-      {% include 'includes/toasts/success.html' %}
-      {% else %}
-      {% include 'includes/toasts/info.html' %}
-      {% endif %}
-      {% endwith %}
-      {% endfor %}
+         {% endif %}
+         {% block page_header %}
+         {% endblock %}
+         {% block content %}
+         {% endblock %}
+         <!--Show toast-->
+         {% block postloadjs %}
+         <script type="text/javascript"> 
+            $('.toast').toast('show');
+         </script>
+         {% endblock %}
    </div>
-   {% endif %}
-   {% block page_header %}
-   {% endblock %}
-   {% block content %}
-   {% endblock %}
-   <!--Show toast-->
-   {% block postloadjs %}
-   <script type="text/javascript"> 
-      $('.toast').toast('show');
-   </script>
-   
-   {% endblock %}
-    </div>
    <!--Footer wit copyright, social media icons
-  to the bijoux and subscribe to newsletter button-->
-  
-         <div class="footer small-box-shadow  d-flex justify-content-center">
-            <div class="footer-container text">
-               <a href="https://www.facebook.com/zeezeebigyok/" target="_blank" rel="noopener"
-                  class="waves-effect waves-light btn-small float-right btn-footer text-white" title="ZeeZee on Facebook">
-               <i class="material-icons left fab fa-facebook-f"> </i>
-               </a>
-                <a href="https://www.instagram.com/zeezeewire/?igshid=wxn0gmviicv7" target="_blank" rel="noopener"
-                  class="waves-effect waves-light btn-small float-right btn-footer text-white" title="ZeeZee on Instagram">
-               <i class="material-icons left fab fa-instagram"> </i>
-               </a>
-            
-            </div>
-      
-         <div class="footer-bottom d-flex justify-content-center">
-         <a  href="https://github.com/krisztinatxt" class="center text-decoration-none text-white" title="Visit my GitHub" target="_blank" rel="noopener"> &copy; Krisztina Szabó </a>
-         </div>
-         </div>
-</body>
+      to the bijoux and subscribe to newsletter button-->
+   <div class="footer small-box-shadow  d-flex justify-content-center">
+   <div class="footer-container text">
+   <a href="https://www.facebook.com/zeezeebigyok/" target="_blank" rel="noopener"
+      class="waves-effect waves-light btn-small float-right btn-footer text-white" title="ZeeZee on Facebook">
+   <i class="material-icons left fab fa-facebook-f"> </i>
+   </a>
+   <a href="https://www.instagram.com/zeezeewire/?igshid=wxn0gmviicv7" target="_blank" rel="noopener"
+      class="waves-effect waves-light btn-small float-right btn-footer text-white" title="ZeeZee on Instagram">
+   <i class="material-icons left fab fa-instagram"> </i>
+   </a>
+   </div>
+   <div class="footer-bottom d-flex justify-content-center">
+   <a  href="https://github.com/krisztinatxt" class="center text-decoration-none text-white" title="Visit my GitHub" target="_blank" rel="noopener"> &copy; Krisztina Szabó </a>
+   </div>
+   </div>
+   </body>
 </html>

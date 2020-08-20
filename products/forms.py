@@ -16,7 +16,7 @@ class ProductForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         '''
-        The super user is able to add, edit and delete things
+        The superuser is able to add, edit and delete things
         Categories displayed with their friendly names
         Display field item with the matching styling attribute
         '''

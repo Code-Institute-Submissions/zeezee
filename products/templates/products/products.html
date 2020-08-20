@@ -1,223 +1,207 @@
 {% extends "base.html" %}
 {% load static %}
-
 <title> {% block title %}All products{% endblock %} </title>
-
-
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
+<div class="container header-container">
+   <div class="row">
+      <div class="col"></div>
+   </div>
+</div>
 {% endblock %}
-
 {% block content %}
-
-    <div class="overlay"></div>
-    <!--Search bar form with products url, returning the products view-->
-    <div class="row">
-            <div class="col-12 col-lg-5 mx-auto mt-2">
-               <form method="GET" action="{% url 'products' %}">
-                  <div class="input-group w-100">
-                     <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="I am looking for...">
-                     <div class="input-group-append">
-                        <button class="form-control btn border-black rounded-0" type="submit">
-                        <span class="icon">
-                        <i class="fas fa-search"></i>
-                        </span>
-                        </button>
+<div class="overlay"></div>
+<!--Search bar form with products url, returning the products view-->
+<div class="row">
+   <div class="col-12 col-lg-5 mx-auto mt-2">
+      <form method="GET" action="{% url 'products' %}">
+         <div class="input-group w-100">
+            <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="I am looking for...">
+            <div class="input-group-append">
+               <button class="form-control btn border-black rounded-0" type="submit">
+               <span class="icon">
+               <i class="fas fa-search"></i>
+               </span>
+               </button>
+            </div>
+         </div>
+      </form>
+   </div>
+</div>
+<!--Badges with the name of the category-->
+<div class="row">
+   <div class="col text-center mt-3">
+      <h2 class="logo-font purple-text">Products</h2>
+   </div>
+</div>
+{% for c in current_categories %}
+<a class="text-decoration-none bagdes mr-5" href="{% url 'products' %}?category={{ c.name }}">
+<span class="mt-2 badge-white">{{ c.friendly_name }}</span>
+</a>
+{% endfor %}
+<hr class="w-50 mb-1">
+<!--Sorting function filtering products by price, and name, both ascending and descending-->
+<div class="row">
+   <div class="product-container col-10 offset-1">
+      <div class="row mt-1 mb-2">
+         <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+            <div class="sort-select-wrapper w-50">
+               <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+               <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+               <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+               <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+               <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+               <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+               </select>
+            </div>
+         </div>
+         <div class="col-12 col-md-6 order-md-first">
+            <p class="text-muted mt-3 text-center text-md-left">
+               {% if search_term or current_categories or current_sorting != 'None_None' %}
+               <span class="small"><a href="{% url 'products' %}" class="purple-text">Products Home</a> | </span>
+               {% endif %}
+               <!--Count the products, and display to the user the search keyword if there is one-->
+               {{ products|length }} Jewellery {% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+            </p>
+         </div>
+      </div>
+      <div class="row">
+         <div class="product-container col-10 offset-1">
+            <div class="row mt-1 mb-2"></div>
+            <div class="row">
+               <!--Render products with product images -->
+               {% for product in products %}
+               <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 purple-text">
+                  <div class="card h-100 border-0">
+                     <a href="{% url 'detail_product' product.id %}">
+                     <img class="card-img-top img-fluid product-img " src="{{ product.image1.url }}" alt="{{ product.name }}">
+                     </a>
+                     <div class="card-body pb-0">
+                        <a href="{% url 'detail_product' product.id %}" class="purple-text">
+                           <p class="mb-0" href="{% url 'detail_product' product.id %}">{{ product.name }}</p>
+                        </a>
+                     </div>
+                     <div class="card-footer bg-white pt-0 border-0 text-left">
+                        <div class="row">
+                           <div class="col">
+                              <p class="lead mb-0 text-left font-weight-bold">‎€{{ product.price }}</p>
+                              {% if product.category %}
+                              <p class="small mt-1 mb-0">
+                                 <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                                 <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                                 </a>
+                              </p>
+                              {% endif %}
+                           </div>
+                        </div>
                      </div>
                   </div>
-               </form>
+               </div>
+               <!--Django Jinja template to make the list of products
+                  look good on smaller and larger screens too
+                  Extra small screens - one product in a row-->
+               {% if forloop.counter|divisibleby:1 %}
+               <div class="col-12 d-sm-none mb-5">
+                  <hr>
+               </div>
+               {% endif %}      
+               <!--With two products it will render this Boostrap column
+                  Not rendering on larger screens-->                  
+               {% if forloop.counter|divisibleby:2 %}
+               <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                  <hr>
+               </div>
+               {% endif %}
+               <!--On larger screens there will be three products in a column-->
+               {% if forloop.counter|divisibleby:3 %}
+               <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                  <hr>
+               </div>
+               {% endif %}
+               <!--On extra large screens will be four products-->
+               {% if forloop.counter|divisibleby:4 %}
+               <div class="col-12 d-none d-xl-block mb-5">
+                  <hr>
+               </div>
+               {% endif %}
+               {% endfor %}
             </div>
-        </div>
-        <!--Badges with the name of the category-->
-        <div class="row">
-            <div class="col text-center mt-3">
-                <h2 class="logo-font purple-text">Products</h2>
-            </div>
-        </div>
-        
-                {% for c in current_categories %}
-                    <a class="text-decoration-none bagdes mr-5" href="{% url 'products' %}?category={{ c.name }}">
-                        <span class="mt-2 badge-white">{{ c.friendly_name }}</span>
-                    </a>
-                {% endfor %}
-                <hr class="w-50 mb-1">
-          
-        <!--Sorting function filtering products by price, and name, both ascending and descending-->
-        <div class="row">
-            <div class="product-container col-10 offset-1">
-                <div class="row mt-1 mb-2">
-                    <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
-                        <div class="sort-select-wrapper w-50">
-                            <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
-                                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-                                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
-                                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
-                                <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
-                                <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 order-md-first">
-                        <p class="text-muted mt-3 text-center text-md-left">
-                            {% if search_term or current_categories or current_sorting != 'None_None' %}
-                                <span class="small"><a href="{% url 'products' %}" class="purple-text">Products Home</a> | </span>
-                            {% endif %}
-                            <!--Count the products, and display to the user the search keyword if there is one-->
-                            {{ products|length }} Jewellery {% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
-                        </p>
-                    </div>
-                </div>
-        <div class="row">
-            <div class="product-container col-10 offset-1">
-                <div class="row mt-1 mb-2"></div>
-                <div class="row">
-                <!--Render products with product images -->
-                    {% for product in products %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 purple-text">
-                            <div class="card h-100 border-0">
-                                <a href="{% url 'detail_product' product.id %}">
-                                    <img class="card-img-top img-fluid product-img " src="{{ product.image1.url }}" alt="{{ product.name }}">
-                                </a>
-                               
-                                <div class="card-body pb-0">
-                                    <a href="{% url 'detail_product' product.id %}" class="purple-text">
-                                    <p class="mb-0" href="{% url 'detail_product' product.id %}">{{ product.name }}</p>
-                                    </a>
-                                </div>
-                                <div class="card-footer bg-white pt-0 border-0 text-left">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">‎€{{ product.price }}</p>
-                                         {% if product.category %}
-                                            <p class="small mt-1 mb-0">
-                                                <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
-                                                    <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
-                                                </a>
-                                            </p>
-                                            {% endif %}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <!--Django Jinja template to make the list of products
-                     look good on smaller and larger screens too
-                     Extra small screens - one product in a row-->
-                   
-                        {% if forloop.counter|divisibleby:1 %}
-                            <div class="col-12 d-sm-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}      
-                         <!--With two products it will render this Boostrap column
-                         Not rendering on larger screens-->                  
-                        {% if forloop.counter|divisibleby:2 %}
-                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        <!--On larger screens there will be three products in a column-->
-                        {% if forloop.counter|divisibleby:3 %}
-                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        <!--On extra large screens will be four products-->
-                        {% if forloop.counter|divisibleby:4 %}
-                            <div class="col-12 d-none d-xl-block mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                    
-                </div>
-            </div>
-        </div>
-    </div>
+         </div>
+      </div>
+   </div>
 </div>
 <!--Pagination with Font Awesome Icons-->
-    <div class="row">
-            <div class="col offset-5 mt-3">
-                <div class="pagination mx-auto">
-                    {% if products.has_previous %}
-                    <a class="pagination-action" href="?page=1">
-                    <i class="fas fa-angle-double-left"></i>
-                    </a>
-                    <a class="pagination-action" href="?page={{products.previous_page_number}}">
-                    <i class="fas fa-angle-left"></i>
-                    </a>
-                    {% endif %}
-                    {% for num in products.paginator.page_range %}
-                        
-                    <span class="number">{{ num }} </span>
-
-                    {% endfor %}
-
-                    {% if products.has_next %}
-                    <a class="pagination-action" href="?page={{products.next_page_number}}">
-                    <i class="fas fa-angle-right"></i>
-                    </a>
-                    <a class="pagination-action" href="?page={{products.paginator.num_pages}}">
-                    <i class="fas fa-angle-double-right"></i>
-                    </a>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-        <!--Send the user back to the top of the page-->
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<div class="row">
+   <div class="col offset-5 mt-3">
+      <div class="pagination mx-auto">
+         {% if products.has_previous %}
+         <a class="pagination-action" href="?page=1">
+         <i class="fas fa-angle-double-left"></i>
+         </a>
+         <a class="pagination-action" href="?page={{products.previous_page_number}}">
+         <i class="fas fa-angle-left"></i>
+         </a>
+         {% endif %}
+         {% for num in products.paginator.page_range %}
+         <span class="number">{{ num }} </span>
+         {% endfor %}
+         {% if products.has_next %}
+         <a class="pagination-action" href="?page={{products.next_page_number}}">
+         <i class="fas fa-angle-right"></i>
+         </a>
+         <a class="pagination-action" href="?page={{products.paginator.num_pages}}">
+         <i class="fas fa-angle-double-right"></i>
+         </a>
+         {% endif %}
+      </div>
+   </div>
+</div>
+<!--Send the user back to the top of the page-->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 {% endblock %}
-
 {% block postloadjs %}
-    {{ block.super }}
-        
+{{ block.super }}
 <script type="text/javascript">
-//Store the button
-    var mybutton = document.getElementById("myBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {scrollFunction()};
-
-    function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-    } else {
-        mybutton.style.display = "none";
-    }
-    }
-
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-    }
-
-
-    $('#sort-selector').change(function() {
-            var selector = $(this);
-            var currentUrl = new URL(window.location);
-//Sort and direction variables to store the value and the direction of it (ascending or descending)
-            var selectedVal = selector.val();
-            if(selectedVal != "reset"){
-                var sort = selectedVal.split("_")[0];
-                var direction = selectedVal.split("_")[1];
-
-                currentUrl.searchParams.set("sort", sort);
-                currentUrl.searchParams.set("direction", direction);
-//Replace the location with the updated url, reload the page and resort the products
-                window.location.replace(currentUrl);
-//If the user wants to reset the sorting method, we deleted the sort and the direction and reload the page
-            } else {
-                currentUrl.searchParams.delete("sort");
-                currentUrl.searchParams.delete("direction");
-
-                window.location.replace(currentUrl);
-            }
-        })
+   //Store the button
+       var mybutton = document.getElementById("myBtn");
+   
+   // When the user scrolls down 20px from the top of the document, show the button
+       window.onscroll = function() {scrollFunction()};
+   
+       function scrollFunction() {
+       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+           mybutton.style.display = "block";
+       } else {
+           mybutton.style.display = "none";
+       }
+       }
+   
+       // When the user clicks on the button, scroll to the top of the document
+       function topFunction() {
+       document.body.scrollTop = 0;
+       document.documentElement.scrollTop = 0;
+       }
+   
+   
+       $('#sort-selector').change(function() {
+               var selector = $(this);
+               var currentUrl = new URL(window.location);
+   //Sort and direction variables to store the value and the direction of it (ascending or descending)
+               var selectedVal = selector.val();
+               if(selectedVal != "reset"){
+                   var sort = selectedVal.split("_")[0];
+                   var direction = selectedVal.split("_")[1];
+   
+                   currentUrl.searchParams.set("sort", sort);
+                   currentUrl.searchParams.set("direction", direction);
+   //Replace the location with the updated url, reload the page and resort the products
+                   window.location.replace(currentUrl);
+   //If the user wants to reset the sorting method, we deleted the sort and the direction and reload the page
+               } else {
+                   currentUrl.searchParams.delete("sort");
+                   currentUrl.searchParams.delete("direction");
+   
+                   window.location.replace(currentUrl);
+               }
+           })
 </script>
-
 {% endblock %}

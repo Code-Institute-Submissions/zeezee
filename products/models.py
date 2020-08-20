@@ -5,12 +5,13 @@ from django.db import models
 
 
 class Category(models.Model):
-    ''''Categories with a name and a friendly name for frontend
-     Both of them have max lenght,
-     the friendly name it's not required (because blank=True)
-     Metaclass provided to fix the spelling,
-     declare that the plural version of Category is not Categorys
-     '''
+    '''
+    Categories with a name and a friendly name for frontend
+    Both of them have max lenght,
+    the friendly name it's not required (because blank=True)
+    Metaclass provided to fix the spelling,
+    declare that the plural version of Category is not Categorys
+    '''
 
     class Meta:
         verbose_name_plural = 'Categories'
@@ -25,7 +26,8 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    '''Product model with key elements
+    '''
+    Product model with key elements
     Category, sku, image url and image fields are optional
     '''
     category = models.ForeignKey('Category', null=True, blank=False, on_delete=models.SET_NULL)

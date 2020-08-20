@@ -1,38 +1,36 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
+<div class="container header-container">
+   <div class="row">
+      <div class="col"></div>
+   </div>
+</div>
 {% endblock %}
 <title> {% block title %} Edit {{product.name}} {% endblock %} </title>
 {% block content %}
 <!--Render existing infos about a product for the superuser to edit then update it-->
-    <div class="overlay"></div>
-    <div class="container purple-text">
-        <div class="row">
-            <div class="col-12 col-md-12">
-                <hr>
-                <h2 class="purple-text mb-4">Product Management</h2>
-                <h5 class="purple-text">Edit {{product.name}} </h5>
-                <hr>
+<div class="overlay"></div>
+<div class="container purple-text">
+   <div class="row">
+      <div class="col-12 col-md-12">
+         <hr>
+         <h2 class="purple-text mb-4">Product Management</h2>
+         <h5 class="purple-text">Edit {{product.name}} </h5>
+         <hr>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-12 col-md-12 purple-text">
+         <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form | crispy }}
+            <div class="text-right">
+               <a class="btn purple_button rounded-0" href="{% url 'products' %}">Cancel</a>
+               <button class="btn purple_button rounded-0" type="submit">Update</button>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12 col-md-12 purple-text">
-                <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {{ form | crispy }}
-                    <div class="text-right">
-                        <a class="btn purple_button rounded-0" href="{% url 'products' %}">Cancel</a>
-                        <button class="btn purple_button rounded-0" type="submit">Update</button>
-                    </div>
-                </form>
-            </div>            
-        </div>
-    </div>
+         </form>
+      </div>
+   </div>
+</div>
 {% endblock %}

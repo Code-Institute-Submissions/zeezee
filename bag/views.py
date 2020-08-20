@@ -38,7 +38,8 @@ def remove_from_cart(request, item_id):
 
     '''
     Remove item from the cart, reload the bag content
-    if there is not product left in the contect, the user can go back to all_products
+    if there is not product left in the contect,
+    the user can go back to all_products
     '''
     product = Product.objects.get(pk=item_id)
     bag = request.session.get('bag')
