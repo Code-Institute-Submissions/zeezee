@@ -15,7 +15,7 @@
 {% block content %}
 
     <div class="overlay"></div>
-    <!--Search bar form  with products url, returning the products view-->
+    <!--Search bar form with products url, returning the products view-->
     <div class="row">
             <div class="col-12 col-lg-5 mx-auto mt-2">
                <form method="GET" action="{% url 'products' %}">
@@ -75,8 +75,7 @@
             <div class="product-container col-10 offset-1">
                 <div class="row mt-1 mb-2"></div>
                 <div class="row">
-                <!--Render products, if there an image attached, load that, if there is no picture,
-                load the noimage error picture-->
+                <!--Render products with product images -->
                     {% for product in products %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 purple-text">
                             <div class="card h-100 border-0">
@@ -140,6 +139,7 @@
         </div>
     </div>
 </div>
+<!--Pagination with Font Awesome Icons-->
     <div class="row">
             <div class="col offset-5 mt-3">
                 <div class="pagination mx-auto">

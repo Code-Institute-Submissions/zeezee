@@ -1,7 +1,7 @@
 from django.test import TestCase
 from .views import index
 
-# Create your tests here.
+# Test if the homepage is rendered correctly using the template
 
 class TestHomeViews(TestCase):
 

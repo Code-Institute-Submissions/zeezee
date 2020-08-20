@@ -9,18 +9,9 @@ from django_countries.fields import CountryField
 from profiles.models import UserProfile
 
 
-
-'''
-Ask the shopper to adjust shipping information,
-generate a unique order number,
-update and save the information, then render the shopping bag
-'''
-
-
 class Order(models.Model):
     '''
     Create form for order
-    Postcode and county is not compulsory
     '''
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
@@ -52,8 +43,8 @@ class Order(models.Model):
 
     def update_total(self):
         """
-       Update total and delivery cost every time
-       when a new line is added
+        Update total and delivery cost every time
+        when a new line is added
         """
         self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
         if self.order_total < settings.FREE_DELIVERY_THRESHOLD:

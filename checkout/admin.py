@@ -13,6 +13,7 @@ class OrderLineItemAdminInline(admin.TabularInline):
 class OrderAdmin(admin.ModelAdmin):
     '''
     Order admin interface with readonly and editable fields
+    Set the direction of the load sorted by date
     '''
     inlines = (OrderLineItemAdminInline,)
 

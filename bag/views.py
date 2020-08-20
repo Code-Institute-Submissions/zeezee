@@ -6,14 +6,17 @@ from products.models import Product
 
 
 def view_bag(request):
-    '''View to render the bag itself'''
+    '''View to render the bag itself using a html template'''
    
     return render(request, 'bag/bag.html')
 
 
 def add_to_cart(request, item_id):
 
-    '''Add item to the cart, display a success message'''
+    '''
+    Add item to the cart, display a success message
+    Overwrite the variable with the new version of the bag
+    '''
     product = Product.objects.get(pk=item_id)
 
     quantity = int(request.POST.get('quantity'))
@@ -27,17 +30,20 @@ def add_to_cart(request, item_id):
         messages.success(request, f'Added {product.name} to your bag')
 
     request.session['bag'] = bag
-    '''Overwrite the variable with the new version of the bag'''
+
     return redirect(redirect_url)
 
 
 def remove_from_cart(request, item_id):
 
-    '''Remove item from the cart'''
+    '''
+    Remove item from the cart, reload the bag content
+    if there is not product left in the contect, the user can go back to all_products
+    '''
     product = Product.objects.get(pk=item_id)
     bag = request.session.get('bag')
     bag.pop(item_id)
-    messages.success(request, f'Removed {product.name} from your bag')
+    messages.success(request, f'{product.name} removed from cart')
     request.session['bag'] = bag
     return HttpResponse(status=200)
     

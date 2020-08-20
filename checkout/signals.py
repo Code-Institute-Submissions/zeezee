@@ -9,7 +9,7 @@ def update_on_save(sender, instance, created, **kwargs):
     """
     Handle signals, and update the order on save
     Receiver decorator to execute the function itself
-    receivin post_save signals from the sender, in this case
+    receiving post_save signals from the sender, in this case
     the OrderLineItem
     """
     instance.order.update_total()

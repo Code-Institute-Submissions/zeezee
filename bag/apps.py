@@ -1,7 +1,7 @@
 from django.apps import AppConfig
 
 
-# Bag default config
+# Bag default configuration
 
 class BagConfig(AppConfig):
     name = 'bag'

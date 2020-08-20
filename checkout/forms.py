@@ -3,6 +3,9 @@ from .models import Order
 
 
 class OrderForm(forms.ModelForm):
+    '''
+    Basic order fields
+    '''
     class Meta:
         model = Order
         fields = ('full_name', 'email', 'phone_number',
@@ -13,7 +16,8 @@ class OrderForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         """
         Set the form as default with init method
-        Set focus on the full name field when the page is loaded
+        Set focus on the full name field when,
+        so when the page is loaded the cursor will start with this field
         Handle required fields, adding a start to them
         Set the placeholder attributes
         """

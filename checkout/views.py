@@ -39,6 +39,11 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+    '''
+    Form for proceeding checkout
+    Let the user to save the order info to their profile
+
+    '''
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -84,13 +89,13 @@ def checkout(request):
                             order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your bag wasn't found in our store. "
+                        "A product in your cart isn't available unfortunately. "
                         "Please contact us by contact form!")
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
 
-            # Save the info to the user's profile if all is well
+            
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
@@ -111,7 +116,9 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        # Attempt to prefill the form with any info the user maintains in their profile
+        '''
+        Prefill the logged in user's form with the saved infos from their profile
+        ''' 
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
@@ -139,25 +146,23 @@ def checkout(request):
     }
 
     return render(request, template, context)
-    
-
-    
 
 
 def checkout_success(request, order_number):
     """
     Handle successful checkouts
+    If the user is logged in, attach the profile to the order
+    Save the infos to the profile
+    If there is no error and the order was placed successfuly,
+    redirect the user to the success page
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
-        # Attach the user's profile to the order
         order.user_profile = profile
         order.save()
-        
-        # Save the user's info
         if save_info:
             profile_data = {
                 'default_phone_number': order.phone_number,

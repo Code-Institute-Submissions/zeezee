@@ -8,17 +8,15 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
-
-# Create your views here.
-
-
 def all_products(request):
     '''
-     A view to show all products, including sorting and search queries
+    A view to show all products, including sorting and search queries
     Filter all the category who's name is in the list'
     If the query is empty,
     so the user haven't entered any search term,
     they get an error message
+    Pagination with django paginator loading
+    8 product/page to improve user experience
     '''
     query = None
     categories = None
@@ -72,7 +70,9 @@ def all_products(request):
 
 
 def detail_product(request, product_id):
-    '''Detailed product view'''
+    '''
+    Detailed product view
+    '''
     product = get_object_or_404(Product, pk=product_id)
 
     context = {
@@ -81,15 +81,15 @@ def detail_product(request, product_id):
 
     return render(request, 'products/detail_product.html', context)
 
-'''
-Login_required decorator added to avoid people
-deleting, editing or adding products with hardtyping the urls
-'''
 @login_required
 def edit_product(request, product_id):
-    """ Edit a product in the store """
+    '''
+    Login_required decorator added to avoid people
+    deleting, editing or adding products with hardtyping the urls
+    View for editing products, only allowed for superusers
+    '''
     if not request.user.is_superuser:
-        messages.error(request, "Sorry, you don't have acces to this page.")
+        messages.error(request, "Sorry, you don't have access to this page.")
         return redirect(reverse('home'))
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
@@ -110,12 +110,12 @@ def edit_product(request, product_id):
 
 @login_required
 def add_new_product(request):
-    """
+    '''
     Allow the superusers 
     to add a new product with admin
     Render the add_new_product template 
     and the form    
-    """
+    '''
     if not request.user.is_superuser:
         messages.error(request, "Sorry, you don't have access to this page.")
         return redirect(reverse('home'))
@@ -126,7 +126,7 @@ def add_new_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('add_new_product'))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(request, 'Please make sure your form is valid.')
     else:
         form = ProductForm()
     template = 'products/add_new_product.html'
@@ -138,6 +138,10 @@ def add_new_product(request):
 
 @login_required
 def delete_product(request, product_id):
+    '''
+    Delete products
+    Only superusers have access to this
+    '''
     if not request.user.is_superuser:
         messages.error(request, "Sorry, you don't have acces to this page.")
         return redirect(reverse('home'))

@@ -54,6 +54,7 @@
                     data-width="450"
                      data-show-faces="true">
             </div>
+            <!--Edit and delete product options for superusers-->
              {% if request.user.is_superuser %}
                         <small class="ml-3">
                             <a href="{% url 'edit_product' product.id %}" class="text-muted">Edit </a> | 
@@ -73,7 +74,7 @@
                         </div>
                      </div>
                   </div>
-                  <!--Back to shopping or add to bag links-->
+                  <!--Back to all products or add to bag links-->
                   <div class="col-md-6">
                      <a href="{% url 'products' %}" class="btn purple_button mt-5">
                      <span class="purple_button">

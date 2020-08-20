@@ -1,8 +1,12 @@
 from django.test import TestCase
 from .views import view_bag, add_to_cart, remove_from_cart
 
-# Create your tests here.
+
 class TestProductViews(TestCase):
+    '''
+    Basic tests to make sure that bag, 
+    add item and remove from bag views work as expected
+    '''
 
     def test_view_bag_view(self):
         response = self.client.get('/')

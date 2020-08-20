@@ -2,23 +2,25 @@ from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
-
 from .models import Order, OrderLineItem
 from products.models import Product
 from profiles.models import UserProfile
-
 import json
 import time
 
 
 class StripeWH_Handler:
-    """Handle Stripe webhooks"""
+    '''
+    Handle Stripe webhooks
+    '''
 
     def __init__(self, request):
         self.request = request
     
     def _send_confirmation_email(self, order):
-        """Send the user a confirmation email"""
+        '''
+        Send the user a confirmation email by using Django sendmail()
+        '''
         cust_email = order.email
         {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL}
         send_mail(
@@ -39,6 +41,7 @@ class StripeWH_Handler:
     def handle_payment_intent_succeeded(self, event):
         """
         Handle the payment_intent.succeeded webhook from Stripe
+        Clean the data and update the profile information if save boolean it's checked
         """
         intent = event.data.object
         pid = intent.id
@@ -49,11 +52,10 @@ class StripeWH_Handler:
         shipping_details = intent.shipping
         grand_total = round(intent.charges.data[0].amount / 100, 2)
 
-        # Clean data in the shipping details
+       
         for field, value in shipping_details.address.items():
             if value == "":
                 shipping_details.address[field] = None
-        # Update profile information if save_info was checked
         profile = None
         username = intent.metadata.username
         if username != 'AnonymousUser':

@@ -9,7 +9,9 @@ def bag_contents(request):
     total = 0
     product_count = 0
     bag = request.session.get('bag', {})
-    '''Get the content of the bag,  append to the new bag dictionary'''
+    '''
+    Get the content of the bag,  append to the new bag dictionary
+    '''
 
     for item_id, quantity in bag.items():
         product = get_object_or_404(Product, pk=item_id)
@@ -21,8 +23,10 @@ def bag_contents(request):
             'product': product,
             'price': product.price,
         })
-    ''' If the order costs less then the free deliver threshold,
-    add 8 percentage of delivery cost, otherwise the delivery cost is 0'''
+    '''
+    If the order costs less then the free deliver threshold,
+    add 8 percentage of delivery cost, otherwise the delivery cost is 0
+    '''
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
         '''Display how much more should the user spend to get delivery for free''' 
