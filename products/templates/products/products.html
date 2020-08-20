@@ -40,8 +40,8 @@
         </div>
         
                 {% for c in current_categories %}
-                    <a class="text-decoration-none bagdes" href="{% url 'products' %}?category={{ c.name }}">
-                        <span class="p-2 mt-2 badge badge-white text-black rounded-0 border">{{ c.friendly_name }}</span>
+                    <a class="text-decoration-none bagdes mr-5" href="{% url 'products' %}?category={{ c.name }}">
+                        <span class="mt-2 badge-white">{{ c.friendly_name }}</span>
                     </a>
                 {% endfor %}
                 <hr class="w-50 mb-1">

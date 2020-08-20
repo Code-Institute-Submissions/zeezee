@@ -168,7 +168,7 @@ code to make the icons appears in the center */
 	background: #6A0848;
 	color: white;
 	padding: 0.5rem;
-    margin-left:50%;
+    margin-left:47%;
 }
 
 a:hover {
@@ -281,9 +281,10 @@ form {
 
 
 @media screen and (max-width: 400px) {
-  body{
 
-  }
+    .bagdes{
+        margin-left:41%;
+    }
 
 
 }
