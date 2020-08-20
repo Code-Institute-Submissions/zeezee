@@ -68,8 +68,6 @@ def all_products(request):
         'paginator': paginator,
     }
 
-    
-
     return render(request, 'products/products.html', context)
 
 
@@ -119,7 +117,7 @@ def add_new_product(request):
     and the form    
     """
     if not request.user.is_superuser:
-        messages.error(request, "Sorry, you don't have acces to this page.")
+        messages.error(request, "Sorry, you don't have access to this page.")
         return redirect(reverse('home'))
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
