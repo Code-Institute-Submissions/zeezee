@@ -88,6 +88,8 @@ The implementation ended up slightly different.
 
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript);
 
+- [Django](https://www.djangoproject.com/);
+
 - [Jquery](https://jquery.com/);
 
 - [Materialize](https://materializecss.com/);
@@ -122,9 +124,24 @@ The implementation ended up slightly different.
 
 - [Jinja](https://jinja.palletsprojects.com/en/2.10.x/);
 
-- [PyMongo](https://pymongo.readthedocs.io/en/stable/)
+- [PyMongo](https://pymongo.readthedocs.io/en/stable/);
 
-- [PEP8](http://pep8online.com/)
+- [PEP8](http://pep8online.com/);
+
+- [Bootstrap](https://getbootstrap.com/);
+
+- [FontAwesome](https://fontawesome.com/);
+
+- [Stripe](http://stripe.com/);
+
+- [MailChimp](https://mailchimp.com/);
+
+- [SqLite](https://www.sqlite.org/index.html);
+
+- [AWS Amazon](https://aws.amazon.com/);
+
+
+
 
 ## Credits
 
