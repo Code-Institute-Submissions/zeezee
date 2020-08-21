@@ -66,6 +66,44 @@ The implementation ended up slightly different.
 
 ## Testing
 
+The site compatibility was checked with devtools, the AmIresponsive site, Responsive Viewer Chrome extension and also tested by friends from different devices and browsers.
+
+The site is responsive when you are browsing with:
+    - [x] Google Chrome.
+    - [x] Mozilla Firefox.
+    - [x] Opera.  
+Tested devices:
+
+- [x] laptop, laptop with touch (width 1440px);
+
+- [x] Moto G4;
+
+- [x] Galaxy S5;
+
+- [x] Pixel2, Pixel 2XL;
+
+- [x] Iphone 5/SE, Iphone 6/7/8;
+
+- [x] Iphone 6/7/8 Plus, IphoneX;
+
+- [x] Ipad and Ipad Pro;
+
+- [x] Xiaomi Redmi 4A.
+
+- [x] Xiaomi Redmi Note5.
+
+All of the codes are validated and beatufied.
+
+- [HTMLValidation](https://validator.w3.org/):
+  - Unfortunatelly the HTML validator doesn't understand the Jinja templating syntax, so I got a bunch of errors because of this.
+    No other error found.
+- [CSSValidation](https://jigsaw.w3.org/css-validator/):
+  - No error found, valid.
+- [JavaScript Validation](https://esprima.org/demo/validate.html):
+  - No error found, code is syntactically valid.
+- [PythonCodeChecker](https://extendsclass.com/python-tester.html):
+  - No syntax errors detected. Couple of errors saying that the line is too long, but in Django project Chris advised to avoid those if doesn't effect the code itself.
+  
 
 ## Deployment
 
@@ -147,16 +185,26 @@ The implementation ended up slightly different.
 
 ### Content
 
+Product names, descriptions and introduction text was written by jewelry maker, Bekő-Fóri Zenkő.
 
 ### Media
 
+All pictures are owned by Bekő-Fóri Zenkő. 
 
 ### Code
 
-
+- I learned a lot from the Code Institute Full Stack Frameworks Boutique Ado Project, I used that as a shell of my project.
+- Threads from [Stackoverflow](https://stackoverflow.com/) about how to fix diverse bugs.
+- The base of the code for back to top button [W3Schools](https://www.w3schools.com/).
+- The base of the code for main functionalites are from [Django Official Documentation](https://docs.djangoproject.com/en/3.1/).
 
 ## Acknowledgements
 
+Special thanks to:
+
+- Code Institute Tutor Team, they helped a lot during this project.
+- My mentor, [Aaron Sinnott](https://github.com/aaronsnig501) for his advices.
+- Everybody who did take time to test this page, and gave me feedback.
 This site is for educational use.
 
 Krisztina Szabó
