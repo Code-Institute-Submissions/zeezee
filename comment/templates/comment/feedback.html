@@ -1,3 +1,8 @@
+{% extends "base.html" %}
+{% load static %}
+<title> {% block title %}Guestbook{% endblock %} </title>
+{% block content %}
+<div class="container-fluid contact purple-text">
 {% with comments.count as total_comments %}
   <h2>
     {{ total_comments }} comment{{ total_comments|pluralize }}
@@ -21,6 +26,8 @@
   <form action="." method="post">
     {{ comment_form.as_p }}
     {% csrf_token %}
-    <p><input type="submit" value="Add feedback"></p>
+    <p><input type="submit" class="purple_button" value="Add feedback"></p>
   </form>
 {% endif %}
+</div>
+{% endblock %}
