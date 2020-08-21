@@ -19,3 +19,12 @@ def comment(request):
                   {'comments': comments,
                    'new_comment': new_comment,
                    'comment_form': comment_form})
+
+def comment_list(request, comment_id):
+    comment = get_object_or_404(Comment, pk=comment_id)
+
+    context = {
+        'comment': comment,
+    }
+
+    return render(request, 'feedback/feedback.html', context)
