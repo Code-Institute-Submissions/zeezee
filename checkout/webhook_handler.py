@@ -16,7 +16,7 @@ class StripeWH_Handler:
 
     def __init__(self, request):
         self.request = request
-    
+
     def _send_confirmation_email(self, order):
         '''
         Send the user a confirmation email by using Django sendmail()
@@ -41,7 +41,8 @@ class StripeWH_Handler:
     def handle_payment_intent_succeeded(self, event):
         """
         Handle the payment_intent.succeeded webhook from Stripe
-        Clean the data and update the profile information if save boolean it's checked
+        Clean the data and update the profile information
+        if save boolean it's checked
         """
         intent = event.data.object
         pid = intent.id
@@ -52,7 +53,6 @@ class StripeWH_Handler:
         shipping_details = intent.shipping
         grand_total = round(intent.charges.data[0].amount / 100, 2)
 
-       
         for field, value in shipping_details.address.items():
             if value == "":
                 shipping_details.address[field] = None
@@ -139,7 +139,7 @@ class StripeWH_Handler:
                 return HttpResponse(
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
-        self._send_confirmation_email(order)      
+        self._send_confirmation_email(order)
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
             status=200)

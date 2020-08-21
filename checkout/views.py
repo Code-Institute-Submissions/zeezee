@@ -95,7 +95,6 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('view_bag'))
 
-            
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
@@ -117,8 +116,9 @@ def checkout(request):
         )
 
         '''
-        Prefill the logged in user's form with the saved infos from their profile
-        ''' 
+        Prefill the logged in user's form 
+        with the saved infos from their profile
+        '''
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)

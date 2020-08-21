@@ -3,6 +3,7 @@ from .views import index
 
 # Test if the homepage is rendered correctly using the template
 
+
 class TestHomeViews(TestCase):
 
     def test_home_page(self):

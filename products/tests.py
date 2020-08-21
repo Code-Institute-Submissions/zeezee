@@ -2,7 +2,6 @@ from django.test import TestCase
 from .views import all_products, edit_product, add_new_product, delete_product, detail_product
 
 
-
 class TestProductViews(TestCase):
 
     def test_all_product_view(self):

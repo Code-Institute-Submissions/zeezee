@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import messages
 from products.models import Product
 
@@ -6,8 +6,10 @@ from products.models import Product
 
 
 def view_bag(request):
-    '''View to render the bag itself using a html template'''
-   
+    '''
+    View to render the bag itself using a html template
+    '''
+
     return render(request, 'bag/bag.html')
 
 
@@ -47,4 +49,3 @@ def remove_from_cart(request, item_id):
     messages.success(request, f'{product.name} removed from cart')
     request.session['bag'] = bag
     return HttpResponse(status=200)
-    
