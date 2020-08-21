@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.shortcuts import render, redirect
 
 
 # Create your models here.
@@ -14,8 +15,6 @@ class Comment(models.Model):
     class Meta: 
         ordering = ('created',) 
  
-    def __str__(self): 
-       template = loader.get_template("feedback/feedback.html")
-       return HttpResponse(template.render)
+
 
     
