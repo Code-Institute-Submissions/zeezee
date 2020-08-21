@@ -15,5 +15,3 @@ def success(request, *args, **kwargs):
     return render(request, "pages/success-contact.html", {"page": "success"})
 
 
-
-
