@@ -76,6 +76,56 @@ The implementation ended up slightly different.
 
 ## Technologies Used
 
+- [GitHub](https://github.com/);
+
+- [GitPod](https://gitpod.io/);
+
+- [Heroku](https://dashboard.heroku.com/);
+
+- [HTML](https://en.wikipedia.org/wiki/HTML5);
+
+- [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript);
+
+- [Jquery](https://jquery.com/);
+
+- [Materialize](https://materializecss.com/);
+
+- [Python](https://www.python.org/download/releases/3.0/);
+
+- [EmailJS](https://www.emailjs.com/);
+
+- [MarkDownLit](https://dlaa.me/markdownlint/);
+
+- [Balsamiq](https://balsamiq.com/);
+
+- [HTMLValidator](https://validator.w3.org/);
+
+- [CSSValidator](https://jigsaw.w3.org/css-validator/)
+
+- [JavaScriptValidator](https://esprima.org/demo/validate.html);
+
+- [HTMLFormatter](https://htmlformatter.com/);
+
+- [CSSBeautifier](https://www.freeformatter.com/css-beautifier.html);
+
+- [JSHint](https://jshint.com/);
+
+- [PythonCodeChecker](https://extendsclass.com/python-tester.html);
+
+- [Favicon](https://www.favicon-generator.org/);
+
+- [GoogleFonts](https://fonts.google.com/);
+
+- [AmIResponsive](http://ami.responsivedesign.is/);
+
+- [Jinja](https://jinja.palletsprojects.com/en/2.10.x/);
+
+- [PyMongo](https://pymongo.readthedocs.io/en/stable/)
+
+- [PEP8](http://pep8online.com/)
+
 ## Credits
 
 ### Content
