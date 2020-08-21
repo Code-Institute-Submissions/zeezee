@@ -3,17 +3,19 @@ from django.utils import timezone
 
 
 # Create your models here.
-class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
-    user = models.CharField(max_length=200)
-    email = models.EmailField()
-    text = models.TextField()
-    created_date = models.DateTimeField(default=timezone.now)
-    approved_comment = models.BooleanField(default=False)
+class Comment(models.Model): 
+    name = models.CharField(max_length=80) 
+    email = models.EmailField() 
+    body = models.TextField() 
+    created = models.DateTimeField(auto_now_add=True) 
+    updated = models.DateTimeField(auto_now=True) 
+    active = models.BooleanField(default=True) 
+ 
+    class Meta: 
+        ordering = ('created',) 
+ 
+    def __str__(self): 
+       template = loader.get_template("feedback/feedback.html")
+       return HttpResponse(template.render)
 
-    def approved(self):
-        self.approved_comment = True
-        self.save()
-
-    def __str__(self):
-        return self.user
+    
