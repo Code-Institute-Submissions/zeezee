@@ -136,7 +136,7 @@ The implementation ended up slightly different.
 #### Sign up, Sign in, login
 
 - The shopper can easily sign up, sign in and reach their profile with the shipping and order information.
-- I built the autentication system using Django Allauth.
+- I built the authentication system using Django Allauth.
 
 ### Features Left to Implement
 
@@ -152,20 +152,62 @@ Basic testing files to check if the page is correctly loading are in ``` test.py
 
 ### Homepage
 
-- On the Homepage you can see a navbar which is consistent on each pages. It contains a menu and a User Menu with autentication and shopping bag.
+- On the Homepage you can see a navbar which is consistent on each pages. It contains a menu and a User Menu with authentication and shopping bag.
 The navbar is collapsable on mobile devices. 
+- Under the navbar there is a responsive hero image. 
+- On the Homepage you can find a small introduction textbox to tell the user a little bit about the scope of the page.
+Inside that field there is a MailChimp form, where the user can find the Facebook page of ZeeZee Bijoux. 
+The form loads in a new tab.
+- To show user some products on the Homepage, I choosed to use cards. Each card leads the user to a category. I used overlay on cards, so when the user ```hover```, they can see which category belongs to that card.
+- The footer is an other returning component on the page. 
+The footer contains two FontAwesome icons leading to the Instagram and Facebook page of the artist, and the developers name leading to the GitHub page of mine.
+All links are working, they load in new tab.
 
 ### Products Page
 
+- When the user want to see Products, they can choose between browsing by categories or loading all products.
+- If the user choose to load product categories, they can see a badge telling which category is loaded.
+- I used count() to let the user know how many product they can find in that page.
+- I built Django Pagination to split the page and make it easier to navigate on.
+- There is a searcbar to let the shopper search for categories, components, materials they are interested in.
+- Besides sorting by categories, there is a SortBy function loading the products sorting them by the price or the name.
+- On Detailed Product Page there is a Bootstrap carousel to show the product images.
+- Product details are visible for anyone, Edit and Delete buttons are available only for SuperUsers.
+Edit and delete functions works without problem.
+- The quantity is set to one, because each product is unique.
+- When the user add a product to their bag, a Bootstrap toas pops up to display a success message.
+These bootstrap messages appear after every operation. I used toast to display success, error, info, and warning.
 
 ### About Page
 
+- The About Page contains a small introduction about the creator of ZeeZee Bijoux, and a responsive image of her.
+
 ### Contact Page
 
+- The Contact Page is built with a form where the user can provide some information and send the message to the developer.
+I used emailJS for this page. After submitting the form, they get redirected to a success page.
+Form is tested, test email successfully received. 
 
 ### Feedback Page
 
+- For the GuestBook I used Django comments to provide a platform where the user can ad reviews, and see other people's feedback about the shop or the products.
+These reviews can be removed from the Django Admin only. Comments are tested. 
 
+### Bag 
+
+- The default status of the bag is empty. When a user adds an item to it, they can see the product details, the bag total, the delivery cost and the grand total.
+If they hit on Secure Checkout, I form appears where the user has to provide some information regarding the delivery and the payment.
+All fields are required. After the checkout, they get redirected to a success page which contains an order summary and a button back to all product page.
+The whole checkout process was tested from different devices. Everything worked well. After the checkout, the admin can see the order in Django Admin and Stripe dashboard as well.
+
+### Authentication
+
+- Authentication is provided by using Django Allauth. The user can sign up by setting a username, a password and a valid email address.
+After clicking on Sign Up, they receive an email with a link to activate the profile. By clicking on the link, the user created a profile, so they can login.
+Signed in users have a profile with delivery information (if they choosed to save it), and an order history with details about the product, and an order status.
+The order status has two mode: Processed and Awaiting, telling the user if their order is already seen by the shop owner.
+The status of the order can be changed in Django Admin.
+- SuperUser can click on Product Managment page where they can add new products. This page is only available for the shop owner.
 
 ### Compatibility
 The site compatibility was checked with devtools, the AmIresponsive site, Responsive Viewer Chrome extension and also tested by friends from different devices and browsers.
