@@ -69,7 +69,15 @@ As a SuperUser (Products Owner) I would like to:
 
 ### Developer Goals
 
+- Provide a nice, easy to usewehsbop where the user can browse, add to bag, order, and checkout.
+- Learn Django framework, and try to use as much as I can from things I learnt during the course.
+- Get an insight into Amazon AWS and Stripe Payment's platform.
+
 ### Design
+
+To make an integrated design for this site, I used Bootstrap, and FontAwesome.
+The best-used components are cards. I choosed cards for products, categoriesure because I think cards helps me to organize the information in a user-friendly way.
+For providing feedback, editing and adding products or shipping informations I used forms.
 
 #### Color Scheme
 
@@ -78,8 +86,9 @@ To find out, what colors would match with the bijouxs's feeling and style, I use
 
 Colors I used:
 
-- ![#6A0848](https://placehold.it/15/6A0848/000000?text=+) `##6A0848 - purple, primary color`
-- ![#A8A8A8](https://placehold.it/15/A8A8A8/000000?text=+) `#A8A8A8 - grey, secondary color`
+- ![#6A0848](https://placehold.it/15/6A0848/000000?text=+) `#6A0848 - purple, primary color`
+- ![#FFFFFF](https://placehold.it/15/FFFFFF/000000?text=+) `#FFFFFF- white, secondary color`
+- ![#A8A8A8](https://placehold.it/15/A8A8A8/000000?text=+) `#A8A8A8 - grey, text color for small paragraphs, and color for hovers`
 - ![#84d5ff](https://placehold.it/15/84d5ff/000000?text=+) `#84d5ff - light blue (info-blue) for making the login system easier to read and navigate in`
 - ![##FF0000](https://placehold.it/15/#FF0000/000000?text=+) `#FF0000 - red used once at the Delete button`
 
@@ -104,7 +113,38 @@ The implementation ended up slightly different.
 
 ### Existing Features
 
+#### Get all Products, Sort, Filter and Search
+
+- The user can load all of the products or browse products sorting by categories. Filtering is available by Price (low to high or high to low) and by Name (A-Z or Z-A).
+- Product page is splitted using Django Pagination to provide an transparent list of products.
+
+#### Edit, Update and delete Products
+
+- The superuser can easily edit or delete a product using the adequate button on the Product Detail page.
+- They can add products on Product Management Page. To make it easy to upload a collection of products, when the superuser add one product, they get redirected to the Add Product Page instead of All Product Page.
+
+#### Send feedback
+
+- The user can write reviews, send some feedback about the product or the shop itself.
+- The visitor can read these feedbacks so they can have an image about the shop.
+
+#### Get in touch
+
+- The user can send an email using the Contact Form.
+- The contact form is using emailJS.
+
+#### Sign up, Sign in, login
+
+- The shopper can easily sign up, sign in and reach their profile with the shipping and order information.
+- I built the autentication system using Django Allauth.
+
 ### Features Left to Implement
+
+- I would like to build Facebook Login and Sharing-Like system in the future. I was working on it, and on the development side everything was working fine, so I could login with facebook, share a product and like it, 
+but I couldn't find the way to make it work in deployed version. I tried a couple of ways to fix it, but it seems that I have problem with my CallBack URI.
+I haven't sorted it out, but I definitely want to add those features in the future to the deployed version too. 
+
+- To have a unified view, I would like to change all Product Previews to a white background picture about the product. Currently the artist could provide me white background pictures for all products, and I didn't want to mix the natural and studio photos up, so I choosed to use 'natural' pictures as previews.
 
 ## Testing
 
@@ -147,6 +187,13 @@ All of the codes are validated and beatufied.
 - [PythonCodeChecker](https://extendsclass.com/python-tester.html):
   - No syntax errors detected. Couple of errors saying that the line is too long, but in Django project Chris advised to avoid those if doesn't effect the code itself.
 
+### Bugs
+
+- When I added media and static files to AWS S3 bucket, the deployed version couldn't load any of my pictures from homepage, altough my product images were loaded correctly.
+The solution was to change the path to  ```{{ MEDIA_URL }}background_hand.jpg```.
+
+- After I added something to my bage and proceedeed secure checkout, the price of the product turned to 0.00. I saw that payment succeeded in my stripe account, but in Django Admin I couldn't see the order summary properly.
+The problem was caused by an identation error in my ```signals.py ```.
 
 ## Deployment
 
@@ -178,6 +225,8 @@ All of the codes are validated and beatufied.
 - [Python](https://www.python.org/download/releases/3.0/);
 
 - [EmailJS](https://www.emailjs.com/);
+
+- [Gmail](https://mail.google.com/);
 
 - [MarkDownLit](https://dlaa.me/markdownlint/);
 
