@@ -7,6 +7,7 @@
 ZeeZee Bijoux is an e-commerce site, where the shopper can browse for handmade, unique jewellery. This project was built as my final milestone project for the Code Institute Full Stack Web Development diploma.
 The purpose of ZeeZee Bijoux online shop is to provide a nice, intuitive platform for the artist to share her bijoux with potential shoppers, so they can easily buy them, and become a part of ZeeZee Community.
 ![AmIresponsive]( "Responsive Image")
+
 ## Table of Contents
 
 1. [UX](https://github.com/krisztinatxt/zeezee#ux)
@@ -140,9 +141,9 @@ The implementation ended up slightly different.
 
 ### Features Left to Implement
 
-- I would like to build Facebook Login and Sharing-Like system in the future. I was working on it, and on the development side everything was working fine, so I could login with facebook, share a product and like it, 
+- I would like to build Facebook Login and Sharing-Like system in the future. I was working on it, and on the development side everything was working fine, so I could login with facebook, share a product and like it.
 but I couldn't find the way to make it work in deployed version. I tried a couple of ways to fix it, but it seems that I have problem with my CallBack URI.
-I haven't sorted it out, but I definitely want to add those features in the future to the deployed version too. 
+I haven't sorted it out, but I definitely want to add those features in the future to the deployed version too.
 
 - To have a unified view, I would like to change all Product Previews to a white background picture about the product. Currently the artist could provide me white background pictures for all products, and I didn't want to mix the natural and studio photos up, so I choosed to use 'natural' pictures as previews.
 
@@ -153,13 +154,13 @@ Basic testing files to check if the page is correctly loading are in ``` test.py
 ### Homepage
 
 - On the Homepage you can see a navbar which is consistent on each pages. It contains a menu and a User Menu with authentication and shopping bag.
-The navbar is collapsable on mobile devices. 
-- Under the navbar there is a responsive hero image. 
+The navbar is collapsable on mobile devices.
+- Under the navbar there is a responsive hero image.
 - On the Homepage you can find a small introduction textbox to tell the user a little bit about the scope of the page.
-Inside that field there is a MailChimp form, where the user can find the Facebook page of ZeeZee Bijoux. 
+Inside that field there is a MailChimp form, where the user can find the Facebook page of ZeeZee Bijoux.
 The form loads in a new tab.
 - To show user some products on the Homepage, I choosed to use cards. Each card leads the user to a category. I used overlay on cards, so when the user ```hover```, they can see which category belongs to that card.
-- The footer is an other returning component on the page. 
+- The footer is an other returning component on the page.
 The footer contains two FontAwesome icons leading to the Instagram and Facebook page of the artist, and the developers name leading to the GitHub page of mine.
 All links are working, they load in new tab.
 
@@ -186,14 +187,14 @@ These bootstrap messages appear after every operation. I used toast to display s
 
 - The Contact Page is built with a form where the user can provide some information and send the message to the developer.
 I used emailJS for this page. After submitting the form, they get redirected to a success page.
-Form is tested, test email successfully received. 
+Form is tested, test email successfully received.
 
 ### Feedback Page
 
 - For the GuestBook I used Django comments to provide a platform where the user can ad reviews, and see other people's feedback about the shop or the products.
-These reviews can be removed from the Django Admin only. Comments are tested. 
+These reviews can be removed from the Django Admin only. Comments are tested.
 
-### Bag 
+### Bag
 
 - The default status of the bag is empty. When a user adds an item to it, they can see the product details, the bag total, the delivery cost and the grand total.
 If they hit on Secure Checkout, I form appears where the user has to provide some information regarding the delivery and the payment.
@@ -208,16 +209,17 @@ Signed in users have a profile with delivery information (if they choosed to sav
 The order status has two mode: Processed and Awaiting, telling the user if their order is already seen by the shop owner.
 The status of the order can be changed in Django Admin.
 - SuperUser can click on Product Managment page where they can add new products. This page is only available for the shop owner.
-The whole sign up, sign in, sign out process was tested, everything worked well. 
+The whole sign up, sign in, sign out process was tested, everything worked well.
 
 ### Compatibility
+
 The site compatibility was checked with devtools, the AmIresponsive site, Responsive Viewer Chrome extension and also tested by friends from different devices and browsers.
 
 The site is responsive when you are browsing with:
     - [x] Google Chrome.
     - [x] Mozilla Firefox.
     - [x] Opera.  
-    
+
 Tested devices:
 
 - [x] laptop, laptop with touch (width 1440px);
@@ -256,7 +258,7 @@ All of the codes are validated and beatufied.
 The solution was to change the path to  ```{{ MEDIA_URL }}background_hand.jpg```.
 
 - After I added something to my bage and proceedeed secure checkout, the price of the product turned to 0.00. I saw that payment succeeded in my stripe account, but in Django Admin I couldn't see the order summary properly.
-The problem was caused by an identation error in my ```signals.py ```.
+The problem was caused by an identation error in my ```signals.py```.
 
 ## Deployment
 
@@ -269,24 +271,25 @@ To deploy ZeeZee Bijoux webshop to heroku, take the following steps:
 2. Create a Procfile with the terminal command echo web: python app.py > Procfile.
 
 3. git add and git commit the new requirements and Procfile and then git push the project to GitHub.
+
 - Add ```echo web: gunicorn main.wsgi:application > Procfile```
 
-4. Create a new app on the Heroku website by clicking the "New" button in your dashboard. 
+4. Create a new app on the Heroku website by clicking the "New" button in your dashboard.
 
 5. From the heroku dashboard of your application, click on "Deploy" > "Deployment method" and select GitHub.
 
 6. Link heroku and GitHub repository.
 
-7. In the Heroku Resources tab, navigate to the Add-Ons section and search for Heroku Postgres. Make sure to select the free Hobby level. 
+7. In the Heroku Resources tab, navigate to the Add-Ons section and search for Heroku Postgres. Make sure to select the free Hobby level.
 
 8. In the heroku dashboard for the application, click on "Settings" > "Reveal Config Vars". And set the followings config vars:
 
 - AWS Access Key,
 - AWS Secret Key,
-- S3 Bucket Name, 
-- Database URL, 
+- S3 Bucket Name,
+- Database URL,
 - Hostname,
-- Secret Key, 
+- Secret Key,
 - Stripe Secret Key.
 
 9. In your heroku dashboard, deploy the application.
@@ -300,9 +303,9 @@ If you want to access admin, just add ```/admin``` at the end of your site.
 
 In order to run this project locally on your own system, you will need the followings:
 
-- an IDE like GitPod or VS Code; 
+- an IDE like GitPod or VS Code;
 - Python3;
-- PIP; 
+- PIP;
 - GIT.
 
 If you have these thins up and running, then the next steps are:
@@ -311,7 +314,7 @@ If you have these thins up and running, then the next steps are:
 
 2. Create a .env file with your own credentials.
 
-3. Create a requirements.txt file, then free requirements with this command: 
+3. Create a requirements.txt file, then free requirements with this command:
 ```pip freeze > requirements.txt```
 
 4. To launch your project on an IDEA, type in the terminal this:
@@ -401,7 +404,7 @@ Product names, descriptions and introduction text was written by jewelry maker, 
 
 ### Media
 
-All pictures are owned by Bekő-Fóri Zenkő. 
+All pictures are owned by Bekő-Fóri Zenkő.
 
 ### Code
 
