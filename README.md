@@ -35,7 +35,37 @@ The purpose of ZeeZee Bijoux online shop is to provide a nice, intuitive platfor
 
 ### Project Goals
 
+ZeeZee Bijoux is part of my Code Institute Full Stack Software Development studies, the Full Stack Development with Django module.
+The scope for this application was to create an e-commerce site using Django and providing the checkout system using Stripe payment system.
+As this is my last milestone project, I wanted to work with a "real" client, so I reached out an artist aquiantance to create a webshop for her handmade jewelleries.
+The target audience of the page is woman around 15-40, preferring to wear something special, handmade and unique. All products are unique, can not be reproduced.
+
 ### User Stories
+
+As a User I would like to:
+
+- [x] easily access the webshop from different kind of devices.
+- [x] have an easy and logical method to buy a product.
+- [x] have the opportunity to buy a product even if you don't want to sign up.
+- [x] browse bijouxs by categories.
+- [x] find bijouxs or type of bijouxs.
+- [x] get informations about products and the creator.
+- [x] sign up.
+- [x] easily add or remove products to my bag.
+- [x] get an email about my order.
+- [x] place an order.
+- [x] save the order informations to their profile.
+- [x] create a profile.
+- [x] edit my shipping information if it's needed.
+- [x] have an easy way to contact the webshop if I have problem.
+- [x] get success or error message to know my feedback was successfully submitted.
+- [x] leave feedback and read about other shoppers feedback.
+- [x] follow the status of my order.
+
+As a SuperUser (Products Owner) I would like to:
+
+- [x] easily add, edit and delete orders.
+- [x] have a nice product managment page which is easy to use even if you don't have any experience in admin platforms.
 
 ### Developer Goals
 
@@ -51,7 +81,7 @@ Colors I used:
 - ![#6A0848](https://placehold.it/15/6A0848/000000?text=+) `##6A0848 - purple, primary color`
 - ![#A8A8A8](https://placehold.it/15/A8A8A8/000000?text=+) `#A8A8A8 - grey, secondary color`
 - ![#84d5ff](https://placehold.it/15/84d5ff/000000?text=+) `#84d5ff - light blue (info-blue) for making the login system easier to read and navigate in`
-- ![#ff0000](https://placehold.it/15/#ff0000/000000?text=+) `#ff0000 - red used once at the Delete button`
+- ![##FF0000](https://placehold.it/15/#FF0000/000000?text=+) `#FF0000 - red used once at the Delete button`
 
 #### Fonts
 
