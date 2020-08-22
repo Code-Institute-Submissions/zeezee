@@ -39,7 +39,7 @@ The purpose of ZeeZee Bijoux online shop is to provide a nice, intuitive platfor
 ZeeZee Bijoux is part of my Code Institute Full Stack Software Development studies, the Full Stack Development with Django module.
 The scope for this application was to create an e-commerce site using Django and providing the checkout system using Stripe payment system.
 As this is my last milestone project, I wanted to work with a "real" client, so I reached out an artist aquiantance to create a webshop for her handmade jewelleries.
-The target audience of the page is woman around 15-40, preferring to wear something special, handmade and unique. All products are unique, can not be reproduced.
+The target audience of the page is women around 15-40, preferring to wear something special, handmade and unique. All products are unique, can not be reproduced.
 
 ### User Stories
 
@@ -79,6 +79,9 @@ As a SuperUser (Products Owner) I would like to:
 To make an integrated design for this site, I used Bootstrap, and FontAwesome.
 The best-used components are cards. I choosed cards for products, categoriesure because I think cards helps me to organize the information in a user-friendly way.
 For providing feedback, editing and adding products or shipping informations I used forms.
+
+![ContactForm](https://github.com/krisztinatxt/zeezee/blob/master/media/contact_mobile.PNG "Responsive Image")
+
 
 #### Color Scheme
 
@@ -179,6 +182,9 @@ Edit and delete functions works without problem.
 - When the user add a product to their bag, a Bootstrap toas pops up to display a success message.
 These bootstrap messages appear after every operation. I used toast to display success, error, info, and warning.
 
+![Oders](https://github.com/krisztinatxt/zeezee/blob/master/media/profile.PNG "Responsive Image")
+
+
 ### About Page
 
 - The About Page contains a small introduction about the creator of ZeeZee Bijoux, and a responsive image of her.
@@ -200,6 +206,8 @@ These reviews can be removed from the Django Admin only. Comments are tested.
 If they hit on Secure Checkout, I form appears where the user has to provide some information regarding the delivery and the payment.
 All fields are required. After the checkout, they get redirected to a success page which contains an order summary and a button back to all product page.
 The whole checkout process was tested from different devices. Everything worked well. After the checkout, the admin can see the order in Django Admin and Stripe dashboard as well.
+
+![Checkout](https://github.com/krisztinatxt/zeezee/blob/master/media/checkout_form.PNG "Responsive Image")
 
 ### Authentication
 
