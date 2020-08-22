@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = True
 
 ALLOWED_HOSTS = ['zeezee-bijoux.herokuapp.com', 'localhost']
 
@@ -107,7 +107,6 @@ AUTHENTICATION_BACKENDS = [
 
 #if you succeed in login, you'll be redirected to the main page.
 SITE_ID = 1 
-ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'
 
 SOCIALACCOUNT_PROVIDERS = {
     'facebook': {

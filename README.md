@@ -270,9 +270,6 @@ The problem was caused by an identation error in my ```signals.py ```.
 
 - [AWS Amazon](https://aws.amazon.com/);
 
-
-
-
 ## Credits
 
 ### Content
