@@ -82,7 +82,6 @@ For providing feedback, editing and adding products or shipping informations I u
 
 ![ContactForm](https://github.com/krisztinatxt/zeezee/blob/master/media/contact_mobile.PNG "Responsive Image")
 
-
 #### Color Scheme
 
 Two of the most important colors are purple and grey. To make the site consistent and easy to read, I used these two colors for almost everything.
@@ -182,8 +181,7 @@ Edit and delete functions works without problem.
 - When the user add a product to their bag, a Bootstrap toas pops up to display a success message.
 These bootstrap messages appear after every operation. I used toast to display success, error, info, and warning.
 
-![Oders](https://github.com/krisztinatxt/zeezee/blob/master/media/profile.PNG "Responsive Image")
-
+![Orders](https://github.com/krisztinatxt/zeezee/blob/master/media/profile.PNG "Responsive Image")
 
 ### About Page
 
