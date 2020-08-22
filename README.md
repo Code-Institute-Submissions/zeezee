@@ -208,6 +208,7 @@ Signed in users have a profile with delivery information (if they choosed to sav
 The order status has two mode: Processed and Awaiting, telling the user if their order is already seen by the shop owner.
 The status of the order can be changed in Django Admin.
 - SuperUser can click on Product Managment page where they can add new products. This page is only available for the shop owner.
+The whole sign up, sign in, sign out process was tested, everything worked well. 
 
 ### Compatibility
 The site compatibility was checked with devtools, the AmIresponsive site, Responsive Viewer Chrome extension and also tested by friends from different devices and browsers.
@@ -261,8 +262,68 @@ The problem was caused by an identation error in my ```signals.py ```.
 
 ### How to deploy the site
 
+To deploy ZeeZee Bijoux webshop to heroku, take the following steps:
+
+1. Create a requirements.txt file using the terminal command pip freeze > requirements.txt.
+
+2. Create a Procfile with the terminal command echo web: python app.py > Procfile.
+
+3. git add and git commit the new requirements and Procfile and then git push the project to GitHub.
+- Add ```echo web: gunicorn main.wsgi:application > Procfile```
+
+4. Create a new app on the Heroku website by clicking the "New" button in your dashboard. 
+
+5. From the heroku dashboard of your application, click on "Deploy" > "Deployment method" and select GitHub.
+
+6. Link heroku and GitHub repository.
+
+7. In the Heroku Resources tab, navigate to the Add-Ons section and search for Heroku Postgres. Make sure to select the free Hobby level. 
+
+8. In the heroku dashboard for the application, click on "Settings" > "Reveal Config Vars". And set the followings config vars:
+
+- AWS Access Key,
+- AWS Secret Key,
+- S3 Bucket Name, 
+- Database URL, 
+- Hostname,
+- Secret Key, 
+- Stripe Secret Key.
+
+9. In your heroku dashboard, deploy the application.
+
+10. When the building is finished, you can check it by clickin View App.
+If you want to access admin, just add ```/admin``` at the end of your site.
+
+11. To create a storage for the deployed site, you can use AWS S3 bucket and IAM. To learn more about that, click [here](https://docs.aws.amazon.com/).
+
 ### How to deploy locally
 
+In order to run this project locally on your own system, you will need the followings:
+
+- an IDE like GitPod or VS Code; 
+- Python3;
+- PIP; 
+- GIT.
+
+If you have these thins up and running, then the next steps are:
+
+1. Clone this GitHub repository by clicking the green "Clone or download" button above in order to download the project as a zip-file. Download it, and unzip it.
+
+2. Create a .env file with your own credentials.
+
+3. Create a requirements.txt file, then free requirements with this command: 
+```pip freeze > requirements.txt```
+
+4. To launch your project on an IDEA, type in the terminal this:
+
+```python manage.py runserver```
+
+5. After exposing the port, you should see the local server running.
+
+6. In order to access the Django Admin Panel, you must generate a superuser:
+```python manage.py createsuperuser``` then assign an admin username, email, and secure password.
+
+7. Now you can login as a superuser on Django Admin. Add ```/admin``` to the end of the local port address, and login.
 
 ## Technologies Used
 
