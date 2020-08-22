@@ -148,6 +148,26 @@ I haven't sorted it out, but I definitely want to add those features in the futu
 
 ## Testing
 
+Basic testing files to check if the page is correctly loading are in ``` test.py ``` in regarding app's folders.
+
+### Homepage
+
+- On the Homepage you can see a navbar which is consistent on each pages. It contains a menu and a User Menu with autentication and shopping bag.
+The navbar is collapsable on mobile devices. 
+
+### Products Page
+
+
+### About Page
+
+### Contact Page
+
+
+### Feedback Page
+
+
+
+### Compatibility
 The site compatibility was checked with devtools, the AmIresponsive site, Responsive Viewer Chrome extension and also tested by friends from different devices and browsers.
 
 The site is responsive when you are browsing with:
