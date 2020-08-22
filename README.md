@@ -43,7 +43,19 @@ The purpose of ZeeZee Bijoux online shop is to provide a nice, intuitive platfor
 
 #### Color Scheme
 
+Two of the most important colors are purple and grey. To make the site consistent and easy to read, I used these two colors for almost everything.
+To find out, what colors would match with the bijouxs's feeling and style, I used [ColorSpace](https://mycolor.space/).
+
+Colors I used:
+
+- ![#6A0848](https://placehold.it/15/6A0848/000000?text=+) `##6A0848 - purple, primary color`
+- ![#A8A8A8](https://placehold.it/15/A8A8A8/000000?text=+) `#A8A8A8 - grey, secondary color`
+- ![#84d5ff](https://placehold.it/15/84d5ff/000000?text=+) `#84d5ff - light blue (info-blue) for making the login system easier to read and navigate in`
+- ![#ff0000](https://placehold.it/15/#ff0000/000000?text=+) `#ff0000 - red used once at the Delete button`
+
 #### Fonts
+
+The font I selected to this page is Baloo 2 from [GoogleFonts](https://fonts.google.com/), because it fits perfectly to the elegant, bohemian and playful design the bijouxs and their creator represent.
 
 ### Wireframes
 
@@ -72,6 +84,7 @@ The site is responsive when you are browsing with:
     - [x] Google Chrome.
     - [x] Mozilla Firefox.
     - [x] Opera.  
+    
 Tested devices:
 
 - [x] laptop, laptop with touch (width 1440px);
@@ -103,7 +116,7 @@ All of the codes are validated and beatufied.
   - No error found, code is syntactically valid.
 - [PythonCodeChecker](https://extendsclass.com/python-tester.html):
   - No syntax errors detected. Couple of errors saying that the line is too long, but in Django project Chris advised to avoid those if doesn't effect the code itself.
-  
+
 
 ## Deployment
 
