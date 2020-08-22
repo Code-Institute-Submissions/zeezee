@@ -6,7 +6,7 @@
 
 ZeeZee Bijoux is an e-commerce site, where the shopper can browse for handmade, unique jewellery. This project was built as my final milestone project for the Code Institute Full Stack Web Development diploma.
 The purpose of ZeeZee Bijoux online shop is to provide a nice, intuitive platform for the artist to share her bijoux with potential shoppers, so they can easily buy them, and become a part of ZeeZee Community.
-![AmIresponsive]( "Responsive Image")
+![AmIresponsive](https://github.com/krisztinatxt/zeezee/blob/master/media/amiresponsive.PNG "Responsive Image")
 
 ## Table of Contents
 
