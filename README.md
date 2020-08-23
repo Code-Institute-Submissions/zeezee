@@ -141,6 +141,12 @@ The implementation ended up slightly different.
 - The shopper can easily sign up, sign in and reach their profile with the shipping and order information.
 - I built the authentication system using Django Allauth.
 
+#### Product returning
+
+- If the shopper is not happy with the product, they can return it.
+The link to this return form is a part of the footer, so the user don't have to sign in, or sign up (as they can place order withouth authentication too).
+The idea is that the dissatisfied shopper provide some information about the problem, they give the order number, and contact details, and the owner gets this data in Django Admin, so she can answer, and start the process.
+
 ### Features Left to Implement
 
 - I would like to build Facebook Login and Sharing-Like system in the future. I was working on it, and on the development side everything was working fine, so I could login with facebook, share a product and like it.
@@ -163,8 +169,8 @@ Inside that field there is a MailChimp form, where the user can find the Faceboo
 The form loads in a new tab.
 - To show user some products on the Homepage, I choosed to use cards. Each card leads the user to a category. I used overlay on cards, so when the user ```hover```, they can see which category belongs to that card.
 - The footer is an other returning component on the page.
-The footer contains two FontAwesome icons leading to the Instagram and Facebook page of the artist, and the developers name leading to the GitHub page of mine.
-All links are working, they load in new tab.
+The footer contains two FontAwesome icons leading to the Instagram and Facebook page of the artist, and the return product link.
+All links are working, Instagram and Facebook links load in a new tab. 
 
 ### Products Page
 
@@ -211,9 +217,7 @@ The whole checkout process was tested from different devices. Everything worked 
 
 - Authentication is provided by using Django Allauth. The user can sign up by setting a username, a password and a valid email address.
 After clicking on Sign Up, they receive an email with a link to activate the profile. By clicking on the link, the user created a profile, so they can login.
-Signed in users have a profile with delivery information (if they choosed to save it), and an order history with details about the product, and an order status.
-The order status has two mode: Processed and Awaiting, telling the user if their order is already seen by the shop owner.
-The status of the order can be changed in Django Admin.
+Signed in users have a profile with delivery information (if they choosed to save it), and an order history with details about the product.
 - SuperUser can click on Product Managment page where they can add new products. This page is only available for the shop owner.
 The whole sign up, sign in, sign out process was tested, everything worked well.
 
