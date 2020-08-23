@@ -50,26 +50,26 @@
                      </a>
                   </td>
                   <td>{{ order.date }}</td>
-                  <td>
+                    <td>
                      <ul class="list-unstyled">
                         {% for item in order.lineitems.all %}
                         <li class="small">
                            {{ item.quantity }} X {{ item.product.name }}
                         </li>
-                        {% if order.status %}
-                        <td> Awaiting <br>
+                    </td>
+                    
+                    {% if order.status %}
+                    <td> Awaiting <br>
                         <small>We haven't seen your order yet, check this in an hour </small>
-                        </td>
-                        {% else %}
-                        <td> Processed <br>
-                        <small> We started to prepare your order </small> 
-                         </td>
-                        {% endif %}
-                     {% endfor %}
-                     </ul>
+                    </td>
+                     {% else %}
+                    <td> Processed <br>
+                     <small> We started to prepare your order </small> 
                   </td>
+                  {% endif %}
                </tr>
                {% endfor %}
+              {% endfor %}
             </tbody>
          </table>
       </div>
