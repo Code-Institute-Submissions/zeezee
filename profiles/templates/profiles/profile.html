@@ -37,8 +37,7 @@
                   <th>Order Number</th>
                   <th>Date</th>
                   <th>Items</th>
-                  <th>Order Status</th>
-               </tr>
+                </tr>
             </thead>
             <tbody>
                {% for order in orders %}
@@ -59,18 +58,6 @@
                         {% endfor %}
                      </ul>
                   </td>
-                  <!--The order status default is Awaiting, when the admin received the order, 
-                     they can check in and then the status is updating to Processed-->
-                  {% if order.status %}
-                  <td> Awaiting <br>
-                     <small>We haven't seen your order yet, check this in an hour </small>
-                  </td>
-                  {% else %}
-                  <td> Processed <br>
-                     <small> We started to prepare your order </small> 
-                  </td>
-                  {% endif %}
-               </tr>
                {% endfor %}
             </tbody>
          </table>
