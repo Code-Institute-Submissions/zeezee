@@ -37,6 +37,7 @@
                   <th>Order Number</th>
                   <th>Date</th>
                   <th>Items</th>
+                  <th>Order Status</th>
                 </tr>
             </thead>
             <tbody>
@@ -55,7 +56,16 @@
                         <li class="small">
                            {{ item.quantity }} X {{ item.product.name }}
                         </li>
-                        {% endfor %}
+                        {% if order.status %}
+                        <td> Awaiting <br>
+                        <small>We haven't seen your order yet, check this in an hour </small>
+                        </td>
+                        {% else %}
+                        <td> Processed <br>
+                        <small> We started to prepare your order </small> 
+                         </td>
+                        {% endif %}
+                     {% endfor %}
                      </ul>
                   </td>
                </tr>
