@@ -217,7 +217,8 @@ The whole checkout process was tested from different devices. Everything worked 
 
 - Authentication is provided by using Django Allauth. The user can sign up by setting a username, a password, and a valid email address.
 After clicking on Sign Up, they receive an email with a link to activate the profile. By clicking on the link, the user created a profile, so they can log in.
-Signed in users have a profile with delivery information (if they chose to save it) and order history with details about the product.
+Signed in users have a profile with delivery information (if they choosed to save it), and an order history with details about the product, and an order status.
+The order status has two mode: Processed and Awaiting, telling the user if their order is already seen by the shop owner. The status of the order can be changed in Django Admin.
 - SuperUser can click on Product Managment page where they can add new products. This page is only available for the shop owner.
 The whole sign up, sign in, sign out process was tested, everything worked well.
 
