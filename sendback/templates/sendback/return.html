@@ -2,10 +2,10 @@
 {% load static %}
 <title> {% block title %}Return a product{% endblock %} </title>
 {% block content %}
-<div class="container-fluid contact purple-text">
 {% if new_sendback %}
   <h2 class="mt-5">Thanks for your request. We will get in touch with you in a 3 working days.</h2>
 {% else %}
+<div class="container-fluid contact purple-text">
   <h2 class="mt-3">Add a new request</h2>
   <p>Please provide some information, why would you like to return the product.</p>
   <form action="." method="post">

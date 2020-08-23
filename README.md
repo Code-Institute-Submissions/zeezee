@@ -4,7 +4,7 @@
 
 ## Code Institute / Full Stack Frameworks
 
-ZeeZee Bijoux is an e-commerce site, where the shopper can browse for handmade, unique jewelry. This project was built as my final milestone project for the Code Institute Full Stack Web Development diploma.
+ZeeZee Bijoux is an e-commerce site, where the shopper can browse for handmade, unique jewelry. This site was built as my final milestone project for the Code Institute Full Stack Web Development diploma.
 The purpose of ZeeZee Bijoux online shop is to provide a nice, intuitive platform for the artist to share her bijoux with potential shoppers, so they can easily buy them, and become a part of ZeeZee Community.
 ![AmIresponsive](https://github.com/krisztinatxt/zeezee/blob/master/media/amiresponsive.PNG "Responsive Image")
 
@@ -39,7 +39,7 @@ The purpose of ZeeZee Bijoux online shop is to provide a nice, intuitive platfor
 ZeeZee Bijoux is part of my Code Institute Full Stack Software Development studies, the Full Stack Development with Django module.
 The scope for this application was to create an e-commerce site using Django and providing the checkout system using the Stripe payment system.
 As this is my last milestone project, I wanted to work with a "real" client, so I reached out to an artist acquaintance to create a webshop for her handmade jewellery.
-The target audience of the page is women around 15-40, preferring to wear something special, handmade, and unique. All products are unique, can not be reproduced.
+The target audience of the page is women around the age 15-40, preferring to wear something special, handmade, and unique. All products are unique, can not be reproduced.
 
 ### User Stories
 
@@ -70,14 +70,14 @@ As a SuperUser (Products Owner) I would like to:
 
 ### Developer Goals
 
-- Provide a nice, easy to use wehsbop where the user can browse, add to bag, order, and checkout.
+- Provide a nice, easy to use webshop where the user can browse, add to bag, order, and checkout.
 - Learn Django framework, and try to use as much as I can from things I learned during the course.
 - Get an insight into Amazon AWS and Stripe Payment's platform.
 
 ### Design
 
-To make an integrated design for this site, I used Bootstrap, and FontAwesome.
-The best-used components are cards. I chose cards for products, categorise because I think cards helps me to organize the information in a user-friendly way.
+I used Bootstrap, and FontAwesome to make an integrated design for this site
+The best-used components are cards. I chose cards for products, categories because I think cards helps me to organize the information in a user-friendly way.
 For providing feedback, editing, and adding products or shipping informations I used forms.
 
 ![ContactForm](https://github.com/krisztinatxt/zeezee/blob/master/media/contact_mobile.PNG "Responsive Image")
@@ -124,7 +124,7 @@ The implementation ended up slightly different.
 #### Edit, Update and delete Products
 
 - The superuser can easily edit or delete a product using the adequate button on the Product Detail page.
-- They can add products on Product Management Page. To make it easy to upload a collection of products, when the superuser adds one product, they get redirected to the Add Product Page instead of All Product Page.
+- They can add products on Product Management Page.In order to make it easy to upload a collection of products, when the superuser adds one product, they get redirected to the Add Product Page instead of All Product Page.
 
 #### Send feedback
 
@@ -144,14 +144,14 @@ The implementation ended up slightly different.
 #### Product returning
 
 - If the shopper is not happy with the product, they can return it.
-The link to this return form is a part of the footer, so the user don't have to sign in, or sign up (as they can place order without authentication too).
-The idea is that the dissatisfied shopper provide some information about the problem, they give the order number, and contact details, and the owner gets this data in Django Admin, so she can answer, and start the process.
+The link to this return form is a part of the footer, so the user doesn't have to sign in, or sign up (as they can place order without authentication too).
+The idea is that the dissatisfied shopper provides some information about the problem, they give the order number, and contact details, and the owner gets this data in Django Admin, so she can answer, and start the process.
 
 ### Features Left to Implement
 
-- I would like to build Facebook Login and Sharing-Like system in the future. I was working on it, and on the development side everything was working fine, so I could login with Facebook, share a product, and like it.
+- I would like to build Facebook Login and Sharing-Like system later on. I was working on it, and on the development side everything was working fine, so I could login with Facebook, share a product, and like it.
 but I couldn't find the way to make it work in the deployed version. I tried a couple of ways to fix it, but it seems that I have a problem with my CallBack URI.
-I haven't sorted it out, but I definitely want to add those features in the future to the deployed version too.
+I haven't sorted it out yet, but I definitely want to add those features in the future to the deployed version too.
 
 - To have a unified view, I would like to change all Product Previews to a white background picture of the product. Currently the artist could provide me white background pictures for all products, and I didn't want to mix the natural and studio photos up, so I chose to use 'natural' pictures as previews.
 
@@ -170,7 +170,7 @@ The form loads in a new tab.
 - To show users some products on the Homepage, I chose to use cards. Each card leads the user to a category. I used an overlay on cards, so when the user ```hover```, they can see which category belongs to that card.
 - The footer is another returning component on the page.
 The footer contains two FontAwesome icons leading to the Instagram and Facebook page of the artist, and the return product link.
-All links are working, Instagram and Facebook links load in a new tab. 
+All links are working, Instagram and Facebook links load in a new tab.
 
 ### Products Page
 
@@ -201,14 +201,14 @@ The form is tested, test email successfully received.
 
 ### Feedback Page
 
-- For the GuestBook, I used Django comments to provide a platform where the user can ad reviews and see other people's feedback about the shop or the products.
+- For the GuestBook, I used Django comments to provide a platform where the user can add reviews and see other people's feedback about the shop or the products.
 These reviews can be removed from the Django Admin only. Comments are tested.
 
 ### Bag
 
 - The default status of the bag is empty. When a user adds an item to it, they can see the product details, the bag total, the delivery cost, and the grand total.
-If they hit on Secure Checkout, I form appears where the user has to provide some information regarding the delivery and the payment.
-All fields are required. After the checkout, they get redirected to a success page which contains an order summary and a button back to all product pages.
+If they hit on Secure Checkout, a form appears where the user has to provide some information regarding the delivery and the payment.
+All fields are required to be filled out. After the checkout, they get redirected to a success page which contains an order summary and a button back to all product pages.
 The whole checkout process was tested from different devices. Everything worked well. After the checkout, the admin can see the order in Django Admin and Stripe dashboard as well.
 
 ![Checkout](https://github.com/krisztinatxt/zeezee/blob/master/media/checkout_form.PNG "Responsive Image")
@@ -260,14 +260,14 @@ All of the codes are validated and beautified.
 - [JavaScript Validation](https://esprima.org/demo/validate.html):
   - No error found, code is syntactically valid.
 - [PythonCodeChecker](https://extendsclass.com/python-tester.html):
-  - No syntax errors detected. A couple of errors saying that the line is too long, but in Django project, Chris advised to avoid those if doesn't effect the code itself.
+  - No syntax errors detected. A couple of errors saying that the line is too long, but in Django project, Chris advised to ignore those if don't affect the code itself.
 
 ### Bugs
 
 - When I added media and static files to AWS S3 bucket, the deployed version couldn't load any of my pictures from the homepage, although my product images were loaded correctly.
 The solution was to change the path to  ```{{ MEDIA_URL }}background_hand.jpg```.
 
-- After I added something to my bage and proceeded secure checkout, the price of the product turned to 0.00. I saw that payment succeeded in my stripe account, but in Django Admin I couldn't see the order summary properly.
+- After I added something to my bag and proceeded secure checkout, the price of the product turned to 0.00. I saw that payment succeeded in my stripe account, but in Django Admin I couldn't see the order summary properly.
 The problem was caused by an indentation error in my ```signals.py```.
 
 ## Deployment
@@ -327,7 +327,7 @@ If you have these things up and running, then the next steps are:
 3. Create a requirements.txt file, then free requirements with this command:
 ```pip freeze > requirements.txt```
 
-4. To launch your project on an IDEA, type in the terminal this:
+4. To launch your project on an IDEA, type this in your terminal:
 
 ```python manage.py runserver```
 
