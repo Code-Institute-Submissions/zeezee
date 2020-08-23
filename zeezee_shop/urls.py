@@ -29,6 +29,6 @@ urlpatterns = [
     path('checkout/', include('checkout.urls')),
     path('profile/', include('profiles.urls')),
     path('comment/', include('comment.urls')),
-    
-    
+    path('sendback/', include('sendback.urls')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

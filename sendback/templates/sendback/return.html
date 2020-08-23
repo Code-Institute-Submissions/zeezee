@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+<title> {% block title %}Return a product{% endblock %} </title>
+{% block content %}
+<div class="container-fluid contact purple-text">
+
+{% for sendback in sendbacks %}
+  <div class="Request a return">
+    <p class="info">
+      Sendback {{ forloop.counter }} by {{ sendback.name }}
+      {{ sendback.created }}
+    </p>
+    {{ sendback.body|linebreaks }}
+  </div>
+{% empty %}
+  
+{% endfor %}
+{% if new_sendback %}
+  <h2 class="mx-auto">Thanks for your request. We will get in touch with you in a 3 working days.</h2>
+{% else %}
+  <h2>Add a new request</h2>
+  <form action="." method="post">
+    {{ sendback_form.as_p }}
+    {% csrf_token %}
+    <p><input type="submit" class="purple_button" value="Add a request"></p>
+  </form>
+{% endif %}
+</div>
+{% endblock %}

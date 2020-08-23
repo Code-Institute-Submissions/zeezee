@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'profiles',
     'storages',
     'comment',
+    'sendback'
 ]
 
 MIDDLEWARE = [
