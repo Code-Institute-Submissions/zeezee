@@ -9,5 +9,6 @@ class Comment(models.Model):
     body = models.TextField(blank=False) 
     created = models.DateTimeField(auto_now_add=True, blank=False) 
     updated = models.DateTimeField(auto_now=True, blank=False) 
-    active = models.BooleanField(default=True, blank=False) 
+    active = models.BooleanField(default=True, blank=False)
+
 

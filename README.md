@@ -273,6 +273,9 @@ The solution was to change the path to  ```{{ MEDIA_URL }}background_hand.jpg```
 - After I added something to my bag and proceeded secure checkout, the price of the product turned to 0.00. I saw that payment succeeded in my stripe account, but in Django Admin I couldn't see the order summary properly.
 The problem was caused by an indentation error in my ```signals.py```.
 
+- I couldn't load my models in deployed version, I kept getting a ```programming error```. The solution was that I had to remove my Postgres database, then add it again.
+After that I had to change the DATABASE_URL, then run migrations in Heroku, and load my fixtures in Heroku CLI.
+
 ## Deployment
 
 ### How to deploy the site
