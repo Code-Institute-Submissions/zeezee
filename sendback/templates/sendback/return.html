@@ -9,9 +9,9 @@
   <h2 class="mt-3">Add a new request</h2>
   <p>Please provide some information, why would you like to return the product.</p>
   <form action="." method="post">
-    {{ sendback_form.as_p }}
-    {% csrf_token %}
-    <p><input type="submit" class="purple_button" value="Add a request"></p>
+   {% csrf_token %}
+   {{ sendback_form|crispy }}
+   <p><input type="submit" class="purple_button" value="Add a request"></p>
   </form>
 {% endif %}
 </div>
