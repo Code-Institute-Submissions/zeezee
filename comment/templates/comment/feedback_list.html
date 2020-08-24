@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 <title>{% block title %}Reviews{% endblock %}</title>
+<!--List of reviews and add review button-->
+<div> 
 <div class="row">
     <div class="col-md-12 mb-md-0 sm-12 mb-5 m-3 offset-5">
         <h2 class="mt-5 mx-auto">
@@ -12,9 +14,9 @@
         </a>
     </div>
 </div>
-      {% for comments in comments %}
-      <div class="row purple-text">
-        <div class="feedback col-md-6 lg-6 sm-6 md-0 mb-5 ml-3">
+<div class="row purple-text">
+{% for comments in comments %}
+        <div class="feedback col-md-12 col-lg-5 col-sm-6 mx-auto mb-5 ml-4 mr-4">
             <h5 class="info">
                 Review number {{ forloop.counter }} by {{ comments.name }} {{ comments.created }}
             </h5>
@@ -24,4 +26,5 @@
       </div>
 {% endfor %}
 </div>
+
 {% endblock %}

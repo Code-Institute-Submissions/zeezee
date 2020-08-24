@@ -256,19 +256,16 @@ form {
 	border-radius: 0.2rem;
 }
 
-/*Feedback */
+/*Feedback reviews */
 
 .feedback{
     border: #6A0848 0.1rem solid;
     border-radius:0.4rem;
     background: #6A0848;
-    color:white;
-    overflow: hidden;
+    color:white;  
    }
 
-.test{
-    overflow:auto;
-}
+
 /*Footer*/
 
 .footer {
