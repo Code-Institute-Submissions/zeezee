@@ -146,6 +146,7 @@ The implementation ended up slightly different.
 - If the shopper is not happy with the product, they can return it.
 The link to this return form is a part of the footer, so the user doesn't have to sign in, or sign up (as they can place order without authentication too).
 The idea is that the dissatisfied shopper provides some information about the problem, they give the order number, and contact details, and the owner gets this data in Django Admin, so she can answer, and start the process.
+![Request](https://github.com/krisztinatxt/zeezee/blob/master/media/request.PNG "Responsive Image")
 
 ### Features Left to Implement
 
