@@ -5,6 +5,9 @@ from django.contrib import messages
 
 
 def comment(request):
+    '''
+    View for add new comment and redirect a success message
+    '''
     new_comment = None
 
     if request.method == 'POST':
@@ -12,7 +15,7 @@ def comment(request):
         if comment_form.is_valid():
             new_comment = comment_form.save(commit=False)
             new_comment.save()
-            messages.success(request, 'Comment successfully added!')
+            messages.success(request, 'Review successfully added!')
     else:
         comment_form = CommentForm()
     return render(request,
@@ -22,11 +25,12 @@ def comment(request):
                    'comment_form': comment_form})
 
 
-def comment_list(request, comment_id):
-    comment = get_object_or_404(Comment, pk=comment_id)
-
+def comment_list(request):
+    '''
+    View to render the list of comments
+    '''
+    comments = Comment.objects.all()
     context = {
-        'comment': comment,
+        'comments': comments,
     }
-
-    return render(request, 'comment/feedback.html', context)
+    return render(request, 'comment/feedback_list.html', context)

@@ -2,19 +2,7 @@
 {% load static %}
 <title>{% block title %}Guestbook{% endblock %}</title>
 {% block content %}
-<div class="container-fluid contact purple-text">
-  {% with comments.count as total_comments %}
-  <h2>
-    {{ total_comments }}
-  </h2>
-  {% endwith %} {% for comment in comments %}
-  <div class="Feedback">
-    <p class="info">
-      Comment {{ forloop.counter }} by {{ comment.name }} {{ comment.created }}
-    </p>
-    {{ comment.body|linebreaks }}
-  </div>
-  {% empty %} {% endfor %} {% if new_comment %}
+ {% if new_comment %}
   <h2 class="mt-3">Thanks for your feedback</h2>
   <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
     <span class="purple_button p-1"

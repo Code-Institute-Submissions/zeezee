@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-fluid contact purple-text">
+  {% for comments in comments %}
+  <div class="Feedback">
+    <p class="info">
+      Comment {{ forloop.counter }} by {{ comment.name }} {{ comment.created }}
+    </p>
+    {{ comments.body|linebreaks }}
+  </div>
+  {% empty %}
+{% endfor %}
+{% endblock %}
