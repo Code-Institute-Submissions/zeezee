@@ -430,6 +430,7 @@ All pictures are owned by Bekő-Fóri Zenkő.
 Special thanks to:
 
 - Code Institute Tutor Team, they helped a lot during this project.
+- [Tutor Tim](https://github.com/TravelTimN), who is always helpful, professional, devoted and patient. Thanks a lot for this year, Tim!
 - My mentor, [Aaron Sinnott](https://github.com/aaronsnig501) for his advices.
 - Everybody who did take time to test this page, and gave me feedback.
 This site is for educational use.
