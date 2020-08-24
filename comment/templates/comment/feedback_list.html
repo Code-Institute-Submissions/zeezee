@@ -2,28 +2,23 @@
 {% block content %}
 <title>{% block title %}Reviews{% endblock %}</title>
 <!--List of reviews and add review button-->
-<div class="row">
-    <div class="col-md-12 mb-md-0 sm-12 mb-5 m-3 offset-5">
-        <h2 class="mt-5 mx-auto">
-        Do you want to give us some feedback?
-        </h2>
-        <a href="{% url 'comment' %}" class="btn rounded-0 btn-lg mb-5">
-            <span class="purple_button p-1"
-            ><i class="far fa-sticky-note"></i> Write a review</span>
-        </a>
-    </div>
+<h2 class="mt-5 mx-auto">
+   Do you want to give us some feedback?
+</h2>
+<a href="{% url 'comment' %}" class="btn rounded-0 btn-lg mb-5">
+<span class="purple_button p-1"
+   ><i class="far fa-sticky-note"></i> Write a review</span>
+</a>
+<div class="row purple-text ml-4 mr-4">
+   {% for comments in comments %}
+   <div class="feedback col-md-12 col-lg-5 col-sm-6 mx-auto mb-5 ml-4 mr-4">
+      <h5 class="info">
+         Review number {{ forloop.counter }} by {{ comments.name }} {{ comments.created }}
+      </h5>
+      {{ comments.body|linebreaks }}
+   </div>
+   {% empty %}
 </div>
-<div class="row purple-text">
-{% for comments in comments %}
-        <div class="feedback col-md-12 col-lg-5 col-sm-6 mx-auto mb-5 ml-4 mr-4">
-            <h5 class="info">
-                Review number {{ forloop.counter }} by {{ comments.name }} {{ comments.created }}
-            </h5>
-            {{ comments.body|linebreaks }}
-        </div>
-        {% empty %}
-      </div>
 {% endfor %}
 </div>
-
 {% endblock %}
