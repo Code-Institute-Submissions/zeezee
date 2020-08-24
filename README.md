@@ -210,6 +210,7 @@ These reviews can be removed from the Django Admin only. Comments are tested.
 - The default status of the bag is empty. When a user adds an item to it, they can see the product details, the bag total, the delivery cost, and the grand total.
 If they hit on Secure Checkout, a form appears where the user has to provide some information regarding the delivery and the payment.
 All fields are required to be filled out. After the checkout, they get redirected to a success page which contains an order summary and a button back to all product pages.
+The user gets a confirmation email.
 The whole checkout process was tested from different devices. Everything worked well. After the checkout, the admin can see the order in Django Admin and Stripe dashboard as well.
 
 ![Checkout](https://github.com/krisztinatxt/zeezee/blob/master/media/checkout_form.PNG "Responsive Image")
