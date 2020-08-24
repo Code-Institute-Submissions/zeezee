@@ -12,7 +12,7 @@
 <div class="row purple-text ml-4 mr-4">
    {% for comments in comments %}
    <div class="feedback col-md-12 col-lg-5 col-sm-6 mx-auto mb-5 ml-4 mr-4">
-      <h5 class="info">
+      <h5>
          Review number {{ forloop.counter }} by {{ comments.name }} {{ comments.created }}
       </h5>
       {{ comments.body|linebreaks }}
