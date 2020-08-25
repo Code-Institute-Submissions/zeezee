@@ -257,7 +257,7 @@ All of the codes are validated and beautified.
 
 - [HTMLValidation](https://validator.w3.org/):
   - Unfortunately the HTML validator doesn't understand the Jinja templating syntax, so I got a bunch of errors because of this.
-    Also you can find some errors caused by using base.html as a shell (body and div closing error caused by the base container, duplicate ID and li error I can't fix because then my Bootstrap components don't work).
+    Also you can find some errors caused by using base.html as a shell (body and div closing error caused by the base container, duplicate ID and li error I can't fix because then my Bootstrap components don't work) and some warning regarding that JS script doesn't need an attribute type, but when I removed that it blocked my emailJs and toast functions, so I have to ignore them.
     No other error found.
 - [CSSValidation](https://jigsaw.w3.org/css-validator/):
   - No error found, valid.
