@@ -4,6 +4,10 @@
     <div class="col-md-12 offset-md-4">
         <div class="collapse navbar-collapse" id="main-nav">
         <ul class="navbar-nav w-auto mx-auto">
+            <li class="nav-item dropdown">
+                    <a class="logo-font font-weight-bold nav-link mr-5  nav-item nav-link text-white" href="{% url 'home' %}"  aria-haspopup="true" aria-expanded="false">
+                    Home</a> 
+            </li>
          <li class="nav-item dropdown text">
                 <a class="logo-font font-weight-bold nav-link mr-5 text-white" href="{% url 'products' %}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Products
@@ -16,10 +20,6 @@
                     <a href="{% url 'products' %}?category=necklaces" class="dropdown-item purple-text">Necklaces</a>
                     <a href="{% url 'products' %}" class="dropdown-item purple-text">All Bijoux</a>
                 </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="logo-font font-weight-bold nav-link mr-5  nav-item nav-link text-white" href="{% url 'home' %}"  aria-haspopup="true" aria-expanded="false">
-                Home</a> 
             </li>
             <li class="nav-item dropdown">
                 <a class="logo-font font-weight-bold nav-link mr-5 text nav-item nav-link text-white" href="{% url 'about' %}" aria-haspopup="true" aria-expanded="false">
